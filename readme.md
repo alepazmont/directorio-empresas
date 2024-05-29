@@ -2,7 +2,7 @@
 
 ## Descripción
 
-Directorio de Empresas es una aplicación web que permite a las empresas registrarse a través de un formulario de contacto y publicar su empresa en un mapa utilizando la API de Google Maps. Las empresas pueden subir fotos, su carta de productos/servicios y datos de contacto.
+Empresas Ya! es una aplicación web que permite a las empresas registrarse a través de un formulario de contacto y publicar su empresa en un mapa utilizando la API de Google Maps. Las empresas pueden subir fotos, su carta de productos/servicios y datos de contacto.
 
 ## Características
 
@@ -10,6 +10,8 @@ Directorio de Empresas es una aplicación web que permite a las empresas registr
 - Publicación de empresas en el mapa utilizando la API de Google Maps.
 - Subida de fotos y documentos de productos/servicios.
 - Gestión de datos de contacto de las empresas.
+- Dashboard para gestión de tareas de administrador. Aprobar solicitudes o cancelar. Comentarios a los usuarios.
+- Dashboard para usuarios.
 
 ## Tecnologías
 
@@ -17,6 +19,8 @@ Directorio de Empresas es una aplicación web que permite a las empresas registr
 - **Backend:** Node.js
 - **Base de Datos:** MongoDB
 - **API de Mapas:** Google Maps API
+
+NodeMailer o https://www.emailjs.com/
 
 ## Despliegue
 
@@ -31,7 +35,6 @@ Para usar la aplicación, simplemente accede a la URL donde está desplegada y s
 Este es un proyecto de grupo de trabajo cerrado. Actualmente, no aceptamos contribuciones externas.
 
 ## Licencia
-
 Este proyecto se distribuye bajo la licencia MIT. Para más detalles, consulta el archivo LICENSE.
 
 ## Autores
