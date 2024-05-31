@@ -41,13 +41,13 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-// Middleware para hash de contraseña antes de guardar
+/* // Middleware para hash de contraseña antes de guardar
 userSchema.pre("save", async function(next) {
   if (this.password) {
     this.password = await bcrypt.hash(this.password, salt);
   }
   next();
-});
+}); */
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
