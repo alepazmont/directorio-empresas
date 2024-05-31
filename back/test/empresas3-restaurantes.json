@@ -1,0 +1,388 @@
+[
+  { "// comentario": "16 entradas en el documento" },
+
+  {
+    "nameEmpresa": "Gourmet Delights",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Platos gourmet", "Productos delicatessen"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo34.png",
+    "galeriaFotos": [
+      "https://url-de-imagen34.com/foto1.jpg",
+      "https://url-de-imagen34.com/foto2.jpg"
+    ],
+    "direccion": "Calle Gourmet 123",
+    "codigoPostal": 28034,
+    "paradaMetro": "Estación Gourmet",
+    "locMapa": [40.415, -3.701],
+    "telefono": ["123456789", "987654321"],
+    "email": "info@gourmetdelights.com",
+    "web": "https://www.gourmetdelights.com",
+    "redes": [
+      "https://twitter.com/gourmetdelights",
+      "https://facebook.com/gourmetdelights"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Sushi House",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Sushi", "Sashimi", "Makis"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo35.png",
+    "galeriaFotos": [
+      "https://url-de-imagen35.com/foto1.jpg",
+      "https://url-de-imagen35.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Sushi 456",
+    "codigoPostal": 28035,
+    "paradaMetro": "Estación Sushi",
+    "locMapa": [40.417, -3.695],
+    "telefono": ["234567890", "456789012"],
+    "email": "info@sushihouse.com",
+    "web": "https://www.sushihouse.com",
+    "redes": [
+      "https://twitter.com/sushihouse",
+      "https://facebook.com/sushihouse"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "La Parrilla Argentina",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Asado argentino", "Empanadas"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo36.png",
+    "galeriaFotos": [
+      "https://url-de-imagen36.com/foto1.jpg",
+      "https://url-de-imagen36.com/foto2.jpg"
+    ],
+    "direccion": "Calle Argentina 789",
+    "codigoPostal": 28036,
+    "paradaMetro": "Estación Argentina",
+    "locMapa": [40.42, -3.7],
+    "telefono": ["345678901", "567890123"],
+    "email": "info@laparrillaargentina.com",
+    "web": "https://www.laparrillaargentina.com",
+    "redes": [
+      "https://twitter.com/laparrillaargentina",
+      "https://facebook.com/laparrillaargentina"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Seafood Lovers",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Mariscos frescos", "Pescados del día"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo37.png",
+    "galeriaFotos": [
+      "https://url-de-imagen37.com/foto1.jpg",
+      "https://url-de-imagen37.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Mariscos 123",
+    "codigoPostal": 28037,
+    "paradaMetro": "Estación Mariscos",
+    "locMapa": [40.418, -3.698],
+    "telefono": ["678901234", "890123456"],
+    "email": "info@seafoodlovers.com",
+    "web": "https://www.seafoodlovers.com",
+    "redes": [
+      "https://twitter.com/seafoodlovers",
+      "https://facebook.com/seafoodlovers"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Vegetarian Delights",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Platos vegetarianos", "Ensaladas gourmet"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo38.png",
+    "galeriaFotos": [
+      "https://url-de-imagen38.com/foto1.jpg",
+      "https://url-de-imagen38.com/foto2.jpg"
+    ],
+    "direccion": "Calle Vegetariana 456",
+    "codigoPostal": 28038,
+    "paradaMetro": "Estación Vegetariana",
+    "locMapa": [40.42, -3.694],
+    "telefono": ["456789012", "678901234"],
+    "email": "info@vegetariandelights.com",
+    "web": "https://www.vegetariandelights.com",
+    "redes": [
+      "https://twitter.com/vegetariandelights",
+      "https://facebook.com/vegetariandelights"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Pasta Italiana",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Pasta fresca", "Salsas caseras"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo39.png",
+    "galeriaFotos": [
+      "https://url-de-imagen39.com/foto1.jpg",
+      "https://url-de-imagen39.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Pasta 789",
+    "codigoPostal": 28039,
+    "paradaMetro": "Estación Pasta",
+    "locMapa": [40.416, -3.696],
+    "telefono": ["890123456", "012345678"],
+    "email": "info@pastaitaliana.com",
+    "web": "https://www.pastaitaliana.com",
+    "redes": [
+      "https://twitter.com/pastaitaliana",
+      "https://facebook.com/pastaitaliana"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Burger Joint",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Hamburguesas gourmet", "Patatas fritas"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo40.png",
+    "galeriaFotos": [
+      "https://url-de-imagen40.com/foto1.jpg",
+      "https://url-de-imagen40.com/foto2.jpg"
+    ],
+    "direccion": "Calle Hamburguesas 123",
+    "codigoPostal": 28040,
+    "paradaMetro": "Estación Hamburguesas",
+    "locMapa": [40.42, -3.695],
+    "telefono": ["234567890", "456789012"],
+    "email": "info@burgerjoint.com",
+    "web": "https://www.burgerjoint.com",
+    "redes": [
+      "https://twitter.com/burgerjoint",
+      "https://facebook.com/burgerjoint"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Pizza Italia",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Pizzas artesanales", "Calzones"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo41.png",
+    "galeriaFotos": [
+      "https://url-de-imagen41.com/foto1.jpg",
+      "https://url-de-imagen41.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Pizza 456",
+    "codigoPostal": 28041,
+    "paradaMetro": "Estación Pizza",
+    "locMapa": [40.417, -3.697],
+    "telefono": ["567890123", "789012345"],
+    "email": "info@pizzaitalia.com",
+    "web": "https://www.pizzaitalia.com",
+    "redes": [
+      "https://twitter.com/pizzaitalia",
+      "https://facebook.com/pizzaitalia"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Pasta Fresca",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Pasta fresca", "Salsas caseras"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo43.png",
+    "galeriaFotos": [
+      "https://url-de-imagen43.com/foto1.jpg",
+      "https://url-de-imagen43.com/foto2.jpg"
+    ],
+    "direccion": "Calle Pasta 123",
+    "codigoPostal": 28043,
+    "paradaMetro": "Estación Pasta",
+    "locMapa": [40.419, -3.694],
+    "telefono": ["890123456", "012345678"],
+    "email": "info@pastafresca.com",
+    "web": "https://www.pastafresca.com",
+    "redes": [
+      "https://twitter.com/pastafresca",
+      "https://facebook.com/pastafresca"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Steakhouse Grill",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Carnes a la parrilla", "Entrantes"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo44.png",
+    "galeriaFotos": [
+      "https://url-de-imagen44.com/foto1.jpg",
+      "https://url-de-imagen44.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Steakhouse 456",
+    "codigoPostal": 28044,
+    "paradaMetro": "Estación Steakhouse",
+    "locMapa": [40.421, -3.696],
+    "telefono": ["234567890", "456789012"],
+    "email": "info@steakhousegrill.com",
+    "web": "https://www.steakhousegrill.com",
+    "redes": [
+      "https://twitter.com/steakhousegrill",
+      "https://facebook.com/steakhousegrill"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Café Central",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Cafés especiales", "Tés"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo45.png",
+    "galeriaFotos": [
+      "https://url-de-imagen45.com/foto1.jpg",
+      "https://url-de-imagen45.com/foto2.jpg"
+    ],
+    "direccion": "Plaza Café 789",
+    "codigoPostal": 28045,
+    "paradaMetro": "Estación Café",
+    "locMapa": [40.422, -3.701],
+    "telefono": ["678901234", "890123456"],
+    "email": "info@cafecentral.com",
+    "web": "https://www.cafecentral.com",
+    "redes": [
+      "https://twitter.com/cafecentral",
+      "https://facebook.com/cafecentral"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Tapas y Vinos",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Tapas españolas", "Quesos y embutidos"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo46.png",
+    "galeriaFotos": [
+      "https://url-de-imagen46.com/foto1.jpg",
+      "https://url-de-imagen46.com/foto2.jpg"
+    ],
+    "direccion": "Calle Tapas 123",
+    "codigoPostal": 28046,
+    "paradaMetro": "Estación Tapas",
+    "locMapa": [40.417, -3.699],
+    "telefono": ["345678901", "567890123"],
+    "email": "info@tapasyvinos.com",
+    "web": "https://www.tapasyvinos.com",
+    "redes": [
+      "https://twitter.com/tapasyvinos",
+      "https://facebook.com/tapasyvinos"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Brasserie Française",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Cocina francesa", "Vinos"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo47.png",
+    "galeriaFotos": [
+      "https://url-de-imagen47.com/foto1.jpg",
+      "https://url-de-imagen47.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Brasserie 456",
+    "codigoPostal": 28047,
+    "paradaMetro": "Estación Brasserie",
+    "locMapa": [40.42, -3.7],
+    "telefono": ["789012345", "901234567"],
+    "email": "info@brasseriefrancaise.com",
+    "web": "https://www.brasseriefrancaise.com",
+    "redes": [
+      "https://twitter.com/brasseriefrancaise",
+      "https://facebook.com/brasseriefrancaise"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Noodle House",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Noodles", "Dim sum"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo48.png",
+    "galeriaFotos": [
+      "https://url-de-imagen48.com/foto1.jpg",
+      "https://url-de-imagen48.com/foto2.jpg"
+    ],
+    "direccion": "Calle Noodles 123",
+    "codigoPostal": 28048,
+    "paradaMetro": "Estación Noodles",
+    "locMapa": [40.416, -3.696],
+    "telefono": ["012345678", "234567890"],
+    "email": "info@noodlehouse.com",
+    "web": "https://www.noodlehouse.com",
+    "redes": [
+      "https://twitter.com/noodlehouse",
+      "https://facebook.com/noodlehouse"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Bistro Italiano",
+    "categoria": "Restaurante",
+    "prodServ": "Ambos",
+    "listaProd": ["Comida italiana", "Antipasti"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo49.png",
+    "galeriaFotos": [
+      "https://url-de-imagen49.com/foto1.jpg",
+      "https://url-de-imagen49.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Bistro 789",
+    "codigoPostal": 28049,
+    "paradaMetro": "Estación Bistro",
+    "locMapa": [40.42, -3.698],
+    "telefono": ["456789012", "678901234"],
+    "email": "info@bistroitaliano.com",
+    "web": "https://www.bistroitaliano.com",
+    "redes": [
+      "https://twitter.com/bistroitaliano",
+      "https://facebook.com/bistroitaliano"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Vegetariano Zen",
+    "categoria": "Restaurante",
+    "prodServ": "Productos",
+    "listaProd": ["Comida vegetariana", "Sushi vegetariano"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo50.png",
+    "galeriaFotos": [
+      "https://url-de-imagen50.com/foto1.jpg",
+      "https://url-de-imagen50.com/foto2.jpg"
+    ],
+    "direccion": "Calle Vegetariano 123",
+    "codigoPostal": 28050,
+    "paradaMetro": "Estación Vegetariano",
+    "locMapa": [40.418, -3.694],
+    "telefono": ["678901234", "890123456"],
+    "email": "info@vegetarianozen.com",
+    "web": "https://www.vegetarianozen.com",
+    "redes": [
+      "https://twitter.com/vegetarianozen",
+      "https://facebook.com/vegetarianozen"
+    ],
+    "condiciones": true
+  }
+]

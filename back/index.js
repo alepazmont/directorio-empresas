@@ -4,6 +4,7 @@ const path = require("path");
 require("dotenv").config();
 const userRouter = require("./api/user/user.router"); // Import user router
 const empresaRouter = require("./api/empresas/empresas.router");
+const passwordValidationRouter = require("./api/passwordValidation/passwordValidation.router"); // Importa el nuevo router
 const { connectMongo } = require("./utils/db");
 const {
   notFoundHandler,
@@ -31,9 +32,10 @@ app.get("/", (req, res) => {
 });
 
 // Route '/usuarios' to userRouter
-app.use("/usuarios", userRouter); // Route '/usuarios' to userRouter
-
+app.use("/user", userRouter); // Route '/usuarios' to userRouter
 app.use("/empresas", empresaRouter);
+app.use("/password", passwordValidationRouter); // Añade el nuevo router
+
 
 // Manejo de excepciones / errores
 app.use(notFoundHandler);

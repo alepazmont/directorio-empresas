@@ -1,10 +1,10 @@
 const User = require("./user.model");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcrypt"); 
 const jwt = require("jsonwebtoken");
 
 const register = async (req, res, next) => {
   try {
-    const { username, password, email } = req.body;
+    const { nombre, apellidos, telefono, password, email, conditions, tipoUsuario } = req.body;
 
     const userExist = await User.findOne({ email });
     if (userExist) {
@@ -14,10 +14,9 @@ const register = async (req, res, next) => {
       });
     }
 
-    // Hash the password before saving it
-    const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
+    const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ username, password: hashedPassword, email });
+    const newUser = new User({ nombre, apellidos, telefono, password: hashedPassword, email, conditions, tipoUsuario });
     const userDB = await newUser.save();
 
     return res.status(201).json({
@@ -27,39 +26,47 @@ const register = async (req, res, next) => {
   } catch (error) {
     return next(error);
   }
-};
+}; 
+
+
+
 
 const login = async (req, res, next) => {
   try {
-    const userInfo = await User.findOne({ email: req.body.email });
+    const { email, password } = req.body;
+    const userInfo = await User.findOne({ email });
+
     if (!userInfo) {
       return res.status(400).json({
         status: 400,
-        message: "Invalid credentials",
+        message: "Invalid credentials - No user found",
         data: null,
       });
     }
-    if (bcrypt.compareSync(req.body.password, userInfo.password)) {
-      userInfo.password = "*************"; // Hide password in the response for security
-      const token = jwt.sign(
-        {
-          id: userInfo._id,
-          email: userInfo.email,
-        },
-        process.env.JWT_SECRET,
-        { expiresIn: "1d" } // In production, adjust the expiration time based on your requirements
-      );
 
-      return res.status(200).json({
-        data: { massage: "ok", user: userInfo, token: token },
-      });
-    } else {
+    const isPasswordValid = await bcrypt.compare(password, userInfo.password);
+    if (!isPasswordValid) {
       return res.status(400).json({
         status: 400,
-        message: "Invalid credentials",
+        message: "Invalid credentials - No password match",
         data: null,
       });
     }
+
+    const token = jwt.sign(
+      {
+        id: userInfo._id,
+        email: userInfo.email,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
+    userInfo.password = "*************"; // Ocultar contraseña en la respuesta por seguridad
+
+    return res.status(200).json({
+      data: { message: "ok", user: userInfo, token: token },
+    });
   } catch (error) {
     return next(error);
   }
@@ -67,14 +74,13 @@ const login = async (req, res, next) => {
 
 const logout = (req, res, next) => {
   try {
-    // Clear token
     const token = null;
     return res.status(200).json({
       status: 200,
       message: "Logout successful",
     });
   } catch (error) {
-    return next(setError(error.statusCode, "Logout Error"));
+    return next(error);
   }
 };
 

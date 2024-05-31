@@ -1,0 +1,247 @@
+[
+  { "// comentario": "10 entradas en el documento" },
+
+
+  {
+    "nameEmpresa": "Tech Solutions Inc.",
+    "categoria": "Tecnología",
+    "prodServ": "Productos",
+    "listaProd": ["Hardware", "Software"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo15.png",
+    "galeriaFotos": [
+      "https://url-de-imagen15.com/foto1.jpg",
+      "https://url-de-imagen15.com/foto2.jpg"
+    ],
+    "direccion": "Calle Tecnología 456",
+    "codigoPostal": 28015,
+    "paradaMetro": "Estación Tecnología",
+    "locMapa": [40.425, -3.698],
+    "telefono": ["345678901", "567890123"],
+    "email": "info@techsolutionsinc.com",
+    "web": "https://www.techsolutionsinc.com",
+    "redes": [
+      "https://twitter.com/techsolutions",
+      "https://facebook.com/techsolutions"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Art & Design Studio",
+    "categoria": "Arte y Diseño",
+    "prodServ": "Ambos",
+    "listaProd": [],
+    "listaServ": ["Diseño gráfico", "Arte digital"],
+    "logo": "https://url-del-logo.com/logo16.png",
+    "galeriaFotos": [
+      "https://url-de-imagen16.com/foto1.jpg",
+      "https://url-de-imagen16.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Creatividad 789",
+    "codigoPostal": 28016,
+    "paradaMetro": "Estación Creatividad",
+    "locMapa": [40.418, -3.702],
+    "telefono": ["678901234", "890123456"],
+    "email": "info@artdesignstudio.com",
+    "web": "https://www.artdesignstudio.com",
+    "redes": [
+      "https://twitter.com/artdesignstudio",
+      "https://facebook.com/artdesignstudio"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Financial Advisors Ltd.",
+    "categoria": "Finanzas",
+    "prodServ": "Servicios",
+    "listaProd": [],
+    "listaServ": ["Asesoría financiera", "Planificación de inversiones"],
+    "logo": "https://url-del-logo.com/logo17.png",
+    "galeriaFotos": [
+      "https://url-de-imagen17.com/foto1.jpg",
+      "https://url-de-imagen17.com/foto2.jpg"
+    ],
+    "direccion": "Plaza Finanzas 123",
+    "codigoPostal": 28017,
+    "paradaMetro": "Estación Finanzas",
+    "locMapa": [40.421, -3.694],
+    "telefono": ["123456789", "987654321"],
+    "email": "info@financialadvisors.com",
+    "web": "https://www.financialadvisors.com",
+    "redes": [
+      "https://twitter.com/financialadvisors",
+      "https://facebook.com/financialadvisors"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Fashion Style Shop",
+    "categoria": "Moda",
+    "prodServ": "Productos",
+    "listaProd": ["Ropa", "Accesorios de moda"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo18.png",
+    "galeriaFotos": [
+      "https://url-de-imagen18.com/foto1.jpg",
+      "https://url-de-imagen18.com/foto2.jpg"
+    ],
+    "direccion": "Calle Moda 456",
+    "codigoPostal": 28018,
+    "paradaMetro": "Estación Moda",
+    "locMapa": [40.416, -3.698],
+    "telefono": ["456789012", "890123456"],
+    "email": "info@fashionstyleshop.com",
+    "web": "https://www.fashionstyleshop.com",
+    "redes": [
+      "https://twitter.com/fashionstyleshop",
+      "https://facebook.com/fashionstyleshop"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Travel Adventures",
+    "categoria": "Viajes",
+    "prodServ": "Ambos",
+    "listaProd": [],
+    "listaServ": ["Paquetes turísticos", "Reservas de hoteles"],
+    "logo": "https://url-del-logo.com/logo19.png",
+    "galeriaFotos": [
+      "https://url-de-imagen19.com/foto1.jpg",
+      "https://url-de-imagen19.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Viajes 789",
+    "codigoPostal": 28019,
+    "paradaMetro": "Estación Viajes",
+    "locMapa": [40.415, -3.69],
+    "telefono": ["567890123", "901234567"],
+    "email": "info@traveladventures.com",
+    "web": "https://www.traveladventures.com",
+    "redes": [
+      "https://twitter.com/traveladventures",
+      "https://facebook.com/traveladventures"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Health & Fitness Center",
+    "categoria": "Salud y Fitness",
+    "prodServ": "Servicios",
+    "listaProd": [],
+    "listaServ": ["Entrenamiento personalizado", "Clases de yoga"],
+    "logo": "https://url-del-logo.com/logo20.png",
+    "galeriaFotos": [
+      "https://url-de-imagen20.com/foto1.jpg",
+      "https://url-de-imagen20.com/foto2.jpg"
+    ],
+    "direccion": "Calle Salud 123",
+    "codigoPostal": 28020,
+    "paradaMetro": "Estación Fitness",
+    "locMapa": [40.418, -3.694],
+    "telefono": ["678901234", "012345678"],
+    "email": "info@healthfitness.com",
+    "web": "https://www.healthfitness.com",
+    "redes": [
+      "https://twitter.com/healthfitness",
+      "https://facebook.com/healthfitness"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Construction Solutions",
+    "categoria": "Construcción",
+    "prodServ": "Ambos",
+    "listaProd": ["Materiales de construcción", "Herramientas"],
+    "listaServ": ["Servicios de reforma", "Asesoría técnica"],
+    "logo": "https://url-del-logo.com/logo21.png",
+    "galeriaFotos": [
+      "https://url-de-imagen21.com/foto1.jpg",
+      "https://url-de-imagen21.com/foto2.jpg"
+    ],
+    "direccion": "Avenida Construcción 456",
+    "codigoPostal": 28021,
+    "paradaMetro": "Estación Construcción",
+    "locMapa": [40.42, -3.698],
+    "telefono": ["234567890", "456789012"],
+    "email": "info@constructionsolutions.com",
+    "web": "https://www.constructionsolutions.com",
+    "redes": [
+      "https://twitter.com/constructionsolutions",
+      "https://facebook.com/constructionsolutions"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Legal Advisors",
+    "categoria": "Legal",
+    "prodServ": "Servicios",
+    "listaProd": [],
+    "listaServ": ["Asesoría legal", "Representación legal"],
+    "logo": "https://url-del-logo.com/logo22.png",
+    "galeriaFotos": [
+      "https://url-de-imagen22.com/foto1.jpg",
+      "https://url-de-imagen22.com/foto2.jpg"
+    ],
+    "direccion": "Plaza Legal 789",
+    "codigoPostal": 28022,
+    "paradaMetro": "Estación Legal",
+    "locMapa": [40.423, -3.702],
+    "telefono": ["789012345", "901234567"],
+    "email": "info@legaladvisors.com",
+    "web": "https://www.legaladvisors.com",
+    "redes": [
+      "https://twitter.com/legaladvisors",
+      "https://facebook.com/legaladvisors"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Pet Paradise",
+    "categoria": "Mascotas",
+    "prodServ": "Productos",
+    "listaProd": ["Alimentos para mascotas", "Juguetes"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo23.png",
+    "galeriaFotos": [
+      "https://url-de-imagen23.com/foto1.jpg",
+      "https://url-de-imagen23.com/foto2.jpg"
+    ],
+    "direccion": "Calle Mascotas 123",
+    "codigoPostal": 28023,
+    "paradaMetro": "Estación Mascotas",
+    "locMapa": [40.416, -3.694],
+    "telefono": ["890123456", "012345678"],
+    "email": "info@petparadise.com",
+    "web": "https://www.petparadise.com",
+    "redes": [
+      "https://twitter.com/petparadise",
+      "https://facebook.com/petparadise"
+    ],
+    "condiciones": true
+  },
+  {
+    "nameEmpresa": "Organic Food Market",
+    "categoria": "Alimentación",
+    "prodServ": "Productos",
+    "listaProd": ["Frutas", "Verduras", "Productos Orgánicos"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo24.png",
+    "galeriaFotos": [
+      "https://url-de-imagen24.com/foto1.jpg",
+      "https://url-de-imagen24.com/foto2.jpg"
+    ],
+    "direccion": "Calle Orgánica 456",
+    "codigoPostal": 28024,
+    "paradaMetro": "Estación Orgánica",
+    "locMapa": [40.415, -3.697],
+    "telefono": ["234567890", "456789012"],
+    "email": "info@organicfoodmarket.com",
+    "web": "https://www.organicfoodmarket.com",
+    "redes": [
+      "https://twitter.com/organicfoodmarket",
+      "https://facebook.com/organicfoodmarket"
+    ],
+    "condiciones": true
+  }
+  
+
+]
