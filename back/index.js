@@ -44,4 +44,6 @@ app.use(errorHandler);
 // Activar servidor
 app.listen(PORT, () => {
   console.log(`El servidor se ha iniciado en el puerto ${PORT}`);
+}).on('error', (err) => {
+  console.error('Error al iniciar el servidor:', err);
 });
