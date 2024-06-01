@@ -1,0 +1,38 @@
+.company-page {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .company-page h1 {
+    color: #333;
+    font-size: 28px;
+    margin-bottom: 15px;
+  }
+  
+  .company-page p {
+    color: #555;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+  
+  .company-page .contact {
+    font-weight: bold;
+    margin-top: 10px;
+  }
+  
+  .company-page .photos {
+    margin-top: 20px;
+  }
+  
+  .company-page .photos img {
+    max-width: 100%;
+    height: auto;
+    margin: 10px 0;
+    border-radius: 4px;
+  }
+  

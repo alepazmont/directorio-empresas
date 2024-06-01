@@ -1,0 +1,33 @@
+.user-dashboard {
+    font-family: Arial, sans-serif;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+  }
+  
+  .user-dashboard h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .user-dashboard .company-list {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .user-dashboard .company-item {
+    padding: 10px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+  .user-dashboard .company-item:hover {
+    background-color: #f1f1f1;
+  }
