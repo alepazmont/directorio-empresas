@@ -41,6 +41,7 @@ Este proyecto se distribuye bajo la licencia MIT. Para más detalles, consulta e
 
 - Alejandro Paz
 - Marian Molina
+- Laura Gujarro
 
 ## Recursos Adicionales
 
