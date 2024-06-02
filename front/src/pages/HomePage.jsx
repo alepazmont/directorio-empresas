@@ -1,11 +1,28 @@
 import { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
 import axios from 'axios';
 import Map from '../components/Map/Map';
 import './HomePage.css';
-
+import Directorio from '../components/Directorio/Directorio';
+/* import { apiUrl } from "../components/ApiUrl/apiUrl";
+ */
 const HomePage = () => {
   const [locations, setLocations] = useState([]);
+  /* const [empresas, setEmpresas] = useState([]);
+
+  useEffect(() => {
+    const fetchEmpresas = async () => {
+      try {
+        const route = "/empresas";
+        const response = await axios.get(apiUrl + route);       
+        setEmpresas(response.data.data);
+        console.log(response.data.data);
+      } catch (error) {
+        console.error('Error obteniendo empresas', error);
+      }
+    };
+    
+    fetchEmpresas();
+  }, []); */
 
   useEffect(() => {
     const fetchLocations = async () => {
@@ -26,13 +43,22 @@ const HomePage = () => {
 
   return (
     <div className="home-page">
-      <h1>Bienvenido a EmpresasYa!</h1>
-      <Link to="/companies/new">Registra tu nueva empresa</Link>
-      <Link to="/admin">Panel de Administración</Link>
-      <Link to="/user">Panel de Usuario</Link>
       <div className="map-container">
         <Map locations={locations} />
       </div>
+{/*       <div className="empresas-lista">
+            {empresas.map((empresa, index) => (
+              <div className="card-empresas-inicio" key={index}>
+                <img src={empresa.logo} alt={empresa.nameEmpresa} />
+                <div className="card-empresas-inicio-content">
+                  <h3>{empresa.nameEmpresa}</h3>
+                  <p className="categoria-empresa">Categoría: {empresa.categoria}</p>
+                  <p className="direccion-empresa">{empresa.direccion}, CP: {empresa.codigoPostal}</p>
+                </div>
+              </div>
+            ))}
+          </div> */}
+          <Directorio />
     </div>
   );
 };
