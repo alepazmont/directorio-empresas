@@ -6,19 +6,19 @@ const containerStyle = {
   width: '100%',
   height: '400px'
 };
-
+ 
 const center = {
-  lat: -3.745,
-  lng: -38.523
+  lat: 40.484859888817205,
+  lng: -3.7230726779006367
 };
 
 const Map = ({ locations }) => {
   return (
-    <LoadScript googleMapsApiKey="YOUR_GOOGLE_MAPS_API_KEY">
+    <LoadScript googleMapsApiKey="AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k">
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={center}
-        zoom={10}
+        zoom={15}
       >
         {locations.map((location, index) => (
           <Marker key={index} position={location} />
