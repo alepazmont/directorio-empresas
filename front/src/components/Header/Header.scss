@@ -1,0 +1,76 @@
+.header{
+
+    nav {
+        display: flex;
+        align-items: center;
+        background-color: #7E57BC;
+        color: #fff;
+        padding: 15px;
+
+        .navbar-collapse{
+            .navbar-nav{
+                text-align: center;
+
+                .nav-item{
+                    color: #fff;
+                    margin: 0 35px;
+            
+                    &:hover,
+                    &:focus{
+                        filter: none;
+                        font-weight: 700;
+                    }
+            
+                    
+                  }
+            }
+        }
+
+        .btn-login{
+            background-color: #fff;
+            color: #7E57BC;
+            font-weight: bold;
+            border: none;
+
+            &:hover{
+                opacity: .7;
+            }
+        }
+    }
+}
+
+.modal-login{
+    .modal-dialog{
+        .modal-header{
+            background-color: #7E57BC;
+            color: #fff;
+
+            .modal-title{
+                width: 100%;
+                text-align: center;
+            }
+            .btn-close{
+                filter: invert(1);
+            }
+        }
+
+        .modal-body{
+            .btn{
+                background-color: #7E57BC;
+                color: #fff;
+                font-weight: bold;
+                border: none;
+    
+                &:hover{
+                    opacity: .7;
+                }   
+            }
+        }
+
+        .modal-footer{
+           .link-register{
+            color: #7E57BC;
+           } 
+        }
+    }
+}

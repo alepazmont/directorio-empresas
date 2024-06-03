@@ -30,27 +30,6 @@
   margin-top: 20px;
 } */
 
-nav {
-  display: flex;
-  align-items: center;
-  background-color: #7E57BC;
-  color: #fff;
-  padding: 15px;
-}
-
-nav a {
-  color: #fff;
-}
-
-nav ul {
-  display: flex;
-  list-style: none;
-}
-
- nav ul li {
-padding: 0 10px;
-}
-
 .card-empresas-inicio {
   display: flex;
   align-items: center;

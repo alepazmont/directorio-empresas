@@ -2,6 +2,7 @@ import PropTypes from 'prop-types';
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
 import './Map.css';
 
+
 const containerStyle = {
   width: '100%',
   height: '400px'

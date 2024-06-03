@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import './App.scss';
 import HomePage from './pages/HomePage';
 import CompanyForm from './components/CompanyForm/CompanyForm';
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";

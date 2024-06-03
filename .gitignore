@@ -57,3 +57,5 @@ Thumbs.db
 
 # Windows specific files
 Thumbs.db
+/front/package-lock.json
+/back/package-lock.json

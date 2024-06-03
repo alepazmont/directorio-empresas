@@ -1,8 +1,11 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Header from '../components/Header/Header';
+import Directorio from '../components/Directorio/Directorio';
 import Map from '../components/Map/Map';
 import './HomePage.css';
-import Directorio from '../components/Directorio/Directorio';
+import Footer from '../components/Footer/Footer';
+
 /* import { apiUrl } from "../components/ApiUrl/apiUrl";
  */
 const HomePage = () => {
@@ -42,7 +45,9 @@ const HomePage = () => {
   }, []);
 
   return (
+    
     <div className="home-page">
+      <Header />
       <div className="map-container">
         <Map locations={locations} />
       </div>
@@ -59,6 +64,7 @@ const HomePage = () => {
             ))}
           </div> */}
           <Directorio />
+      <Footer/>    
     </div>
   );
 };
