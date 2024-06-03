@@ -1,0 +1,23 @@
+.seccion-contacto {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+.seccion-contacto h2 {
+    color: #333;
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+.block-contacto {
+    width: 50%;
+}
+form.form-contacto {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+form.form-contacto input {
+  margin: 0 0 10px 0;
+}

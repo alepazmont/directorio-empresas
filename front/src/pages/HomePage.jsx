@@ -42,7 +42,8 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="home-page">
+    <div className="seccion-inicio">
+    <h2>Inicio</h2>
       <div className="map-container">
         <Map locations={locations} />
       </div>
