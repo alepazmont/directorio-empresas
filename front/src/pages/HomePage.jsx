@@ -5,6 +5,7 @@ import Directorio from '../components/Directorio/Directorio';
 import Map from '../components/Map/Map';
 import './HomePage.css';
 import Footer from '../components/Footer/Footer';
+import Container from 'react-bootstrap/esm/Container';
 
 /* import { apiUrl } from "../components/ApiUrl/apiUrl";
  */
@@ -48,10 +49,13 @@ const HomePage = () => {
     
     <div className="home-page">
       <Header />
-      <div className="map-container">
-        <Map locations={locations} />
-      </div>
-{/*       <div className="empresas-lista">
+
+      <Container>
+        <div className="map-container">
+          <Map locations={locations} />
+        </div>
+          
+          {/*<div className="empresas-lista">
             {empresas.map((empresa, index) => (
               <div className="card-empresas-inicio" key={index}>
                 <img src={empresa.logo} alt={empresa.nameEmpresa} />
@@ -64,6 +68,8 @@ const HomePage = () => {
             ))}
           </div> */}
           <Directorio />
+      </Container>
+   
       <Footer/>    
     </div>
   );
