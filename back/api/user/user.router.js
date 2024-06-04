@@ -7,7 +7,7 @@ userRouter.post("/register", register);
 userRouter.post("/login", login);
 userRouter.post("/logout", [isAuth], logout);
 userRouter.get("/get", [isAuth], get);
-userRouter.get("/profile", [isAuth], profile); // recibir un token
+userRouter.get("/profile", [isAuth], profile); 
 
 
 module.exports = userRouter;

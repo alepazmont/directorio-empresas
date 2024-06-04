@@ -36,9 +36,10 @@ const userSchema = new mongoose.Schema({
   },
   tipoUsuario: {
     type: String,
-    enum: ['propietario', 'gestor', 'agencia publicitaria', 'otro'],
+    enum: ["propietario", "gestor", "agencia publicitaria", "otro"],
     required: true,
-  }
+  },
+  empresasCreadas: [{ type: mongoose.Schema.ObjectId, ref: "empresas" }],
 });
 
 /* // Middleware para hash de contraseña antes de guardar
