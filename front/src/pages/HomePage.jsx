@@ -8,6 +8,8 @@ import Footer from '../components/Footer/Footer';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
+import LightTitle from '../components/Title/LightTitle';
+import DarkTitle from '../components/Title/DarkTitle';
 
 /* import { apiUrl } from "../components/ApiUrl/apiUrl";
  */
@@ -76,7 +78,15 @@ const HomePage = () => {
             ))}
           </div> */}
       </Container>
-
+      <div className="bg-purple">
+        <Container>
+          <LightTitle title="Últimas empresas inscritas" />
+        </Container>
+      </div>
+      
+      <div>
+        <DarkTitle title="Las empresas más populares" />
+      </div>
       <Footer/>    
     </div>
   );

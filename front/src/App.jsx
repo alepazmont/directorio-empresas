@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { UserProvider } from "./context/UserContext";
 import './App.scss';
 import HomePage from './pages/HomePage';
 import CompanyForm from './components/CompanyForm/CompanyForm';
@@ -7,6 +8,7 @@ import UserDashboard from "./components/UserDashboard/UserDashboard";
 
 const App = () => {
   return (
+    <UserProvider>
     <Router>
       <div>
         <Routes>
@@ -17,6 +19,7 @@ const App = () => {
         </Routes>
       </div>
     </Router>
+    </UserProvider>
   );
 };
 
