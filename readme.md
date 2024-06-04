@@ -41,11 +41,7 @@ Este proyecto se distribuye bajo la licencia MIT. Para más detalles, consulta e
 
 - Alejandro Paz
 - Marian Molina
-<<<<<<< HEAD
 - Laura Gujarro
-=======
-- Laura Guijarro
->>>>>>> origin/main
 
 ## Recursos Adicionales
 
@@ -57,9 +53,5 @@ Para cualquier consulta, puedes contactar a los autores a través de sus correos
 
 - Alejandro Paz: alepazmont@gmail.com
 - Marian Molina: marianmolina29@hotmail.com
-<<<<<<< HEAD
 - Laura Gujarro: lauraguijarro92@gmail.com
  
-=======
-- Laura Guijarro: lauraguijarro92@gmail.com
->>>>>>> origin/main

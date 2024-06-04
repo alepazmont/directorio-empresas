@@ -84,4 +84,17 @@ const logout = (req, res, next) => {
   }
 };
 
-module.exports = { register, login, logout };
+const get = async (req, res, next) => {
+  try {
+    const usuarios = await User.find();
+    res.json({
+      status: 200,
+      msg: "ok",
+      data: usuarios,
+    });
+  } catch (error) {
+    next(error);
+  }
+};
+
+module.exports = { register, login, logout, get };
