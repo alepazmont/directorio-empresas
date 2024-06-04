@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import axios from "axios";
-import Nav from "../src/nav/Nav";
 import HomePage from "./pages/HomePage";
 import Contacto from "./pages/Contacto";
 import CompanyForm from "./components/CompanyForm/CompanyForm";
@@ -9,7 +8,6 @@ import AdminDashboard from "./pages/Dashboard/AdminDashboard";
 import UserDashboard from "./pages/Dashboard/UserDashboard";
 import Dashboard from "./components/Dashboard/Dashboard";
 import Login from "./pages/Login";
-import UserNav from "./nav/UserNav";
 import { UserProvider } from "./context/UserContext";
 import Perfil from "./pages/Perfil";
 import ListaEmpresas from "./pages/ListaEmpresas";
