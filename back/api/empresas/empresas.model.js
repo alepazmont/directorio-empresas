@@ -16,7 +16,7 @@ const empresasSchema = new mongoose.Schema({
     email: { type: String, required: true, trim: true },
     web: { type: String }, 
     redes: { type: Array }, 
-    condiciones: { type: Boolean, default: false }
+    condiciones: { type: Boolean, required: true, default: false }
 });
 
 const Empresas = mongoose.model("Empresas", empresasSchema);
