@@ -8,10 +8,10 @@
     "prodServ": "Productos",
     "listaProd": ["Hardware", "Software"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo15.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo01.png",
     "galeriaFotos": [
-      "https://url-de-imagen15.com/foto1.jpg",
-      "https://url-de-imagen15.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-03.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-04.jpeg"
     ],
     "direccion": "Calle Tecnología 456",
     "codigoPostal": 28015,
@@ -24,7 +24,8 @@
       "https://twitter.com/techsolutions",
       "https://facebook.com/techsolutions"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Art & Design Studio",
@@ -32,10 +33,10 @@
     "prodServ": "Ambos",
     "listaProd": [],
     "listaServ": ["Diseño gráfico", "Arte digital"],
-    "logo": "https://url-del-logo.com/logo16.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo02.png",
     "galeriaFotos": [
-      "https://url-de-imagen16.com/foto1.jpg",
-      "https://url-de-imagen16.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-01.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-02.jpeg"
     ],
     "direccion": "Avenida Creatividad 789",
     "codigoPostal": 28016,
@@ -48,7 +49,8 @@
       "https://twitter.com/artdesignstudio",
       "https://facebook.com/artdesignstudio"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Financial Advisors Ltd.",
@@ -56,10 +58,10 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Asesoría financiera", "Planificación de inversiones"],
-    "logo": "https://url-del-logo.com/logo17.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo03.png",
     "galeriaFotos": [
-      "https://url-de-imagen17.com/foto1.jpg",
-      "https://url-de-imagen17.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-05.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-06.jpeg"
     ],
     "direccion": "Plaza Finanzas 123",
     "codigoPostal": 28017,
@@ -72,7 +74,8 @@
       "https://twitter.com/financialadvisors",
       "https://facebook.com/financialadvisors"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Fashion Style Shop",
@@ -80,10 +83,10 @@
     "prodServ": "Productos",
     "listaProd": ["Ropa", "Accesorios de moda"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo18.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo04.png",
     "galeriaFotos": [
-      "https://url-de-imagen18.com/foto1.jpg",
-      "https://url-de-imagen18.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-07.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-08.jpeg"
     ],
     "direccion": "Calle Moda 456",
     "codigoPostal": 28018,
@@ -96,7 +99,8 @@
       "https://twitter.com/fashionstyleshop",
       "https://facebook.com/fashionstyleshop"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": false
   },
   {
     "nameEmpresa": "Travel Adventures",
@@ -104,10 +108,10 @@
     "prodServ": "Ambos",
     "listaProd": [],
     "listaServ": ["Paquetes turísticos", "Reservas de hoteles"],
-    "logo": "https://url-del-logo.com/logo19.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo05.png",
     "galeriaFotos": [
-      "https://url-de-imagen19.com/foto1.jpg",
-      "https://url-de-imagen19.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-09.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-10.jpeg"
     ],
     "direccion": "Avenida Viajes 789",
     "codigoPostal": 28019,
@@ -128,10 +132,10 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Entrenamiento personalizado", "Clases de yoga"],
-    "logo": "https://url-del-logo.com/logo20.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo06.png",
     "galeriaFotos": [
-      "https://url-de-imagen20.com/foto1.jpg",
-      "https://url-de-imagen20.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-11.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-12.jpeg"
     ],
     "direccion": "Calle Salud 123",
     "codigoPostal": 28020,
@@ -152,10 +156,10 @@
     "prodServ": "Ambos",
     "listaProd": ["Materiales de construcción", "Herramientas"],
     "listaServ": ["Servicios de reforma", "Asesoría técnica"],
-    "logo": "https://url-del-logo.com/logo21.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo07.png",
     "galeriaFotos": [
-      "https://url-de-imagen21.com/foto1.jpg",
-      "https://url-de-imagen21.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-13.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-14.jpeg"
     ],
     "direccion": "Avenida Construcción 456",
     "codigoPostal": 28021,
@@ -176,10 +180,10 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Asesoría legal", "Representación legal"],
-    "logo": "https://url-del-logo.com/logo22.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo08.png",
     "galeriaFotos": [
-      "https://url-de-imagen22.com/foto1.jpg",
-      "https://url-de-imagen22.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-15.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-16.jpeg"
     ],
     "direccion": "Plaza Legal 789",
     "codigoPostal": 28022,
@@ -200,10 +204,10 @@
     "prodServ": "Productos",
     "listaProd": ["Alimentos para mascotas", "Juguetes"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo23.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo09.png",
     "galeriaFotos": [
-      "https://url-de-imagen23.com/foto1.jpg",
-      "https://url-de-imagen23.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-17.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-18.jpeg"
     ],
     "direccion": "Calle Mascotas 123",
     "codigoPostal": 28023,
@@ -224,10 +228,10 @@
     "prodServ": "Productos",
     "listaProd": ["Frutas", "Verduras", "Productos Orgánicos"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo24.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo10.png",
     "galeriaFotos": [
-      "https://url-de-imagen24.com/foto1.jpg",
-      "https://url-de-imagen24.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-19.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-20.jpeg"
     ],
     "direccion": "Calle Orgánica 456",
     "codigoPostal": 28024,

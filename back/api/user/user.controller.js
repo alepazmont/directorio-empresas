@@ -97,4 +97,12 @@ const get = async (req, res, next) => {
   }
 };
 
-module.exports = { register, login, logout, get };
+const profile = async (req, res) => {
+  try {
+      return res.status(200).json(req.userProfile)
+  } catch (error) {
+    next(error)
+  }
+}
+
+module.exports = { register, login, logout, get, profile };
