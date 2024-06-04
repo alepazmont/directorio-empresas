@@ -11,7 +11,9 @@ const Directorio = () => {
     const loadEmpresas = async () => {
       try {
         const empresasData = await fetchEmpresas();
-        setEmpresas(empresasData);
+        // Filtrar empresas aprobadas antes de establecer el estado
+        const empresasAprobadas = empresasData.filter(empresa => empresa.aprobada);
+        setEmpresas(empresasAprobadas);
       } catch (error) {
         console.error('Error obteniendo empresas', error);
       }
@@ -85,10 +87,10 @@ const Directorio = () => {
               <td><a href={`/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a></td>
               <td>{empresa.categoria}</td>
               <td>{empresa.direccion}</td>
-              <td>{empresa.telefono}</td>
-              <td>{empresa.correo}</td>
-              <td><a href={empresa.web} target="_blank" rel="noopener noreferrer">Web</a></td>
-              <td><a href={`https://maps.google.com/?q=${empresa.direccion}`} target="_blank" rel="noopener noreferrer">Ver en el mapa</a></td>
+              <td>{empresa.telefono.join(" ")}</td>
+              <td><a href={`mailto:${empresa.email}`}>{empresa.email}</a></td>
+              <td><a href={empresa.web} target="_blank" rel="noopener noreferrer">Visitar</a></td>
+              <td><a href={`https://maps.google.com/?q=${empresa.direccion}`} target="_blank" rel="noopener noreferrer"><i className="fa-regular fa-map"></i></a></td>
             </tr>
           ))}
         </tbody>

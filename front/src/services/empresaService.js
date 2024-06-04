@@ -11,3 +11,14 @@ export const fetchEmpresas = async () => {
     throw error;
   }
 };
+
+export const approveEmpresa = async (empresaId) => {
+  try {
+    const response = await axios.patch(`${apiUrl}/empresas/${empresaId}`, { aprobada: true });
+    console.log(response.data);
+    return response.data;
+  } catch (error) {
+    console.error('Error approving empresa:', error);
+    throw error;
+  }
+};
