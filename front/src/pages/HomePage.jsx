@@ -6,6 +6,8 @@ import Map from '../components/Map/Map';
 import './HomePage.css';
 import Footer from '../components/Footer/Footer';
 import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 
 /* import { apiUrl } from "../components/ApiUrl/apiUrl";
  */
@@ -48,14 +50,20 @@ const HomePage = () => {
   return (
     
     <div className="home-page">
-      <Header />
-
-      <Container>
+      <Header/>
+      
+      <Container fluid>
+      <Row>
+            <Col lg={6} xs={12} className="text-center b-xs">
         <div className="map-container">
           <Map locations={locations} />
         </div>
-          
-          {/*<div className="empresas-lista">
+        </Col> 
+        <Col lg={6} xs={12} className="text-center b-xs">
+        <Directorio />
+        </Col>
+        </Row>
+        {/*<div className="empresas-lista">
             {empresas.map((empresa, index) => (
               <div className="card-empresas-inicio" key={index}>
                 <img src={empresa.logo} alt={empresa.nameEmpresa} />
@@ -67,9 +75,8 @@ const HomePage = () => {
               </div>
             ))}
           </div> */}
-          <Directorio />
       </Container>
-   
+
       <Footer/>    
     </div>
   );
