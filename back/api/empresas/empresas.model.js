@@ -18,7 +18,7 @@ const empresasSchema = new mongoose.Schema({
     redes: { type: Array }, 
     condiciones: { type: Boolean},
     aprobada: { type: Boolean, required: true, default: false }
-});
+}, { timestamps: true });
 
 const Empresas = mongoose.model("Empresas", empresasSchema);
 
