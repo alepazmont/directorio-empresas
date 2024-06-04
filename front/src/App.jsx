@@ -1,6 +1,6 @@
-// App.jsx
-
+import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import axios from "axios";
 import Nav from "../src/nav/Nav";
 import HomePage from "./pages/HomePage";
 import Contacto from "./pages/Contacto";
@@ -17,9 +17,18 @@ import Registro from "./components/Registro/Registro";
 import '@fortawesome/fontawesome-free/css/all.min.css';
 import EmpresaDetalle from "./pages/EmpresaDetalle";
 import EmpresasComercial from "./pages/EmpresasComercial";
-
+import AuthRoute from "./components/AuthRoute/AuthRoute";
 
 const App = () => {
+  const [listUsers, setListUsers] = useState([])
+
+  useEffect(() => {
+    axios.get("https://directorio-empresas.vercel.app/user/get")
+      .then(response => {
+        setListUsers(response.data)
+      })
+  }, [])
+
   return (
     <UserProvider>
       <Router>
@@ -30,14 +39,20 @@ const App = () => {
           <Route path="/directorio" element={<ListaEmpresas />} />
           <Route path="/empresas" element={<EmpresasComercial />} />
           <Route path="/empresas/crear" element={<CompanyForm />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/login" element={<Login listUsers={listUsers} />} />
+          <Route path="/admin" element={
+            <AuthRoute component={<AdminDashboard />} />
+          } />
           <Route path="/user" element={<UserDashboard />} />
-          <Route path="/panel" element={<Dashboard />} />
+          <Route path="/panel" element={
+            <AuthRoute component={<Dashboard />} />
+          } />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/perfil" element={<Perfil />} />
           <Route path="/registro" element={<Registro />} />
           <Route path="/empresa/:id" element={<EmpresaDetalle />} />
+          <Route path="/perfil" element={
+            <AuthRoute component={<Perfil />} />
+          } />
         </Routes>
       </Router>
     </UserProvider>

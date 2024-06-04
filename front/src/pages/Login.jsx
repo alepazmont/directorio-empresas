@@ -1,6 +1,4 @@
 /* eslint-disable no-unused-vars */
-// src/pages/Login.jsx
-// src/pages/Login.jsx
 import './Login.css';
 
 import { useState, useContext } from "react";
