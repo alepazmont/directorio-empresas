@@ -18,6 +18,8 @@ import EmpresasComercial from "./pages/EmpresasComercial";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import './App.scss';
+
 
 const App = () => {
   const [listUsers, setListUsers] = useState([])
