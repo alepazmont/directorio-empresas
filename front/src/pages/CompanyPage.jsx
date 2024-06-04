@@ -25,7 +25,8 @@ const CompanyPage = () => {
   }
 
   return (
-    <div className="company-page">
+    <div className="seccion-empresa-individual">
+    <h2>Crear empresa</h2>
       <h1>{company.name}</h1>
       <p>{company.description}</p>
       <p className="contact">Contacto: {company.contact}</p>
