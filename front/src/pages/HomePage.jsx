@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Map from '../components/Map/Map';
@@ -24,7 +25,7 @@ const HomePage = () => {
     fetchEmpresas();
   }, []); */
 
-  useEffect(() => {
+ /*  useEffect(() => {
     const fetchLocations = async () => {
       try {
         const response = await axios.get('/api/companies');
@@ -39,7 +40,7 @@ const HomePage = () => {
     };
 
     fetchLocations();
-  }, []);
+  }, []); */
 
   return (
     <div className="seccion-inicio">

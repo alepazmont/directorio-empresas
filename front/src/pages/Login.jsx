@@ -24,7 +24,6 @@ const Login = () => {
         email,
         password,
       });
-      console.log(user);
       setUser(user); // Guarda el usuario en el contexto y en el localStorage
       navigate('/admin');
     } catch (error) {

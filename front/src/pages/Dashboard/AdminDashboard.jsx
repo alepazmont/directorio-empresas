@@ -1,7 +1,7 @@
-import UserCard from '../UserDashboard/UserCard';
+import UserCard from '../../components/UserDashboard/UserCard';
 import './AdminDashboard.css';
-import AprobarSolicitudes from './admin-components/AprobarSolicitudes';
-import UsageStats from './admin-components/UsageStats';
+import AprobarSolicitudes from '../../components/AdminDashboard/AprobarSolicitudes';
+import UsageStats from '../../components/AdminDashboard/UsageStats';
 
 const AdminDashboard = () => {
   // Aquí se manejará la lógica de aprobación y cancelación de solicitudes

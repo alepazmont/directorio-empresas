@@ -1,7 +1,6 @@
 import './Directorio.css';
 import { useEffect, useState } from 'react';
-import axios from 'axios';
-import { apiUrl } from "../ApiUrl/apiUrl";
+import { fetchEmpresas } from '../../services/empresaService';
 
 const Directorio = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -9,18 +8,16 @@ const Directorio = () => {
   const [categoriaFiltro, setCategoriaFiltro] = useState('');
 
   useEffect(() => {
-    const fetchEmpresas = async () => {
+    const loadEmpresas = async () => {
       try {
-        const route = "/empresas";
-        const response = await axios.get(apiUrl + route);       
-        setEmpresas(response.data.data);
-        console.log(response.data.data);
+        const empresasData = await fetchEmpresas();
+        setEmpresas(empresasData);
       } catch (error) {
         console.error('Error obteniendo empresas', error);
       }
     };
-    
-    fetchEmpresas();
+
+    loadEmpresas();
   }, []);
 
   const sortData = (key) => {
@@ -84,7 +81,7 @@ const Directorio = () => {
         <tbody>
           {filteredEmpresas.map((empresa, index) => (
             <tr key={index}>
-            <td><a href={`/empresa/${empresa._id}`}><img src={empresa.logo} alt={empresa.nameEmpresa} className="logo-empresa" /></a></td>
+              <td><a href={`/empresa/${empresa._id}`}><img src={empresa.logo} alt={empresa.nameEmpresa} className="logo-empresa" /></a></td>
               <td><a href={`/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a></td>
               <td>{empresa.categoria}</td>
               <td>{empresa.direccion}</td>

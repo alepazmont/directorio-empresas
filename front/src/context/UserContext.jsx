@@ -19,7 +19,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const savedUser = localStorage.getItem("user");
+      const savedUser = localStorage.getItem("token");
       if (savedUser) {
         setUser(JSON.parse(savedUser));
       }
@@ -30,12 +30,12 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   const saveUser = (userData) => {
-    localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("token", JSON.stringify(userData));
     setUser(userData);
   };
 
   const logout = () => {
-    localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setUser(null);
   };
 

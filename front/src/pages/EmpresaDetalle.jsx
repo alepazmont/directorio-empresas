@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-import { apiUrl } from "../components/ApiUrl/apiUrl";
+import { apiUrl } from "../services/ApiUrl/apiUrl";
 
 const EmpresaDetalle = () => {
   const { nombre, id } = useParams();
@@ -14,7 +14,6 @@ const EmpresaDetalle = () => {
         const route = `/empresas/${id}`; // Suponiendo que la API tiene un endpoint para obtener una empresa por ID
         const response = await axios.get(apiUrl + route);       
         setEmpresa(response.data.data); // Asumiendo que la respuesta de la API contiene todos los datos de la empresa
-        console.log(response.data.data);
       } catch (error) {
         console.error('Error obteniendo empresa', error);
       }
@@ -49,7 +48,7 @@ const EmpresaDetalle = () => {
           )}
           <p><strong>Email:</strong> <a href={`mailto:${empresa.email}`}>{empresa.email}</a></p>
           <p><strong>Web:</strong> <a href={empresa.web} target="_blank" rel="noopener noreferrer">{empresa.web}</a></p>
-          <p><strong>Redes Sociales:</strong> 
+          <p><strong>Redes Sociales:</strong></p>
             {empresa.redes && empresa.redes.length > 0 && (
               <div>
               <ul>
@@ -59,7 +58,7 @@ const EmpresaDetalle = () => {
                 </ul>
               </div>
             )}
-          </p>
+          
         </div>
       </div>
       <div className="galeria-fotos">
