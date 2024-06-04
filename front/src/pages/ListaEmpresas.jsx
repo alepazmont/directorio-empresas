@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useEffect, useState } from 'react';
 import Map from '../components/Map/Map';
 import axios from 'axios';
@@ -6,7 +7,7 @@ import './ListaEmpresas.css';
 
 
 const ListaEmpresas = () => {
-    const [locations, setLocations] = useState([]);
+/*     const [locations, setLocations] = useState([]);
 
   
     useEffect(() => {
@@ -24,14 +25,14 @@ const ListaEmpresas = () => {
       };
   
       fetchLocations();
-    }, []);
+    }, []); */
   
     return (
       <div className="seccion-empresas">
         <h2>Directorio de Empresas</h2>
-        <div className="map-container">
+{/*         <div className="map-container">
           <Map locations={locations} />
-        </div>
+        </div> */}
             <Directorio />
       </div>
     );

@@ -1,5 +1,6 @@
-import UserCard from '../Dashboard/dashboard-components/UserCard';
+import UserCard from '../UserDashboard/UserCard';
 import './AdminDashboard.css';
+import AprobarSolicitudes from './admin-components/AprobarSolicitudes';
 import UsageStats from './admin-components/UsageStats';
 
 const AdminDashboard = () => {
@@ -8,25 +9,13 @@ const AdminDashboard = () => {
     <div className="admin-dashboard">
       <h2>Panel de Administracion</h2>
       {/* Mostrar lista de solicitudes */}
+      <div className='grid grid-cols-4'>
       <UserCard />
       <UsageStats />
-      <ul className="requests-list">
-        <li className="request-item">
-          Solicitud 1
-          <div className="request-buttons">
-            <button className="request-button approve-button">Aprobar</button>
-            <button className="request-button cancel-button">Cancelar</button>
-          </div>
-        </li>
-        <li className="request-item">
-          Solicitud 2
-          <div className="request-buttons">
-            <button className="request-button approve-button">Aprobar</button>
-            <button className="request-button cancel-button">Cancelar</button>
-          </div>
-        </li>
-        {/* Agrega más solicitudes según sea necesario */}
-      </ul>
+      <AprobarSolicitudes />
+      </div>
+      
+      
     </div>
   );
 };

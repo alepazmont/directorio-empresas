@@ -16,6 +16,7 @@ import {
         decorationColor="indigo"
       >
         <div className="mx-auto max-w-2xl">
+        <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">Datos del directorio</p>
         <Table>
           <TableHead>
             <TableRow>

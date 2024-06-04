@@ -4,6 +4,7 @@
 import './Login.css';
 
 import { useState, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import loginService from "../services/login";
 import UserContext from "../context/UserContext";
 
@@ -12,6 +13,8 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const { setUser } = useContext(UserContext);
   const [errorMessage, setErrorMessage] = useState(null);
+  const navigate = useNavigate();
+
 
   const handleLogin = async (event) => {
     event.preventDefault();
@@ -23,8 +26,7 @@ const Login = () => {
       });
       console.log(user);
       setUser(user); // Guarda el usuario en el contexto y en el localStorage
-      setUsermail("");
-      setPassword("");
+      navigate('/admin');
     } catch (error) {
       setErrorMessage("Error iniciando sesión");
       setTimeout(() => {

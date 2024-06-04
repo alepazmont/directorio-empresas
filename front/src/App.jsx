@@ -14,6 +14,10 @@ import { UserProvider } from "./context/UserContext";
 import Perfil from "./pages/Perfil";
 import ListaEmpresas from "./pages/ListaEmpresas";
 import Registro from "./components/Registro/Registro";
+import '@fortawesome/fontawesome-free/css/all.min.css';
+import EmpresaDetalle from "./pages/EmpresaDetalle";
+import EmpresasComercial from "./pages/EmpresasComercial";
+
 
 const App = () => {
   return (
@@ -23,7 +27,8 @@ const App = () => {
         <Nav />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
-          <Route path="/empresas" element={<ListaEmpresas />} />
+          <Route path="/directorio" element={<ListaEmpresas />} />
+          <Route path="/empresas" element={<EmpresasComercial />} />
           <Route path="/empresas/crear" element={<CompanyForm />} />
           <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminDashboard />} />
@@ -32,6 +37,7 @@ const App = () => {
           <Route path="/contacto" element={<Contacto />} />
           <Route path="/perfil" element={<Perfil />} />
           <Route path="/registro" element={<Registro />} />
+          <Route path="/empresa/:id" element={<EmpresaDetalle />} />
         </Routes>
       </Router>
     </UserProvider>
