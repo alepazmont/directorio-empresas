@@ -18,6 +18,8 @@ import '@fortawesome/fontawesome-free/css/all.min.css';
 import EmpresaDetalle from "./pages/EmpresaDetalle";
 import EmpresasComercial from "./pages/EmpresasComercial";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 const App = () => {
   const [listUsers, setListUsers] = useState([])
@@ -32,8 +34,7 @@ const App = () => {
   return (
     <UserProvider>
       <Router>
-        <UserNav />
-        <Nav />
+        <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/directorio" element={<ListaEmpresas />} />
@@ -54,6 +55,7 @@ const App = () => {
             <AuthRoute component={<Perfil />} />
           } />
         </Routes>
+        <Footer />
       </Router>
     </UserProvider>
   );
