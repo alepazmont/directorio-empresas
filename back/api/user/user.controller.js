@@ -16,7 +16,17 @@ const register = async (req, res, next) => {
 
     const hashedPassword = await bcrypt.hash(password, 10);
 
-    const newUser = new User({ nombre, apellidos, telefono, password: hashedPassword, email, conditions, tipoUsuario });
+    // Guardar la fecha de registro
+    const newUser = new User({
+      nombre,
+      apellidos,
+      telefono,
+      password: hashedPassword,
+      email,
+      conditions,
+      tipoUsuario,
+      fechaRegistro: new Date(), // Guarda la fecha actual de registro
+    });
     const userDB = await newUser.save();
 
     return res.status(201).json({
@@ -26,10 +36,7 @@ const register = async (req, res, next) => {
   } catch (error) {
     return next(error);
   }
-}; 
-
-
-
+};
 
 const login = async (req, res, next) => {
   try {
@@ -53,6 +60,10 @@ const login = async (req, res, next) => {
       });
     }
 
+    // Guardar la última fecha de conexión
+    userInfo.ultimaConexion = new Date();
+    await userInfo.save();
+
     const token = jwt.sign(
       {
         id: userInfo._id,
@@ -62,7 +73,8 @@ const login = async (req, res, next) => {
       { expiresIn: "1d" }
     );
 
-    userInfo.password = "*************"; // Ocultar contraseña en la respuesta por seguridad
+    // Ocultar contraseña en la respuesta por seguridad
+    userInfo.password = "*************";
 
     return res.status(200).json({
       data: { message: "ok", user: userInfo, token: token },

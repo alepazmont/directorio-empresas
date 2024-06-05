@@ -1,7 +1,7 @@
 [
-  { "// comentario": "10 entradas en el documento" },
-
-
+  {
+    "// comentario": "10 entradas en el documento"
+  },
   {
     "nameEmpresa": "Tech Solutions Inc.",
     "categoria": "Tecnología",
@@ -16,7 +16,7 @@
     "direccion": "Calle Tecnología 456",
     "codigoPostal": 28015,
     "paradaMetro": "Estación Tecnología",
-    "locMapa": [40.425, -3.698],
+    "locMapa": [40.484356, -3.712034],
     "telefono": ["345678901", "567890123"],
     "email": "info@techsolutionsinc.com",
     "web": "https://www.techsolutionsinc.com",
@@ -25,7 +25,8 @@
       "https://facebook.com/techsolutions"
     ],
     "condiciones": true,
-    "aprobada": true
+    "aprobada": true,
+    "popularidad": 53
   },
   {
     "nameEmpresa": "Art & Design Studio",
@@ -41,7 +42,7 @@
     "direccion": "Avenida Creatividad 789",
     "codigoPostal": 28016,
     "paradaMetro": "Estación Creatividad",
-    "locMapa": [40.418, -3.702],
+    "locMapa": [40.482811, -3.718191],
     "telefono": ["678901234", "890123456"],
     "email": "info@artdesignstudio.com",
     "web": "https://www.artdesignstudio.com",
@@ -50,7 +51,8 @@
       "https://facebook.com/artdesignstudio"
     ],
     "condiciones": true,
-    "aprobada": true
+    "aprobada": true,
+    "popularidad": 82
   },
   {
     "nameEmpresa": "Financial Advisors Ltd.",
@@ -66,7 +68,7 @@
     "direccion": "Plaza Finanzas 123",
     "codigoPostal": 28017,
     "paradaMetro": "Estación Finanzas",
-    "locMapa": [40.421, -3.694],
+    "locMapa": [40.479794, -3.713433],
     "telefono": ["123456789", "987654321"],
     "email": "info@financialadvisors.com",
     "web": "https://www.financialadvisors.com",
@@ -75,7 +77,8 @@
       "https://facebook.com/financialadvisors"
     ],
     "condiciones": true,
-    "aprobada": true
+    "aprobada": true,
+    "popularidad": 37
   },
   {
     "nameEmpresa": "Fashion Style Shop",
@@ -91,7 +94,7 @@
     "direccion": "Calle Moda 456",
     "codigoPostal": 28018,
     "paradaMetro": "Estación Moda",
-    "locMapa": [40.416, -3.698],
+    "locMapa": [40.485641, -3.715895],
     "telefono": ["456789012", "890123456"],
     "email": "info@fashionstyleshop.com",
     "web": "https://www.fashionstyleshop.com",
@@ -99,8 +102,9 @@
       "https://twitter.com/fashionstyleshop",
       "https://facebook.com/fashionstyleshop"
     ],
-    "condiciones": true,
-    "aprobada": false
+    "condiciones": false,
+    "aprobada": true,
+    "popularidad": 61
   },
   {
     "nameEmpresa": "Travel Adventures",
@@ -116,7 +120,7 @@
     "direccion": "Avenida Viajes 789",
     "codigoPostal": 28019,
     "paradaMetro": "Estación Viajes",
-    "locMapa": [40.415, -3.69],
+    "locMapa": [40.483569, -3.715159],
     "telefono": ["567890123", "901234567"],
     "email": "info@traveladventures.com",
     "web": "https://www.traveladventures.com",
@@ -124,7 +128,9 @@
       "https://twitter.com/traveladventures",
       "https://facebook.com/traveladventures"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": false,
+    "popularidad": 28
   },
   {
     "nameEmpresa": "Health & Fitness Center",
@@ -140,7 +146,7 @@
     "direccion": "Calle Salud 123",
     "codigoPostal": 28020,
     "paradaMetro": "Estación Fitness",
-    "locMapa": [40.418, -3.694],
+    "locMapa": [40.485111, -3.710857],
     "telefono": ["678901234", "012345678"],
     "email": "info@healthfitness.com",
     "web": "https://www.healthfitness.com",
@@ -148,7 +154,9 @@
       "https://twitter.com/healthfitness",
       "https://facebook.com/healthfitness"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 74
   },
   {
     "nameEmpresa": "Construction Solutions",
@@ -164,7 +172,7 @@
     "direccion": "Avenida Construcción 456",
     "codigoPostal": 28021,
     "paradaMetro": "Estación Construcción",
-    "locMapa": [40.42, -3.698],
+    "locMapa": [40.479744, -3.706534],
     "telefono": ["234567890", "456789012"],
     "email": "info@constructionsolutions.com",
     "web": "https://www.constructionsolutions.com",
@@ -172,7 +180,9 @@
       "https://twitter.com/constructionsolutions",
       "https://facebook.com/constructionsolutions"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 45
   },
   {
     "nameEmpresa": "Legal Advisors",
@@ -188,7 +198,7 @@
     "direccion": "Plaza Legal 789",
     "codigoPostal": 28022,
     "paradaMetro": "Estación Legal",
-    "locMapa": [40.423, -3.702],
+    "locMapa": [40.482471, -3.719299],
     "telefono": ["789012345", "901234567"],
     "email": "info@legaladvisors.com",
     "web": "https://www.legaladvisors.com",
@@ -196,7 +206,9 @@
       "https://twitter.com/legaladvisors",
       "https://facebook.com/legaladvisors"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 91
   },
   {
     "nameEmpresa": "Pet Paradise",
@@ -212,7 +224,7 @@
     "direccion": "Calle Mascotas 123",
     "codigoPostal": 28023,
     "paradaMetro": "Estación Mascotas",
-    "locMapa": [40.416, -3.694],
+    "locMapa": [40.479451, -3.705926],
     "telefono": ["890123456", "012345678"],
     "email": "info@petparadise.com",
     "web": "https://www.petparadise.com",
@@ -220,7 +232,9 @@
       "https://twitter.com/petparadise",
       "https://facebook.com/petparadise"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 19
   },
   {
     "nameEmpresa": "Organic Food Market",
@@ -236,7 +250,7 @@
     "direccion": "Calle Orgánica 456",
     "codigoPostal": 28024,
     "paradaMetro": "Estación Orgánica",
-    "locMapa": [40.415, -3.697],
+    "locMapa": [40.482854, -3.712558],
     "telefono": ["234567890", "456789012"],
     "email": "info@organicfoodmarket.com",
     "web": "https://www.organicfoodmarket.com",
@@ -244,8 +258,8 @@
       "https://twitter.com/organicfoodmarket",
       "https://facebook.com/organicfoodmarket"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 63
   }
-  
-
 ]

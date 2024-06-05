@@ -39,16 +39,14 @@ const userSchema = new mongoose.Schema({
     enum: ["propietario", "gestor", "agencia publicitaria", "otro"],
     required: true,
   },
+  admin: {
+    type: Boolean,
+    default: false,
+  },
+  ultimaConexion: { type: Date },  
+  fechaRegistro: { type: Date },
   empresasCreadas: [{ type: mongoose.Schema.ObjectId, ref: "empresas" }],
 });
-
-/* // Middleware para hash de contraseña antes de guardar
-userSchema.pre("save", async function(next) {
-  if (this.password) {
-    this.password = await bcrypt.hash(this.password, salt);
-  }
-  next();
-}); */
 
 const User = mongoose.model("User", userSchema);
 module.exports = User;
