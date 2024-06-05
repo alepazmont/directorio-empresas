@@ -53,39 +53,40 @@ const HomePage = () => {
     
     <div className="home-page">
       <Header/>
-      
-      <Container fluid>
-      <Row>
-            <Col lg={6} xs={12} className="text-center b-xs">
-        <div className="map-container">
-          <Map locations={locations} />
-        </div>
-        </Col> 
-        <Col lg={6} xs={12} className="text-center b-xs">
-        <Directorio />
-        </Col>
-        </Row>
-        {/*<div className="empresas-lista">
-            {empresas.map((empresa, index) => (
-              <div className="card-empresas-inicio" key={index}>
-                <img src={empresa.logo} alt={empresa.nameEmpresa} />
-                <div className="card-empresas-inicio-content">
-                  <h3>{empresa.nameEmpresa}</h3>
-                  <p className="categoria-empresa">Categoría: {empresa.categoria}</p>
-                  <p className="direccion-empresa">{empresa.direccion}, CP: {empresa.codigoPostal}</p>
+      <div className="content">
+        <Container fluid>
+        <Row>
+              <Col lg={6} xs={12} className="text-center b-xs">
+          <div className="map-container">
+            <Map locations={locations} />
+          </div>
+          </Col> 
+          <Col lg={6} xs={12} className="text-center b-xs">
+          <Directorio />
+          </Col>
+          </Row>
+          {/*<div className="empresas-lista">
+              {empresas.map((empresa, index) => (
+                <div className="card-empresas-inicio" key={index}>
+                  <img src={empresa.logo} alt={empresa.nameEmpresa} />
+                  <div className="card-empresas-inicio-content">
+                    <h3>{empresa.nameEmpresa}</h3>
+                    <p className="categoria-empresa">Categoría: {empresa.categoria}</p>
+                    <p className="direccion-empresa">{empresa.direccion}, CP: {empresa.codigoPostal}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div> */}
-      </Container>
-      <div className="bg-purple">
-        <Container>
-          <LightTitle title="Últimas empresas inscritas" />
+              ))}
+            </div> */}
         </Container>
-      </div>
-      
-      <div>
-        <DarkTitle title="Las empresas más populares" />
+        <div className="bg-purple">
+          <Container>
+            <LightTitle title="Últimas empresas inscritas" />
+          </Container>
+        </div>
+        
+        <div>
+          <DarkTitle title="Las empresas más populares" />
+        </div>
       </div>
       <Footer/>    
     </div>

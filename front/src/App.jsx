@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import CompanyForm from './components/CompanyForm/CompanyForm';
 import AdminDashboard from "./components/AdminDashboard/AdminDashboard";
 import UserDashboard from "./components/UserDashboard/UserDashboard";
+import EmpresasComercial from './pages/EmpresasComercial';
 
 const App = () => {
   return (
@@ -14,6 +15,7 @@ const App = () => {
         <Routes>
           <Route exact path="/" element={<HomePage />} />
           <Route path="/companies/new" element={<CompanyForm />} />
+          <Route path='/empresas' element={<EmpresasComercial />} />
           <Route path="/admin" element={<AdminDashboard/>} />
           <Route path="/user" element={<UserDashboard/>} />
         </Routes>
