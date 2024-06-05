@@ -1,10 +1,15 @@
 import Container from 'react-bootstrap/Container';
 import Nav from 'react-bootstrap/Nav';
+import { Link } from "react-router-dom";
 import Navbar from 'react-bootstrap/Navbar';
 import Login from './Login';
 import Register from './Register';
+import UserContext from "../../context/UserContext";
+import { useContext } from "react";
+
 
 const Header = () => {
+  const { user, logout } = useContext(UserContext);
 
     return (
       <>
@@ -24,8 +29,18 @@ const Header = () => {
                 </ul>             
               </Nav>
               <Nav className='btn-nav'>
-                <Login/>
-                <Register/>
+              {user ? (
+        <ul>
+          <Link to="/admin">Panel de adminitración</Link>
+          <Link to="/perfil">Perfil</Link>
+          <Link to="/" onClick={logout}>Logout</Link>
+        </ul>
+      ) : (
+        <ul>
+        <Login/>
+        <Register/>
+        </ul>
+      )}
             </Nav>
             </Navbar.Collapse>
           </Container>
