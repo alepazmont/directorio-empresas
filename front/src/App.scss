@@ -32,3 +32,109 @@ table.directorio-tabla tr:hover {
 table.directorio-tabla tr a:hover {
  filter: none;
 }
+
+.map-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.map {
+  width: 100%;
+  height: 400px;
+}
+
+
+/* DIRECTORIO */
+
+.card-empresas-inicio {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #616161;
+  padding: 10px 0;
+}
+
+.card-empresas-inicio img {
+  height: 75px;
+}
+
+.card-empresas-inicio-content h4, .card-empresas-inicio-content h3, .card-empresas-inicio-content p {
+  margin: 0;
+}
+
+.card-empresas-inicio-content {
+  text-align: left;
+}
+
+.directorio-container {
+  margin: 0px;
+}
+
+.filter-container {
+  margin-bottom: 20px;
+}
+
+.filter-container label {
+  margin-right: 10px;
+}
+
+.directorio-tabla {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.directorio-tabla th, .directorio-tabla td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.directorio-tabla th {
+  background-color: #f2f2f2;
+  cursor: pointer;
+  position: relative;
+}
+
+.directorio-tabla th::after {
+  content: '';
+  position: absolute;
+  right: 8px;
+  border: 5px solid transparent;
+}
+
+.directorio-tabla th.sort-ascending::after {
+  border-bottom-color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.directorio-tabla th.sort-descending::after {
+  border-top-color: #000;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.directorio-tabla caption {
+  caption-side: top;
+  font-size: 1.5em;
+  margin-bottom: 10px;
+}
+
+.logo-empresa {
+  width: 50px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Estilos para filas pares e impares */
+.directorio-tabla tbody tr:nth-child(even) {
+  background-color: #E6E6FA; /* Morado claro */
+}
+
+.directorio-tabla tbody tr:nth-child(odd) {
+  background-color: #FAF9F6; /* Blanco roto */
+}
