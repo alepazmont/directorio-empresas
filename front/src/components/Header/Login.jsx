@@ -45,7 +45,7 @@ const Login = () => {
 
   return (
     <>
-      <Button variant="primary" onClick={handleShow} className="btn-login">
+      <Button variant="primary" onClick={handleShow} className='btn-option-user btn btn-option-user-first'>
         Login
       </Button>
 

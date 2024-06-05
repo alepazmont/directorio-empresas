@@ -67,7 +67,7 @@ const Register = () => {
   
       return (
       <>
-          <Button variant="primary" onClick={handleShow} className='btn-register'>
+          <Button variant="primary" onClick={handleShow} className='btn-option-user btn'>
           Registro
           </Button>
   
