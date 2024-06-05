@@ -1,11 +1,38 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
 @import './components/Header/Header';
 @import './components/Footer/Footer';
-@import './components/BreadCrumb/BreadCrumb.scss';
-@import './components/Title/Titles.scss';
+@import './components/BreadCrumb/BreadCrumb';
+@import './components/Title/Titles';
+
+@import './pages/EmpresasComercial';
+@import './pages/Contacto';
+
+#root{
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
 
 .bg-purple{
   background-color: #7e57bc;
+}
+
+.content{
+  margin-bottom: 30px;
+}
+
+.btn{
+  background-color: #7E57BC;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active{
+      background-color: #7E57BC !important;
+      opacity: .7;
+  }
 }
 
 /* #root {

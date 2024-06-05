@@ -1,6 +1,4 @@
 import Container from "react-bootstrap/esm/Container"
-import Footer from "../components/Footer/Footer"
-import Header from "../components/Header/Header"
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb"
 import PurpleTitle from "../components/Title/PurpleTitle"
 import Row from "react-bootstrap/esm/Row"
@@ -10,13 +8,13 @@ import Card from "react-bootstrap/Card"
 const EmpresasComercial = () => {
     return (
         <div className="landing-page">
-            <Header/>
+
             <div className="content">
                 
                 <Container>
                     <BreadCrumb page="Registra tu empresa" />
                     <PurpleTitle title="Lo que EmpresasYa! te ofrece" />
-                    <Row> 
+                    <Row className="register-company-cards"> 
                         <Col lg={3} xs={6} className="d-flex justify-content-center mb-3">
                             <Card style={{ width: '18rem' }}>
                                 <Card.Header className="text-center">
@@ -24,8 +22,7 @@ const EmpresasComercial = () => {
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Sitúa tu empresa en el mapa
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -37,8 +34,7 @@ const EmpresasComercial = () => {
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Muestra tus productos/servicios
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -50,8 +46,7 @@ const EmpresasComercial = () => {
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Publica tus datos de contacto
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -63,8 +58,7 @@ const EmpresasComercial = () => {
                                 </Card.Header>
                                 <Card.Body>
                                     <Card.Text>
-                                    Some quick example text to build on the card title and make up the
-                                    bulk of the card's content.
+                                    Potencia tu visibilidad 
                                     </Card.Text>
                                 </Card.Body>
                             </Card>
@@ -73,13 +67,15 @@ const EmpresasComercial = () => {
                     </Row>
                      <Row>
                         <Col lg={12} xs={12}>
-                            <p></p>
+
+                            <p className="m-5">¿Quieres que tu empresa alcance un nuevo nivel de exposición y oportunidades? ¡Regístrala hoy en <b>EmpresasYa!</b> y empieza a disfrutar de los beneficios de estar presente en la plataforma más dinámica y conectada del sector!</p>
+                            <p className="m-5">No pierdas la oportunidad de hacer que tu empresa sea vista y reconocida. Únete a nosotros y da el primer paso hacia un futuro lleno de posibilidades. ¡Estamos aquí para ayudarte a triunfar!</p>
                         </Col>
                     </Row>
-                    <a href="/empresas/crear">Crear empresa</a>
+                    
                 </Container>
             </div>
-            <Footer/>
+         
       </div>
     )
   }

@@ -3,5 +3,9 @@
         a{
             color: #7E57BC;
         }
+
+        &.active{
+            font-weight: 700;
+        }
     }
 }
