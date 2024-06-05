@@ -1,4 +1,4 @@
-.company-page {
+/* .company-page {
     font-family: Arial, sans-serif;
     max-width: 800px;
     margin: 0 auto;
@@ -6,30 +6,30 @@
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-  }
+  } */
   
-  .company-page h1 {
+  .seccion-empresa-individual h1 {
     color: #333;
     font-size: 28px;
     margin-bottom: 15px;
   }
   
-  .company-page p {
+  .seccion-empresa-individual p {
     color: #555;
     font-size: 16px;
     line-height: 1.5;
   }
   
-  .company-page .contact {
+  .seccion-empresa-individual .contact {
     font-weight: bold;
     margin-top: 10px;
   }
   
-  .company-page .photos {
+  .seccion-empresa-individual .photos {
     margin-top: 20px;
   }
   
-  .company-page .photos img {
+  .seccion-empresa-individual .photos img {
     max-width: 100%;
     height: auto;
     margin: 10px 0;

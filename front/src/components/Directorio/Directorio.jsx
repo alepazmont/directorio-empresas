@@ -1,3 +1,5 @@
+import './Directorio.css';
+
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { apiUrl } from "../ApiUrl/apiUrl";

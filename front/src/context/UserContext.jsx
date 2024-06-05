@@ -1,6 +1,8 @@
+
 import { createContext, useState, useEffect, useContext } from "react";
 
 export const UserContext = createContext();
+
 
 export const useUser = () => {
   const context = useContext(UserContext);
@@ -16,7 +18,7 @@ export const UserProvider = ({ children }) => {
 
   useEffect(() => {
     const fetchUser = async () => {
-      const savedUser = localStorage.getItem("token");
+      const savedUser = localStorage.getItem("user");
       if (savedUser) {
         setUser(JSON.parse(savedUser));
       }
@@ -27,12 +29,13 @@ export const UserProvider = ({ children }) => {
   }, []);
 
   const saveUser = (userData) => {
-    localStorage.setItem("token", JSON.stringify(userData));
+    localStorage.setItem("user", JSON.stringify(userData));
     setUser(userData);
   };
 
   const logout = () => {
-    localStorage.removeItem("token");
+
+    localStorage.removeItem("user");
     setUser(null);
   };
 
@@ -44,3 +47,4 @@ export const UserProvider = ({ children }) => {
 };
 
 export default UserContext;
+

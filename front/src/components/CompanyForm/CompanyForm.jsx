@@ -44,6 +44,8 @@ const CompanyForm = () => {
   };
 
   return (
+    <div className='empresas-crear'>
+    <h2>Añadir nueva empresa</h2>
     <form className="company-form" onSubmit={handleSubmit}>
       <div>
         <label>Nombre:</label>
@@ -63,6 +65,7 @@ const CompanyForm = () => {
       </div>
       <button type="submit">Registrar Empresa</button>
     </form>
+    </div>
   );
 };
 

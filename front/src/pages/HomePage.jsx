@@ -56,7 +56,7 @@ const HomePage = () => {
       <div className="content">
         <Container fluid>
         <Row>
-              <Col lg={6} xs={12} className="text-center b-xs">
+          <Col lg={6} xs={12} className="text-center b-xs">
           <div className="map-container">
             <Map locations={locations} />
           </div>
