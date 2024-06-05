@@ -1,8 +1,8 @@
 
 const EmpresasComercial = () => {
   return (
-    <div>
-      <h2>Empresas comercial</h2>
+<div className='seccion-principal'>
+    <h2 className='tit-seccion'>Empresas comercial</h2>
 
       <a href="/empresas/crear">Crear empresa</a>
     </div>

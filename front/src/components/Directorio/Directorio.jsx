@@ -87,9 +87,17 @@ const Directorio = () => {
               <td><a href={`/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a></td>
               <td>{empresa.categoria}</td>
               <td>{empresa.direccion}</td>
-              <td>{empresa.telefono.join(" ")}</td>
+              <td>
+                {empresa.telefono.map((tel, telIndex) => (
+                  <a key={telIndex} href={`tel:${tel}`}>{tel} </a>
+                ))}
+              </td>   
               <td><a href={`mailto:${empresa.email}`}>{empresa.email}</a></td>
-              <td><a href={empresa.web} target="_blank" rel="noopener noreferrer">Visitar</a></td>
+              <td>
+                <a href={empresa.web} target="_blank" rel="noopener noreferrer">
+                  {empresa.web.replace('https://www.', '')}
+                </a>
+              </td>
               <td><a href={`https://maps.google.com/?q=${empresa.direccion}`} target="_blank" rel="noopener noreferrer"><i className="fa-regular fa-map"></i></a></td>
             </tr>
           ))}

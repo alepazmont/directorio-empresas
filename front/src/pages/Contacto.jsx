@@ -3,8 +3,8 @@ import './Contacto.css';
 const Contacto = () => {
   return (
     <>      
-<div className='seccion-contacto'>
-    <h2>Contacto</h2>
+<div className='seccion-principal'>
+    <h2 className='tit-seccion'>Contacto</h2>
     <div className="block-contacto">
 
       <form className="form-contacto">

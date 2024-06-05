@@ -3,6 +3,21 @@
 @import './components/Footer/Footer';
 @import './components/Title/Titles.scss';
 
+.col-mapa-inicio, .col-directorio-inicio {
+  padding: 0;
+}
+
 .bg-purple{
   background-color: #7e57bc;
+}
+
+.seccion-principal {
+  font-family: Arial, sans-serif;
+  padding: 20px;
+}
+
+.tit-seccion {
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
 }
