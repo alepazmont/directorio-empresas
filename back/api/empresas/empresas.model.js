@@ -17,7 +17,8 @@ const empresasSchema = new mongoose.Schema({
     web: { type: String }, 
     redes: { type: Array }, 
     condiciones: { type: Boolean},
-    aprobada: { type: Boolean, required: true, default: false }
+    aprobada: { type: Boolean, required: true, default: false },
+    popularidad: { type: Number, default: 0, min: [0, 'La popularidad debe ser un número positivo']   }
 }, { timestamps: true });
 
 const Empresas = mongoose.model("Empresas", empresasSchema);

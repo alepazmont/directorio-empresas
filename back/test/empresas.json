@@ -1,22 +1,22 @@
 [
-  { "// comentario": "10 entradas en el documento" },
-
-
+  {
+    "// comentario": "10 entradas en el documento"
+  },
   {
     "nameEmpresa": "Tech Solutions Inc.",
     "categoria": "Tecnología",
     "prodServ": "Productos",
     "listaProd": ["Hardware", "Software"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo15.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo01.png",
     "galeriaFotos": [
-      "https://url-de-imagen15.com/foto1.jpg",
-      "https://url-de-imagen15.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-03.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-04.jpeg"
     ],
     "direccion": "Calle Tecnología 456",
     "codigoPostal": 28015,
     "paradaMetro": "Estación Tecnología",
-    "locMapa": [40.425, -3.698],
+    "locMapa": [40.484356, -3.712034],
     "telefono": ["345678901", "567890123"],
     "email": "info@techsolutionsinc.com",
     "web": "https://www.techsolutionsinc.com",
@@ -24,7 +24,9 @@
       "https://twitter.com/techsolutions",
       "https://facebook.com/techsolutions"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 53
   },
   {
     "nameEmpresa": "Art & Design Studio",
@@ -32,15 +34,15 @@
     "prodServ": "Ambos",
     "listaProd": [],
     "listaServ": ["Diseño gráfico", "Arte digital"],
-    "logo": "https://url-del-logo.com/logo16.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo02.png",
     "galeriaFotos": [
-      "https://url-de-imagen16.com/foto1.jpg",
-      "https://url-de-imagen16.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-01.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-02.jpeg"
     ],
     "direccion": "Avenida Creatividad 789",
     "codigoPostal": 28016,
     "paradaMetro": "Estación Creatividad",
-    "locMapa": [40.418, -3.702],
+    "locMapa": [40.482811, -3.718191],
     "telefono": ["678901234", "890123456"],
     "email": "info@artdesignstudio.com",
     "web": "https://www.artdesignstudio.com",
@@ -48,7 +50,9 @@
       "https://twitter.com/artdesignstudio",
       "https://facebook.com/artdesignstudio"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 82
   },
   {
     "nameEmpresa": "Financial Advisors Ltd.",
@@ -56,15 +60,15 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Asesoría financiera", "Planificación de inversiones"],
-    "logo": "https://url-del-logo.com/logo17.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo03.png",
     "galeriaFotos": [
-      "https://url-de-imagen17.com/foto1.jpg",
-      "https://url-de-imagen17.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-05.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-06.jpeg"
     ],
     "direccion": "Plaza Finanzas 123",
     "codigoPostal": 28017,
     "paradaMetro": "Estación Finanzas",
-    "locMapa": [40.421, -3.694],
+    "locMapa": [40.479794, -3.713433],
     "telefono": ["123456789", "987654321"],
     "email": "info@financialadvisors.com",
     "web": "https://www.financialadvisors.com",
@@ -72,7 +76,9 @@
       "https://twitter.com/financialadvisors",
       "https://facebook.com/financialadvisors"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 37
   },
   {
     "nameEmpresa": "Fashion Style Shop",
@@ -80,15 +86,15 @@
     "prodServ": "Productos",
     "listaProd": ["Ropa", "Accesorios de moda"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo18.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo04.png",
     "galeriaFotos": [
-      "https://url-de-imagen18.com/foto1.jpg",
-      "https://url-de-imagen18.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-07.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-08.jpeg"
     ],
     "direccion": "Calle Moda 456",
     "codigoPostal": 28018,
     "paradaMetro": "Estación Moda",
-    "locMapa": [40.416, -3.698],
+    "locMapa": [40.485641, -3.715895],
     "telefono": ["456789012", "890123456"],
     "email": "info@fashionstyleshop.com",
     "web": "https://www.fashionstyleshop.com",
@@ -96,7 +102,9 @@
       "https://twitter.com/fashionstyleshop",
       "https://facebook.com/fashionstyleshop"
     ],
-    "condiciones": true
+    "condiciones": false,
+    "aprobada": true,
+    "popularidad": 61
   },
   {
     "nameEmpresa": "Travel Adventures",
@@ -104,15 +112,15 @@
     "prodServ": "Ambos",
     "listaProd": [],
     "listaServ": ["Paquetes turísticos", "Reservas de hoteles"],
-    "logo": "https://url-del-logo.com/logo19.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo05.png",
     "galeriaFotos": [
-      "https://url-de-imagen19.com/foto1.jpg",
-      "https://url-de-imagen19.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-09.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-10.jpeg"
     ],
     "direccion": "Avenida Viajes 789",
     "codigoPostal": 28019,
     "paradaMetro": "Estación Viajes",
-    "locMapa": [40.415, -3.69],
+    "locMapa": [40.483569, -3.715159],
     "telefono": ["567890123", "901234567"],
     "email": "info@traveladventures.com",
     "web": "https://www.traveladventures.com",
@@ -120,7 +128,9 @@
       "https://twitter.com/traveladventures",
       "https://facebook.com/traveladventures"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": false,
+    "popularidad": 28
   },
   {
     "nameEmpresa": "Health & Fitness Center",
@@ -128,15 +138,15 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Entrenamiento personalizado", "Clases de yoga"],
-    "logo": "https://url-del-logo.com/logo20.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo06.png",
     "galeriaFotos": [
-      "https://url-de-imagen20.com/foto1.jpg",
-      "https://url-de-imagen20.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-11.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-12.jpeg"
     ],
     "direccion": "Calle Salud 123",
     "codigoPostal": 28020,
     "paradaMetro": "Estación Fitness",
-    "locMapa": [40.418, -3.694],
+    "locMapa": [40.485111, -3.710857],
     "telefono": ["678901234", "012345678"],
     "email": "info@healthfitness.com",
     "web": "https://www.healthfitness.com",
@@ -144,7 +154,9 @@
       "https://twitter.com/healthfitness",
       "https://facebook.com/healthfitness"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 74
   },
   {
     "nameEmpresa": "Construction Solutions",
@@ -152,15 +164,15 @@
     "prodServ": "Ambos",
     "listaProd": ["Materiales de construcción", "Herramientas"],
     "listaServ": ["Servicios de reforma", "Asesoría técnica"],
-    "logo": "https://url-del-logo.com/logo21.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo07.png",
     "galeriaFotos": [
-      "https://url-de-imagen21.com/foto1.jpg",
-      "https://url-de-imagen21.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-13.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-14.jpeg"
     ],
     "direccion": "Avenida Construcción 456",
     "codigoPostal": 28021,
     "paradaMetro": "Estación Construcción",
-    "locMapa": [40.42, -3.698],
+    "locMapa": [40.479744, -3.706534],
     "telefono": ["234567890", "456789012"],
     "email": "info@constructionsolutions.com",
     "web": "https://www.constructionsolutions.com",
@@ -168,7 +180,9 @@
       "https://twitter.com/constructionsolutions",
       "https://facebook.com/constructionsolutions"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 45
   },
   {
     "nameEmpresa": "Legal Advisors",
@@ -176,15 +190,15 @@
     "prodServ": "Servicios",
     "listaProd": [],
     "listaServ": ["Asesoría legal", "Representación legal"],
-    "logo": "https://url-del-logo.com/logo22.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo08.png",
     "galeriaFotos": [
-      "https://url-de-imagen22.com/foto1.jpg",
-      "https://url-de-imagen22.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-15.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-16.jpeg"
     ],
     "direccion": "Plaza Legal 789",
     "codigoPostal": 28022,
     "paradaMetro": "Estación Legal",
-    "locMapa": [40.423, -3.702],
+    "locMapa": [40.482471, -3.719299],
     "telefono": ["789012345", "901234567"],
     "email": "info@legaladvisors.com",
     "web": "https://www.legaladvisors.com",
@@ -192,7 +206,9 @@
       "https://twitter.com/legaladvisors",
       "https://facebook.com/legaladvisors"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 91
   },
   {
     "nameEmpresa": "Pet Paradise",
@@ -200,15 +216,15 @@
     "prodServ": "Productos",
     "listaProd": ["Alimentos para mascotas", "Juguetes"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo23.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo09.png",
     "galeriaFotos": [
-      "https://url-de-imagen23.com/foto1.jpg",
-      "https://url-de-imagen23.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-17.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-18.jpeg"
     ],
     "direccion": "Calle Mascotas 123",
     "codigoPostal": 28023,
     "paradaMetro": "Estación Mascotas",
-    "locMapa": [40.416, -3.694],
+    "locMapa": [40.479451, -3.705926],
     "telefono": ["890123456", "012345678"],
     "email": "info@petparadise.com",
     "web": "https://www.petparadise.com",
@@ -216,7 +232,9 @@
       "https://twitter.com/petparadise",
       "https://facebook.com/petparadise"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 19
   },
   {
     "nameEmpresa": "Organic Food Market",
@@ -224,15 +242,15 @@
     "prodServ": "Productos",
     "listaProd": ["Frutas", "Verduras", "Productos Orgánicos"],
     "listaServ": [],
-    "logo": "https://url-del-logo.com/logo24.png",
+    "logo": "https://alepaz.online/proyectoFinal/logo/logo10.png",
     "galeriaFotos": [
-      "https://url-de-imagen24.com/foto1.jpg",
-      "https://url-de-imagen24.com/foto2.jpg"
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-19.jpeg",
+      "https://alepaz.online/proyectoFinal/fotos/665af39633ae1488b0aed3d7-20.jpeg"
     ],
     "direccion": "Calle Orgánica 456",
     "codigoPostal": 28024,
     "paradaMetro": "Estación Orgánica",
-    "locMapa": [40.415, -3.697],
+    "locMapa": [40.482854, -3.712558],
     "telefono": ["234567890", "456789012"],
     "email": "info@organicfoodmarket.com",
     "web": "https://www.organicfoodmarket.com",
@@ -240,8 +258,8 @@
       "https://twitter.com/organicfoodmarket",
       "https://facebook.com/organicfoodmarket"
     ],
-    "condiciones": true
+    "condiciones": true,
+    "aprobada": true,
+    "popularidad": 63
   }
-  
-
 ]
