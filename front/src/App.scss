@@ -21,3 +21,14 @@
   font-size: 24px;
   margin-bottom: 20px;
 }
+
+table.directorio-tabla tr a {
+transition: 0s;
+}
+table.directorio-tabla tr:hover {
+  background-color: #7e57bc;
+  color: #fff;
+}
+table.directorio-tabla tr a:hover {
+ filter: none;
+}
