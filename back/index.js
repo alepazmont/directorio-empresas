@@ -32,9 +32,9 @@ app.get("/", (req, res) => {
 });
 
 // Route '/usuarios' to userRouter
-app.use("/user", userRouter); // Route '/usuarios' to userRouter
+app.use("/user", userRouter);
 app.use("/empresas", empresaRouter);
-app.use("/password", passwordValidationRouter); // Añade el nuevo router
+app.use("/password", passwordValidationRouter);
 
 
 // Manejo de excepciones / errores
@@ -44,4 +44,6 @@ app.use(errorHandler);
 // Activar servidor
 app.listen(PORT, () => {
   console.log(`El servidor se ha iniciado en el puerto ${PORT}`);
+}).on('error', (err) => {
+  console.error('Error al iniciar el servidor:', err);
 });

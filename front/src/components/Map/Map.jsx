@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
-import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
+import { GoogleMap, Marker } from '@react-google-maps/api';
+import { useJsApiLoader } from '@react-google-maps/api';
 import './Map.css';
 
 
@@ -7,25 +8,36 @@ const containerStyle = {
   width: '100%',
   height: '400px'
 };
- 
+
 const center = {
   lat: 40.484859888817205,
   lng: -3.7230726779006367
 };
 
 const Map = ({ locations }) => {
+  const { isLoaded, loadError } = useJsApiLoader({
+    id: 'google-map-script',
+    googleMapsApiKey: "AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k"
+  });
+
+  if (loadError) {
+    return <div>Error al cargar el mapa</div>;
+  }
+
+  if (!isLoaded) {
+    return <div>Cargando...</div>;
+  }
+
   return (
-    <LoadScript googleMapsApiKey="AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k">
-      <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={15}
-      >
-        {locations.map((location, index) => (
-          <Marker key={index} position={location} />
-        ))}
-      </GoogleMap>
-    </LoadScript>
+    <GoogleMap
+      mapContainerStyle={containerStyle}
+      center={center}
+      zoom={15}
+    >
+      {locations.map((location, index) => (
+        <Marker key={index} position={location} />
+      ))}
+    </GoogleMap>
   );
 };
 
@@ -37,4 +49,3 @@ Map.propTypes = {
 };
 
 export default Map;
-

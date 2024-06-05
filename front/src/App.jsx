@@ -1,33 +1,60 @@
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { UserProvider } from "./context/UserContext"
-import './App.scss'
+import { useEffect, useState } from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import HomePage from "./pages/HomePage";
+import Contacto from "./pages/Contacto";
+import CompanyForm from "./components/CompanyForm/CompanyForm";
+import AdminDashboard from "./pages/Dashboard/AdminDashboard";
+import UserDashboard from "./pages/Dashboard/UserDashboard";
+import Dashboard from "./components/Dashboard/Dashboard";
+import { UserProvider } from "./context/UserContext";
+import Perfil from "./pages/Perfil";
+import ListaEmpresas from "./pages/ListaEmpresas";
+import Registro from "./components/Registro/Registro";
+import EmpresaDetalle from "./pages/EmpresaDetalle";
+import EmpresasComercial from "./pages/EmpresasComercial";
+import AuthRoute from "./components/AuthRoute/AuthRoute";
+import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import './App.scss';
+import Login from "./components/Header/Login";
+import axios from "axios";
 
-import Login from './components/Header/Login'
-import CompanyForm from './components/CompanyForm/CompanyForm'
-import AdminDashboard from "./components/AdminDashboard/AdminDashboard"
-import UserDashboard from "./components/UserDashboard/UserDashboard"
-import Dashboard from './components/Dashboard/Dashboard'
-
-import HomePage from './pages/HomePage'
-import Contacto from './pages/Contacto'
-import Perfil from './pages/Perfil'
-import EmpresasComercial from './pages/EmpresasComercial'
 
 const App = () => {
+  const [listUsers, setListUsers] = useState([])
+
+  useEffect(() => {
+    axios.get("https://directorio-empresas.vercel.app/user/get")
+      .then(response => {
+        setListUsers(response.data)
+      })
+  }, [])
+
   return (
     <UserProvider>
       <Router>
+        <Header />
         <Routes>
           <Route exact path="/" element={<HomePage />} />
+          <Route path="/directorio" element={<ListaEmpresas />} />
           <Route path="/empresas" element={<EmpresasComercial />} />
           <Route path="/empresas/crear" element={<CompanyForm />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/login" element={<Login listUsers={listUsers} />} />
+          <Route path="/admin" element={
+            <AuthRoute component={<AdminDashboard />} />
+          } />
           <Route path="/user" element={<UserDashboard />} />
-          <Route path="/panel" element={<Dashboard />} />
+          <Route path="/panel" element={
+            <AuthRoute component={<Dashboard />} />
+          } />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/perfil" element={<Perfil />} />
+          <Route path="/registro" element={<Registro />} />
+          <Route path="/empresa/:id" element={<EmpresaDetalle />} />
+          <Route path="/perfil" element={
+            <AuthRoute component={<Perfil />} />
+          } />
         </Routes>
+        <Footer />
       </Router>
     </UserProvider>
   );

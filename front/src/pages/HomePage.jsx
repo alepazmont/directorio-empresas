@@ -52,7 +52,6 @@ const HomePage = () => {
   return (
     
     <div className="home-page">
-      <Header/>
       <div className="content">
         <Container fluid>
         <Row>
@@ -88,7 +87,6 @@ const HomePage = () => {
           <DarkTitle title="Las empresas más populares" />
         </div>
       </div>
-      <Footer/>    
     </div>
   );
 };

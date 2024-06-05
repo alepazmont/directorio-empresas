@@ -1,4 +1,5 @@
 export const apiUrl = "https://directorio-empresas.vercel.app";
+export const appUrl = "http://localhost:5173";
 
 
 /* He creado este componente porque he necesitado hacer pruebas y he tenido que estar cambiando la url 
