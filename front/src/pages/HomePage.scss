@@ -44,6 +44,62 @@
       overflow-y:scroll;
       height: 411px;
     }
+
+    .recent-companys,
+    .popular-companys{
+
+      .carousel-control-prev {
+        right: 100%;
+        left: auto;
+
+        &:hover{
+          filter: none;
+        }
+      }
+
+      .carousel-control-next {
+        left: 100%;
+
+        &:hover{
+          filter: none;
+        }
+      }
+
+      .card{
+        margin: 2rem;
+
+        .card-header{
+          background-color: #fff;
+          border-bottom: none;
+          img{
+            width: 90px;
+            height: 90px;
+          }
+          .card-titles{
+            display: flex;
+            flex-direction: column;
+            align-self: center;
+          }
+        }
+
+        .card-body{
+          .btn{
+            background-color: #7E57BC;
+            color: #fff;
+            font-weight: bold;
+            border: none;
+          
+            &:hover,
+            &:focus,
+            &:active{
+                background-color: #7E57BC !important;
+                opacity: .7;
+                filter: none;
+            }
+          }
+        }
+      }
+    }
   }
 }
 

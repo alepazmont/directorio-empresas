@@ -1,23 +1,13 @@
-import {
-    Table,
-    TableBody,
-    TableCell,
-    TableHead,
-    TableHeaderCell,
-    TableRow,
-    Card 
-  } from '@tremor/react';
-  
+import { Table, TableBody, TableCell, TableHead, TableHeaderCell, TableRow } from "@tremor/react"
+import Card from "react-bootstrap/Card"
+
   const UsageStats = () => {
     return (
-        <Card
-        className="max-w-xs"
-        decoration="top"
-        decorationColor="indigo"
-      >
-        <div className="mx-auto max-w-2xl">
-        <p className="text-tremor-default text-tremor-content dark:text-dark-tremor-content">Datos del directorio</p>
-        <Table>
+      <Card>
+        <Card.Body>
+          <Card.Subtitle>Datos del directorio</Card.Subtitle>
+          
+          <Table>
           <TableHead>
             <TableRow>
               <TableHeaderCell>Tipo</TableHeaderCell>
@@ -39,8 +29,11 @@ import {
             </TableRow>
           </TableBody>
         </Table>
-      </div>
-      </Card>
+
+        </Card.Body>      
+    </Card>
+
+       
     )
   }
   
