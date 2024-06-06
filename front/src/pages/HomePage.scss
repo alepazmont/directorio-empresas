@@ -32,7 +32,18 @@
 
 .home-page {
   .content {
-    margin-top: 4rem;
+    margin: 0;
+
+    .col-mapa-inicio,
+    .col-directorio-inicio{
+      padding: 0;
+    }
+
+    .directorio-container {
+      margin: 0px;
+      overflow-y:scroll;
+      height: 411px;
+    }
   }
 }
 

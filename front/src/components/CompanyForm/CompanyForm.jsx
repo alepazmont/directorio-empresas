@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import axios from 'axios';
 import './CompanyForm.css';
+import BreadCrumb from '../BreadCrumb/BreadCrumb';
 
 const CompanyForm = () => {
   const [formData, setFormData] = useState({
@@ -44,7 +45,9 @@ const CompanyForm = () => {
   };
 
   return (
-    <div className='empresas-crear'>
+    <>
+    <div className='container'>
+    <BreadCrumb page="Registra tu empresa" />
     <h2>Añadir nueva empresa</h2>
     <form className="company-form" onSubmit={handleSubmit}>
       <div>
@@ -66,6 +69,7 @@ const CompanyForm = () => {
       <button type="submit">Registrar Empresa</button>
     </form>
     </div>
+    </>
   );
 };
 

@@ -3,12 +3,14 @@
 @import './components/Footer/Footer';
 @import './components/BreadCrumb/BreadCrumb';
 @import './components/Title/Titles';
-@import './components/Directorio/';
+@import './components/Directorio/Directorio';
 
 @import './pages/HomePage';
 @import './pages/EmpresasComercial';
 @import './pages/Contacto';
 @import './pages/Perfil';
+
+@import 'Estilos_Provisional';
 
 #root{
   min-height: 100vh;
