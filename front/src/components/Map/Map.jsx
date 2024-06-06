@@ -1,13 +1,6 @@
 import PropTypes from 'prop-types';
 import { GoogleMap, Marker } from '@react-google-maps/api';
 import { useJsApiLoader } from '@react-google-maps/api';
-import './Map.css';
-
-
-const containerStyle = {
-  width: '100%',
-  height: '400px'
-};
 
 const center = {
   lat: 40.484859888817205,
@@ -30,7 +23,6 @@ const Map = ({ locations }) => {
 
   return (
     <GoogleMap
-      mapContainerStyle={containerStyle}
       center={center}
       zoom={15}
     >

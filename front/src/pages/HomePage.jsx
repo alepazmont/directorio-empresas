@@ -1,15 +1,12 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import Header from '../components/Header/Header';
-import Directorio from '../components/Directorio/Directorio';
 import Map from '../components/Map/Map';
-import './HomePage.css';
-import Footer from '../components/Footer/Footer';
 import Container from 'react-bootstrap/esm/Container';
 import Row from 'react-bootstrap/esm/Row';
 import Col from 'react-bootstrap/esm/Col';
 import LightTitle from '../components/Title/LightTitle';
 import DarkTitle from '../components/Title/DarkTitle';
+import DirectorioSimple from '../components/Directorio/DirectorioSimple';
 
 /* import { apiUrl } from "../components/ApiUrl/apiUrl";
  */
@@ -49,19 +46,20 @@ const HomePage = () => {
     fetchLocations();
   }, []);
 
+
   return (
     
     <div className="home-page">
       <div className="content">
         <Container fluid>
         <Row>
-          <Col lg={6} xs={12} className="text-center b-xs">
+          <Col lg={6} xs={12} className='b-xs'>
           <div className="map-container">
             <Map locations={locations} />
           </div>
           </Col> 
-          <Col lg={6} xs={12} className="text-center b-xs">
-          <Directorio />
+          <Col lg={6} xs={12}>
+            <DirectorioSimple />
           </Col>
           </Row>
           {/*<div className="empresas-lista">

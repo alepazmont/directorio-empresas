@@ -7,7 +7,7 @@ const AuthRoute = ({ component }) => {
   const { user } = useContext(UserContext);
 
   if (!user) {
-    return <Navigate to="/login" />;
+    return <Navigate to="/" />;
   }
 
   return component;

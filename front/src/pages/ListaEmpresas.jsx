@@ -1,18 +1,21 @@
 /* eslint-disable no-unused-vars */
-import { useEffect, useState } from 'react';
-import Map from '../components/Map/Map';
-import axios from 'axios';
 import Directorio from '../components/Directorio/Directorio';
-import './ListaEmpresas.css';
+import Container from 'react-bootstrap/esm/Container';
+import BreadCrumb from '../components/BreadCrumb/BreadCrumb';
 
 
 const ListaEmpresas = () => {
 
   
     return (
-<div className='seccion-principal'>
-    <h2 className='tit-seccion'>Directorio de Empresas</h2>
-            <Directorio />
+      <div className='landing-page'>
+        <div className="content">
+          <Container>
+            <BreadCrumb page="Directorio de empresas" />
+
+            <Directorio/>
+          </Container>
+        </div>
       </div>
     );
   };
