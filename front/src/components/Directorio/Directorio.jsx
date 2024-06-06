@@ -136,7 +136,7 @@ const Directorio = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  <i className="fa-regular fa-map"></i>
+                  <FontAwesomeIcon icon="fa-map" />
                 </a>
               </td>
             </tr>
