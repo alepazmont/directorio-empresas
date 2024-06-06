@@ -1,10 +1,13 @@
 import { useState, useEffect } from 'react';
 import { GoogleMap, Marker, InfoWindow, useJsApiLoader } from '@react-google-maps/api';
 import { fetchEmpresas } from '../../services/empresaService';
+import Container from 'react-bootstrap/esm/Container';
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
 
 const containerStyle = {
   width: '100%',
-  height: '400px'
+  height: '411px'
 };
 
 const center = {
@@ -53,6 +56,9 @@ const MapaEmpresas = () => {
   }
 
   return (
+    <Container fluid>
+    <Row>
+      <Col lg={6} xs={12} className="text-center b-xs col-mapa-inicio">
     <div className="mapa-directorio-container">
       <GoogleMap
         mapContainerStyle={containerStyle}
@@ -87,6 +93,9 @@ const MapaEmpresas = () => {
           </Marker>
         ))}
       </GoogleMap>
+      </div>
+        </Col> 
+        <Col lg={6} xs={12} className="text-center b-xs col-directorio-inicio">
       <div className="directorio-container">
         <table className="directorio-tabla">
           <tbody>
@@ -106,7 +115,9 @@ const MapaEmpresas = () => {
           </tbody>
         </table>
       </div>
-    </div>
+      </Col>
+        </Row>
+      </Container>
   );
 };
 

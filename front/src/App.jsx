@@ -18,6 +18,9 @@ import Footer from "./components/Footer/Footer";
 import './App.scss';
 import Login from "./components/Header/Login";
 import axios from "axios";
+import Aviso from "./pages/Legal/Aviso";
+import Cookies from "./pages/Legal/Cookies";
+import Masinfo from "./pages/Legal/Masinfo"
 
 
 const App = () => {
@@ -38,7 +41,9 @@ const App = () => {
           <Route exact path="/" element={<HomePage />} />
           <Route path="/directorio" element={<ListaEmpresas />} />
           <Route path="/empresas" element={<EmpresasComercial />} />
-          <Route path="/empresas/crear" element={<CompanyForm />} />
+          <Route path="/empresas/crear" element={
+            <AuthRoute component={<CompanyForm />} />
+          } />
           <Route path="/login" element={<Login listUsers={listUsers} />} />
           <Route path="/admin" element={
             <AuthRoute component={<AdminDashboard />} />
@@ -53,6 +58,9 @@ const App = () => {
           <Route path="/perfil" element={
             <AuthRoute component={<Perfil />} />
           } />
+          <Route path="/aviso-legal" element={<Aviso />} />
+          <Route path="/politica-cookies" element={<Cookies />} />
+          <Route path="/mas-info-cookies" element={<Masinfo />} />
         </Routes>
         <Footer />
       </Router>
