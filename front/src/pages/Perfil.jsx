@@ -2,8 +2,8 @@ import './Perfil.css';
 
 const Perfil = () => {
   return (
-    <div className="seccion-perfil">
-      <h2>Perfil</h2>
+<div className='seccion-principal'>
+    <h2 className='tit-seccion'>Perfil</h2>
     </div>
   )
 }
