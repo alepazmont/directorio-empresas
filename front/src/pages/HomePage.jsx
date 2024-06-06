@@ -1,89 +1,32 @@
-import { useEffect, useState } from 'react';
-import axios from 'axios';
-import Map from '../components/Map/Map';
-import Container from 'react-bootstrap/esm/Container';
-import Row from 'react-bootstrap/esm/Row';
-import Col from 'react-bootstrap/esm/Col';
 import LightTitle from '../components/Title/LightTitle';
 import DarkTitle from '../components/Title/DarkTitle';
-import DirectorioSimple from '../components/Directorio/DirectorioSimple';
+import MapaEmpresas from '../components/Map/MapaEmpresas';
+import Container from 'react-bootstrap/esm/Container';
+import DirectorioGridRecientes from '../components/Directorio/DirectorioGridRecientes'
+import DirectorioGridPopulares from '../components/Directorio/DirectorioGridPopulares'
 
-/* import { apiUrl } from "../components/ApiUrl/apiUrl";
- */
+
 const HomePage = () => {
-  const [locations, setLocations] = useState([]);
-  /* const [empresas, setEmpresas] = useState([]);
-
-  useEffect(() => {
-    const fetchEmpresas = async () => {
-      try {
-        const route = "/empresas";
-        const response = await axios.get(apiUrl + route);       
-        setEmpresas(response.data.data);
-        console.log(response.data.data);
-      } catch (error) {
-        console.error('Error obteniendo empresas', error);
-      }
-    };
-    
-    fetchEmpresas();
-  }, []); */
-
-  useEffect(() => {
-    const fetchLocations = async () => {
-      try {
-        const response = await axios.get('/api/companies');
-        const locs = response.data.map(company => ({
-          lat: company.latitude,
-          lng: company.longitude,
-        }));
-        setLocations(locs);
-      } catch (error) {
-        console.error('Error fetching company locations', error);
-      }
-    };
-
-    fetchLocations();
-  }, []);
-
 
   return (
-    
-    <div className="home-page">
+    <div className="home-page">  
       <div className="content">
-        <Container fluid>
-        <Row>
-          <Col lg={6} xs={12} className='b-xs'>
-          <div className="map-container">
-            <Map locations={locations} />
-          </div>
-          </Col> 
-          <Col lg={6} xs={12}>
-            <DirectorioSimple />
-          </Col>
-          </Row>
-          {/*<div className="empresas-lista">
-              {empresas.map((empresa, index) => (
-                <div className="card-empresas-inicio" key={index}>
-                  <img src={empresa.logo} alt={empresa.nameEmpresa} />
-                  <div className="card-empresas-inicio-content">
-                    <h3>{empresa.nameEmpresa}</h3>
-                    <p className="categoria-empresa">Categoría: {empresa.categoria}</p>
-                    <p className="direccion-empresa">{empresa.direccion}, CP: {empresa.codigoPostal}</p>
-                  </div>
-                </div>
-              ))}
-            </div> */}
-        </Container>
+        <MapaEmpresas apiKey="AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k" />
+
         <div className="bg-purple">
-          <Container>
+          <Container className='bloque-oscuro'>
             <LightTitle title="Últimas empresas inscritas" />
+            <DirectorioGridRecientes />
           </Container>
         </div>
         
         <div>
+        <Container className='bloque-claro'>
           <DarkTitle title="Las empresas más populares" />
+          <DirectorioGridPopulares />
+          </Container>
         </div>
+
       </div>
     </div>
   );

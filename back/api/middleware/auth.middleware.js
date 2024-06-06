@@ -25,13 +25,14 @@ const isAuth = (req, res, next) => {
 
   try {
     var token = jwt.verify(jwtString, secret);
+    console.log(jwtString);
   } catch (error) {
     return next(error);
   }
 
   const authority = {
     id: token.id,
-    name: token.name,
+    email: token.email,
   };
   req.authority = authority;
   next();

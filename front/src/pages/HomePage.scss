@@ -32,7 +32,12 @@
 
 .home-page {
   .content {
-    margin-top: 4rem;
+    margin: 0;
+
+    .col-mapa-inicio,
+    .col-directorio-inicio{
+      padding: 0;
+    }
   }
 }
 

@@ -32,10 +32,10 @@ const Footer = () => {
             </Col>
             <Col lg={4} xs={12} className="text-center">
                 <h5>Enlaces legales</h5>
-                <ul className="mb-5">
-                  <li><Link to='#'>Aviso legal</Link></li>  
-                  <li><Link to='#'>Política de cookies</Link></li>
-                  <li><Link to='#'>Más información sobre las cookies</Link></li>
+                <ul>
+                  <li><Link to='/aviso-legal'>Aviso legal</Link></li>  
+                  <li><Link to='/politica-cookies'>Política de cookies</Link></li>
+                  <li><Link to='/mas-info-cookies'>Más información sobre las cookies</Link></li>
                 </ul>
             </Col>
             </Row>
