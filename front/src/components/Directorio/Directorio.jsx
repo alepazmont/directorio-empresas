@@ -62,7 +62,7 @@ const Directorio = () => {
     : empresas;
 
   return (
-    <div className="listaempresas-container">
+    <div className="directorio-container">
       <div className="filter-container">
         <label htmlFor="categoria">Filtrar por categoría:</label>
         <select
