@@ -5,7 +5,7 @@ import axios from "axios";
 import { apiUrl } from "../services/ApiUrl/apiUrl";
 import Container from "react-bootstrap/esm/Container";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
-
+import MapaEmpresaDetalle from "../components/Map/MapaEmpresaDetalle";
 
 const EmpresaDetalle = () => {
   const { nombre, id } = useParams();
@@ -32,7 +32,7 @@ const EmpresaDetalle = () => {
   return (
     <div className="body">
       <Container>
-      <BreadCrumb page="Ficha de empresa" />
+        <BreadCrumb page="Ficha de empresa" />
         <h2>{empresa.nameEmpresa}</h2>
         <div className="empresa-datos">
           <div className="logo-empresa">
@@ -107,7 +107,7 @@ const EmpresaDetalle = () => {
           </div>
         </div>
         <div className="galeria-fotos">
-          <h3>Galería de Fotos</h3>
+          <strong>Galería de Fotos</strong>
           <div className="fotos">
             {empresa.galeriaFotos &&
               empresa.galeriaFotos.length > 0 &&
@@ -115,6 +115,9 @@ const EmpresaDetalle = () => {
                 <img key={index} src={foto} alt={`Foto ${index + 1}`} />
               ))}
           </div>
+        </div>
+        <div className="mapa-empresa-detalle">
+          <MapaEmpresaDetalle empresa={empresa} />
         </div>
       </Container>
     </div>

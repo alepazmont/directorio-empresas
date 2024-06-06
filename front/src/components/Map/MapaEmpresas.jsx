@@ -6,7 +6,6 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import { fetchEmpresas } from "../../services/empresaService";
-import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
@@ -18,6 +17,43 @@ const containerStyle = {
 const center = {
   lat: 40.484859888817205,
   lng: -3.7230726779006367,
+};
+
+const mapOptions = {
+  styles: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.attraction",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.government",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.medical",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.park",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.place_of_worship",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.school",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.sports_complex",
+      stylers: [{ visibility: "on" }],
+    }
+  ],
 };
 
 const MapaEmpresas = () => {
@@ -70,6 +106,7 @@ const MapaEmpresas = () => {
             mapContainerStyle={containerStyle}
             center={center}
             zoom={15}
+            options={mapOptions}
           >
             {empresas.map((empresa) => (
               <Marker
