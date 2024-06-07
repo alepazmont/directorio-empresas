@@ -1,11 +1,17 @@
 const Empresas = require("./empresas.model");
 
-
-// FUNCIONES CRUD
-
 const create = async (req, res, next) => {
   try {
-    const empresa = await Empresas.create(req.body);
+    const logo = req.files['logo'] ? req.files['logo'][0].path : null;
+    const galeriaFotos = req.files['galeriaFotos'] ? req.files['galeriaFotos'].map(file => file.path) : [];
+
+    const empresaData = {
+      ...req.body,
+      logo,
+      galeriaFotos
+    };
+
+    const empresa = await Empresas.create(empresaData);
     res.json({
       status: 201,
       msg: "creado",
@@ -20,21 +26,26 @@ const createMany = async (req, res, next) => {
   try {
     let empresasData = req.body;
 
-    // Verificar si req.body es un array
     if (!Array.isArray(empresasData)) {
-      empresasData = [empresasData]; // Convertir a array si no lo es
+      empresasData = [empresasData];
     }
 
-    // Crear un array para almacenar los resultados
     const empresasCreated = [];
 
-    // Iterar sobre cada elemento en empresasData
     for (let empresaData of empresasData) {
-      const empresa = await Empresas.create(empresaData);
+      const logo = empresaData.logo ? empresaData.logo.path : null;
+      const galeriaFotos = empresaData.galeriaFotos ? empresaData.galeriaFotos.map(file => file.path) : [];
+
+      const newEmpresaData = {
+        ...empresaData,
+        logo,
+        galeriaFotos
+      };
+
+      const empresa = await Empresas.create(newEmpresaData);
       empresasCreated.push(empresa);
     }
 
-    // Respondemos con el array de empresas creadas
     res.status(201).json({
       status: 201,
       msg: "Empresas creadas exitosamente",

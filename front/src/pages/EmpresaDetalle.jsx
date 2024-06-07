@@ -116,7 +116,7 @@ const EmpresaDetalle = () => {
               ))}
           </div>
         </div>
-        <div className="mapa-empresa-detalle">
+        <div className="mapa-empresa-detalle" id="mapa-empresa-detalle">
           <MapaEmpresaDetalle empresa={empresa} />
         </div>
       </Container>

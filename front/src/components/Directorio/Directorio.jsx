@@ -162,7 +162,7 @@ const Directorio = () => {
                 </a>
               </td>
               <td>
-              <Link to={`/empresa/${empresa._id}#mapa-empresadetalle`}>
+              <Link to={`/empresa/${empresa._id}#mapa-empresa-detalle`}>
                   <i className="fa-regular fa-map"></i>
                 </Link>
               </td>

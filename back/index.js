@@ -36,7 +36,6 @@ app.use("/user", userRouter);
 app.use("/empresas", empresaRouter);
 app.use("/password", passwordValidationRouter);
 
-
 // Manejo de excepciones / errores
 app.use(notFoundHandler);
 app.use(errorHandler);

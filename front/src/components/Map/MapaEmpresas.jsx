@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
 import {
   GoogleMap,
@@ -19,7 +20,7 @@ const center = {
   lng: -3.7230726779006367,
 };
 
-const mapOptions = {
+export const mapOptions = {
   styles: [
     {
       featureType: "poi.business",
@@ -27,7 +28,7 @@ const mapOptions = {
     },
     {
       featureType: "poi.attraction",
-      stylers: [{ visibility: "off" }],
+      stylers: [{ visibility: "on" }],
     },
     {
       featureType: "poi.government",
@@ -51,7 +52,7 @@ const mapOptions = {
     },
     {
       featureType: "poi.sports_complex",
-      stylers: [{ visibility: "on" }],
+      stylers: [{ visibility: "off" }],
     }
   ],
 };
@@ -128,8 +129,8 @@ const MapaEmpresas = () => {
                 {selectedEmpresa && selectedEmpresa._id === empresa._id && (
                   <InfoWindow
                     position={{
-                      lat: parseFloat(empresa.lat),
-                      lng: parseFloat(empresa.lng),
+                      lat: parseFloat(empresa.locMapa[0]),
+                      lng: parseFloat(empresa.locMapa[1]),
                     }}
                     onCloseClick={() => setSelectedEmpresa(null)}
                   >

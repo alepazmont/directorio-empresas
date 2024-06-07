@@ -1,5 +1,6 @@
 import { useJsApiLoader, GoogleMap, Marker, InfoWindow } from "@react-google-maps/api";
 import { useState } from "react";
+import { mapOptions } from "./MapaEmpresas";
 
 const containerStyle = {
   width: "100%",
@@ -8,10 +9,11 @@ const containerStyle = {
 
 const MapaEmpresaDetalle = ({ empresa }) => {
   const [selectedEmpresa, setSelectedEmpresa] = useState(null);
+  const [hovered, setHovered] = useState(false);
 
   const { isLoaded, loadError } = useJsApiLoader({
     id: "google-map-script",
-    googleMapsApiKey: "AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k", // Reemplaza esto con tu propia API key
+    googleMapsApiKey: "AIzaSyCj09lN8tpjDD7lrEyumuqOGEtG3_utP8k", 
   });
 
   if (loadError) {
@@ -31,6 +33,7 @@ const MapaEmpresaDetalle = ({ empresa }) => {
           lng: parseFloat(empresa.locMapa[1]),
         }}
         zoom={15}
+        options={mapOptions}
       >
         <Marker
           position={{
@@ -38,6 +41,11 @@ const MapaEmpresaDetalle = ({ empresa }) => {
             lng: parseFloat(empresa.locMapa[1]),
           }}
           onClick={() => setSelectedEmpresa(empresa)}
+          icon={{
+            url: hovered ? "http://maps.google.com/mapfiles/ms/icons/yellow-dot.png" : "http://maps.google.com/mapfiles/ms/icons/purple-dot.png",
+          }}
+          onMouseOver={() => setHovered(true)}
+          onMouseOut={() => setHovered(false)}
         />
         {selectedEmpresa && (
           <InfoWindow
