@@ -1,6 +1,14 @@
 import { useEffect, useState } from 'react';
 import { fetchEmpresas } from '../../services/empresaService';
 
+import Container from 'react-bootstrap/esm/Container'
+import Carousel from 'react-bootstrap/Carousel';
+
+import Card from "react-bootstrap/Card"
+import Row from 'react-bootstrap/esm/Row';
+import Col from 'react-bootstrap/esm/Col';
+import DarkTitle from '../Title/DarkTitle';
+
 const DirectorioGridPopulares = () => {
   const [empresas, setEmpresas] = useState([]);
 
@@ -10,7 +18,7 @@ const DirectorioGridPopulares = () => {
         const empresasData = await fetchEmpresas();
         const empresasAprobadas = empresasData.filter(empresa => empresa.aprobada);
         const sortedEmpresas = empresasAprobadas.sort((a, b) => b.popularidad - a.popularidad);
-        const empresasPopulares = sortedEmpresas.slice(0, 8);
+        const empresasPopulares = sortedEmpresas.slice(0, 15);
         setEmpresas(empresasPopulares);
       } catch (error) {
         console.error('Error obteniendo empresas', error);
@@ -20,37 +28,51 @@ const DirectorioGridPopulares = () => {
     loadEmpresas();
   }, []);
 
+  const chunkArray = (array, size) => {
+    const result = [];
+    for (let i = 0; i < array.length; i += size) {
+      result.push(array.slice(i, i + size));
+    }
+    return result;
+  };
+
+  const isMobile = window.innerWidth <= 768;
+  const empresaChunks = chunkArray(empresas, isMobile ? 1 : 3);
+
   return (
-    <div className="container">
-      <div className="row">
-        {empresas.map(empresa => (
-          <div key={empresa._id} className="col-md-3 mb-4">
-            <div className="card">
-              <div className="card-body">
-                <div className="d-flex align-items-center mb-4">
-                  <div className="me-3">
-                    <img src={empresa.logo} alt={empresa.nameEmpresa} className="img-fluid rounded-circle" style={{ width: '80px', height: '80px', objectFit: 'cover' }} />
-                  </div>
-                  <div>
-                    <h5 className="card-title">{empresa.nameEmpresa}</h5>
-                    <p className="card-text text-muted">{empresa.categoria}</p>
-                  </div>
-                </div>
-                <div className="text-sm">
-                  <p><strong>Dirección:</strong> {empresa.direccion}</p>
-                  <p><strong>Teléfono:</strong> {empresa.telefono.join(', ')}</p>
-                  <p><strong>Correo:</strong> <a href={`mailto:${empresa.email}`}>{empresa.email}</a></p>
-                  <p><strong>Web:</strong> <a href={empresa.web} target="_blank" rel="noopener noreferrer">{empresa.web}</a></p>
-                </div>
-                <div className="mt-4">
-                  <a href={`/empresa/${empresa._id}`} className="btn btn-primary">Ver más</a>
-                </div>
-              </div>
-            </div>
-          </div>
+    <Container className='popular-companys'>
+      <DarkTitle title="Las empresas más populares" />
+      <Carousel interval='3000' indicators={false}>
+      {empresaChunks.map((chunk, chunkIndex) => (
+          <Carousel.Item key={chunkIndex}>
+            <Row>
+              {chunk.map((empresa) => (
+                <Col key={empresa._id} md={4}>
+                  <Card style={{ width: '23rem' }}>   
+
+                  <Card.Header className='d-flex'>
+                    <Card.Img variant="top" src={empresa.logo} alt={empresa.nameEmpresa} />
+                    <div className='card-titles'>
+                      <Card.Title>{empresa.nameEmpresa}</Card.Title>
+                      <Card.Subtitle className="mb-2 text-muted">{empresa.categoria}</Card.Subtitle>
+                    </div>
+                  </Card.Header> 
+                    <Card.Body>
+                        <p><b>Dirección:</b> {empresa.direccion}</p>
+                        <p><b>Teléfono:</b> {empresa.telefono.join(', ')}</p>
+                        <p><b>Correo:</b> <a href={`mailto:${empresa.email}`}>{empresa.email}</a></p>
+                        <p><b>Web:</b> <a href={empresa.web} target="_blank" rel="noopener noreferrer">{empresa.web}</a></p>
+
+                        <a href={`/empresa/${empresa._id}`} className="btn btn-see-more mt-3">Ver más</a>
+                    </Card.Body>
+                  </Card>
+                </Col>
+              ))}
+            </Row>
+          </Carousel.Item>
         ))}
-      </div>
-    </div>
+      </Carousel>
+    </Container>
   );
 };
 

@@ -1,9 +1,10 @@
+
 import { useEffect, useState } from 'react';
 import { fetchEmpresas, approveEmpresa } from '../../services/empresaService';
 
 import Card from "react-bootstrap/Card"
 
-const AprobarSolicitudes = () => {
+const ListadoUsuarios = () => {
   const [empresas, setEmpresas] = useState([]);
 
   useEffect(() => {
@@ -31,9 +32,10 @@ const AprobarSolicitudes = () => {
   };
 
   return (
-    <Card >
-      <Card.Body>
-        <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
+    <Card>
+        <Card.Body>
+            <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
+        </Card.Body>
         <ul className="requests-list">
           {empresas.map((empresa) => (
             <li key={empresa._id} className="request-item">
@@ -52,9 +54,8 @@ const AprobarSolicitudes = () => {
             </li>
           ))}
         </ul>
-        </Card.Body>
     </Card>
   );
 };
 
-export default AprobarSolicitudes;
+export default ListadoUsuarios;
