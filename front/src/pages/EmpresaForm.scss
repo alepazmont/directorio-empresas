@@ -1,0 +1,96 @@
+@use "sass:math";
+
+// Variables de colores y tamaños
+$primary-color: #7e57bc;
+$secondary-color: #f5f5f5;
+$background-color: #ffffff;
+$border-color: #dddddd;
+$text-color: #333333;
+$error-color: #ff4d4f;
+
+$font-family: 'Arial', sans-serif;
+$font-size: 16px;
+$line-height: 1.5;
+
+$spacing-unit: 16px;
+$border-radius: 4px;
+
+
+// Estilos específicos del formulario
+.form-title {
+  font-size: 1.5em;
+  margin-bottom: math.div($spacing-unit, 2) * 2;
+  text-align: center;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+
+  &.checkbox-group {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.array-input {
+  display: flex;
+  flex-direction: column;
+
+  & input {
+    margin-top: math.div($spacing-unit, 2);
+  }
+}
+
+.file-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+  & label {
+    margin-bottom: math.div($spacing-unit, 2);
+  }
+
+  & button {
+        background-color: #ff4d4f;
+        height: 34px;
+        width: 34px;
+        border-radius: 100%;
+        padding: 0;
+        font-size: 23px;
+  }
+  & button:hover {
+        background-color: #b03134;
+  }
+}
+
+.button-group {
+  display: flex;
+  justify-content: space-between;
+
+  & button {
+    flex: 1;
+    margin-right: $spacing-unit;
+
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+}
+
+// Estilos responsivos
+@media (max-width: 600px) {
+  .button-group {
+    flex-direction: column;
+
+    & button {
+      margin-right: 0;
+      margin-bottom: $spacing-unit;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

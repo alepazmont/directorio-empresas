@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import HomePage from "./pages/HomePage";
 import Contacto from "./pages/Contacto";
-import CompanyForm from "./components/CompanyForm/CompanyForm";
 import AdminDashboard from "./pages/Dashboard/AdminDashboard";
 import UserDashboard from "./pages/Dashboard/UserDashboard";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -21,6 +20,7 @@ import axios from "axios";
 import Aviso from "./pages/Legal/Aviso";
 import Cookies from "./pages/Legal/Cookies";
 import Masinfo from "./pages/Legal/Masinfo"
+import EmpresaForm from "./pages/EmpresaForm";
 
 
 const App = () => {
@@ -42,7 +42,7 @@ const App = () => {
           <Route path="/directorio" element={<ListaEmpresas />} />
           <Route path="/empresas" element={<EmpresasComercial />} />
           <Route path="/empresas/crear" element={
-            <AuthRoute component={<CompanyForm />} />
+            <AuthRoute component={<EmpresaForm />} />
           } />
           <Route path="/login" element={<Login listUsers={listUsers} />} />
           <Route path="/admin" element={
