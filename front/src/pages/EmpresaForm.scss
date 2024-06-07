@@ -15,6 +15,62 @@ $line-height: 1.5;
 $spacing-unit: 16px;
 $border-radius: 4px;
 
+// Estilos globales
+
+form {
+  background-color: $background-color;
+  padding: math.div($spacing-unit, 2) * 2;
+  border-radius: $border-radius;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form div {
+  margin-bottom: $spacing-unit;
+}
+
+label {
+  display: block;
+  margin-bottom: math.div($spacing-unit, 2);
+  font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="url"],
+select,
+textarea {
+  width: 100%;
+  padding: math.div($spacing-unit, 2);
+  border: 1px solid $border-color;
+  border-radius: $border-radius;
+  font-size: $font-size;
+}
+
+input[type="file"] {
+  display: block;
+  margin-top: math.div($spacing-unit, 2);
+}
+
+input[type="checkbox"] {
+  margin-right: math.div($spacing-unit, 2);
+}
+
+button {
+  background-color: $primary-color;
+  color: #ffffff;
+  border: none;
+  padding: $spacing-unit;
+  border-radius: $border-radius;
+  font-size: $font-size;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+  }
+}
 
 // Estilos específicos del formulario
 .form-title {
@@ -43,26 +99,42 @@ $border-radius: 4px;
 }
 
 .file-input {
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
 
-  & label {
-    margin-bottom: math.div($spacing-unit, 2);
-  }
+& label {
+  margin-bottom: math.div($spacing-unit, 2);
+}
 
-  & button {
-        background-color: #ff4d4f;
-        height: 34px;
-        width: 34px;
-        border-radius: 100%;
-        padding: 0;
-        font-size: 23px;
-  }
-  & button:hover {
-        background-color: #b03134;
-  }
+& button {
+      background-color: #ff4d4f;
+      height: 34px;
+      width: 34px;
+      border-radius: 100%;
+      padding: 0;
+      font-size: 23px;
+}
+& button:hover {
+      background-color: #b03134;
+}
+}
+
+.image-preview img {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+}
+
+.logo-upload {
+  display: flex;
+}
+
+.sublabel {
+  font-style: italic;
+  color: #696969;
+  font-size: small;
 }
 
 .button-group {
@@ -77,6 +149,26 @@ $border-radius: 4px;
       margin-right: 0;
     }
   }
+}
+
+.create-red {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 25px;
+
+  & button {
+    background-color: #ff4d4f;
+    height: 34px;
+    width: 34px;
+    border-radius: 100%;
+    padding: 0;
+    font-size: 23px;
+}
+}
+
+.image-preview {
+  width: 78px;
 }
 
 // Estilos responsivos
