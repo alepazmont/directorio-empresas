@@ -25,7 +25,7 @@ const MapaEmpresaDetalle = ({ empresa }) => {
   }
 
   return (
-    <div style={{ marginTop: "20px" }}>
+    <div>
       <GoogleMap
         mapContainerStyle={containerStyle}
         center={{

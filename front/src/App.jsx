@@ -8,7 +8,6 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import { UserProvider } from "./context/UserContext";
 import Perfil from "./pages/Perfil";
 import ListaEmpresas from "./pages/ListaEmpresas";
-import Registro from "./components/Registro/Registro";
 import EmpresaDetalle from "./pages/EmpresaDetalle";
 import EmpresasComercial from "./pages/EmpresasComercial";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
@@ -53,7 +52,6 @@ const App = () => {
             <AuthRoute component={<Dashboard />} />
           } />
           <Route path="/contacto" element={<Contacto />} />
-          <Route path="/registro" element={<Registro />} />
           <Route path="/empresa/:id" element={<EmpresaDetalle />} />
           <Route path="/perfil" element={
             <AuthRoute component={<Perfil />} />

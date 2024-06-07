@@ -1,36 +1,46 @@
-import { useState } from 'react';
-import axios from 'axios';
-import BreadCrumb from '../components/BreadCrumb/BreadCrumb';
-import { apiUrl } from '../services/ApiUrl/apiUrl';
-import './EmpresaForm.scss';
+import { useState } from "react";
+import axios from "axios";
+import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
+import { apiUrl } from "../services/ApiUrl/apiUrl";
+import Form from "react-bootstrap/Form";
+import Button from "react-bootstrap/esm/Button";
+import Container from "react-bootstrap/esm/Container";
+import Row from "react-bootstrap/esm/Row";
+import Col from "react-bootstrap/esm/Col";
+import Alert from 'react-bootstrap/Alert';
+
 
 const FormularioEmpresa = () => {
   const [formData, setFormData] = useState({
-    nameEmpresa: '',
-    categoria: '',
-    prodServ: 'Productos',
+    nameEmpresa: "",
+    categoria: "",
+    prodServ: "Productos",
     listaProd: [],
     listaServ: [],
     logo: null,
     galeriaFotos: [],
-    direccion: '',
-    codigoPostal: '',
-    paradaMetro: '',
-    locMapa: '',
-    telefono: '',
-    email: '',
-    web: '',
+    direccion: "",
+    codigoPostal: "",
+    paradaMetro: "",
+    locMapa: "",
+    telefono: "",
+    email: "",
+    web: "",
     redes: [],
     condiciones: false,
   });
 
   const [fileInputs, setFileInputs] = useState([{ id: Date.now() }]);
 
+  const [showAlert, setShowAlert] = useState(false);
+  const [alertMessage, setAlertMessage] = useState("");
+  const [alertVariant, setAlertVariant] = useState("success");
+
   const handleChange = (e) => {
     const { name, value, type, checked } = e.target;
     setFormData({
       ...formData,
-      [name]: type === 'checkbox' ? checked : value,
+      [name]: type === "checkbox" ? checked : value,
     });
   };
 
@@ -41,23 +51,21 @@ const FormularioEmpresa = () => {
     setFormData({ ...formData, galeriaFotos: newGaleriaFotos });
   };
 
-  const handleAddFileInput = () => {
-    setFileInputs([...fileInputs, { id: Date.now() }]);
-  };
-
   const handleRemoveFile = (index) => {
     const newGaleriaFotos = formData.galeriaFotos.filter((_, i) => i !== index);
     const newFileInputs = fileInputs.filter((_, i) => i !== index);
 
     setFormData({ ...formData, galeriaFotos: newGaleriaFotos });
-    setFileInputs(newFileInputs.length > 0 ? newFileInputs : [{ id: Date.now() }]);
+    setFileInputs(
+      newFileInputs.length > 0 ? newFileInputs : [{ id: Date.now() }]
+    );
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
     for (const key in formData) {
-      if (key === 'galeriaFotos') {
+      if (key === "galeriaFotos") {
         formData.galeriaFotos.forEach((file, index) => {
           data.append(`galeriaFotos[${index}]`, file);
         });
@@ -69,226 +77,237 @@ const FormularioEmpresa = () => {
     try {
       await axios.post(`${apiUrl}/empresas/register`, data, {
         headers: {
-          'Content-Type': 'multipart/form-data',
+          "Content-Type": "multipart/form-data",
         },
       });
       // Reset form after submission
       setFormData({
-        nameEmpresa: '',
-        categoria: '',
-        prodServ: 'Productos',
+        nameEmpresa: "",
+        categoria: "",
+        prodServ: "Productos",
         listaProd: [],
         listaServ: [],
         logo: null,
         galeriaFotos: [],
-        direccion: '',
-        codigoPostal: '',
-        paradaMetro: '',
-        locMapa: '',
-        telefono: '',
-        email: '',
-        web: '',
+        direccion: "",
+        codigoPostal: "",
+        paradaMetro: "",
+        locMapa: "",
+        telefono: "",
+        email: "",
+        web: "",
         redes: [],
         condiciones: false,
       });
       setFileInputs([{ id: Date.now() }]);
+
+      setAlertMessage("Empresa pendiente de validación.");
+      setAlertVariant("success");
+      setShowAlert(true);
     } catch (error) {
-      console.error('Error al crear la empresa', error);
+      console.error("Error al crear la empresa", error);
+      setAlertMessage("Empresa no creada correctamente.");
+      setAlertVariant("danger");
+      setShowAlert(true);
     }
   };
 
+  const [pages] = useState([
+    {link: '/admin', page: 'Panel de administración' },
+    {link: '', page: 'Registra tu empresa' }
+  ]);
+
   return (
     <>
-      <div className="container">
-        <BreadCrumb page="Registra tu empresa" />
-        <form onSubmit={handleSubmit}>
-          <div>
-            <label htmlFor="nameEmpresa">Nombre de la Empresa:</label>
-            <input
-              type="text"
-              id="nameEmpresa"
-              name="nameEmpresa"
-              value={formData.nameEmpresa}
-              onChange={handleChange}
-              required
-            />
-          </div>
+      <div className="landing-page">
+        <div className="content">
+          <Container>
+            <BreadCrumb pages={pages} />
+			<Row>
+			<Col lg={6} xs={12}>
 
-          <div>
-            <label htmlFor="categoria">Categoría:</label>
-            <input
-              type="text"
-              id="categoria"
-              name="categoria"
-              value={formData.categoria}
-              onChange={handleChange}
-              required
-            />
-          </div>
-
-          <div>
-            <label htmlFor="prodServ">Producto o Servicio:</label>
-            <select
-              id="prodServ"
-              name="prodServ"
-              value={formData.prodServ}
-              onChange={handleChange}
-            >
-              <option value="Productos">Productos</option>
-              <option value="Servicios">Servicios</option>
-              <option value="Ambos">Ambos</option>
-            </select>
-          </div>
-
-          <div>
-            <label htmlFor="logo">Logo:</label>
-            <input
-              type="file"
-              id="logo"
-              name="logo"
-              onChange={(e) =>
-                setFormData({ ...formData, logo: e.target.files[0] })
-              }
-              required
-            />
-          </div>
-
-          <div className="array-input">
-            <label htmlFor="galeriaFotos">Galería de Fotos:</label>
-            {fileInputs.map((fileInput, index) => (
-              <div key={fileInput.id} className="file-input">
-                <input
-                  type="file"
-                  id={`galeriaFoto-${index}`}
-                  name={`galeriaFoto-${index}`}
-                  onChange={(e) => handleFileChange(e, index)}
+        {showAlert && (
+          <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
+            {alertMessage}
+          </Alert>
+        )}
+			
+            <Form onSubmit={handleSubmit} >
+              <Form.Group className="mb-3" controlId="nameEmpresa">
+                <Form.Label>Nombre de la Empresa:</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="nameEmpresa"
+                  value={formData.nameEmpresa}
+                  onChange={handleChange}
+                  required
                 />
-                {formData.galeriaFotos[index] && (
-                  <button
-                    type="button"
-                    className="remove-button"
-                    onClick={() => handleRemoveFile(index)}
-                  >
-                    &times;
-                  </button>
-                )}
-              </div>
-            ))}
-            {formData.galeriaFotos.length > 0 && (
-              <button type="button" onClick={handleAddFileInput}>
-                Añadir otra imagen
-              </button>
-            )}
-          </div>
+              </Form.Group>
 
-          <div>
-            <label htmlFor="direccion">Dirección:</label>
-            <input
-              type="text"
-              id="direccion"
-              name="direccion"
-              value={formData.direccion}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="categoria">
+                <Form.Label>Categoría</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="categoria"
+                  value={formData.categoria}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-          <div>
-            <label htmlFor="codigoPostal">Código Postal:</label>
-            <input
-              type="text"
-              id="codigoPostal"
-              name="codigoPostal"
-              value={formData.codigoPostal}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="prodServ">
+                <Form.Label>Producto o Servicio</Form.Label>
+                <Form.Select
+                  name="prodServ"
+                  value={formData.prodServ}
+                  onChange={handleChange}
+                >
+                  <option value="Productos">Productos</option>
+                  <option value="Servicios">Servicios</option>
+                  <option value="Ambos">Ambos</option>
+                </Form.Select>
+              </Form.Group>
 
-          <div>
-            <label htmlFor="paradaMetro">Parada de Metro:</label>
-            <input
-              type="text"
-              id="paradaMetro"
-              name="paradaMetro"
-              value={formData.paradaMetro}
-              onChange={handleChange}
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="logo">
+                <Form.Label>Logo</Form.Label>
+                <Form.Control
+                  type="file"
+                  name="logo"
+                  onChange={(e) =>
+                    setFormData({ ...formData, logo: e.target.files[0] })
+                  }
+                  required
+                />
+              </Form.Group>
+              <Form.Group className="mb-3 array-input" controlId="prodServ">
+                <Form.Label>Galeria de Fotos</Form.Label>
+                {fileInputs.map((fileInput, index) => (
+                  <div key={fileInput.id} className="d-flex">
+                    <Form.Control
+                      type="file"
+                      name={`galeriaFoto-${index}`}
+                      onChange={(e) => handleFileChange(e, index)}
+						multiple
+                    />
 
-          <div>
-            <label htmlFor="locMapa">Ubicación en el Mapa:</label>
-            <input
-              type="text"
-              id="locMapa"
-              name="locMapa"
-              value={formData.locMapa}
-              onChange={handleChange}
-              required
-            />
-          </div>
+					
+					{formData.galeriaFotos && formData.galeriaFotos.length > 0 && (
+						<Button
+							type="button"
+							variant="danger"
+							className="btn mt-2"
+							onClick={() => handleRemoveFile(index)}
+						>
+							Eliminar
+					</Button>
+					)}
+                  </div>
+                ))}
+              </Form.Group>
 
-          <div>
-            <label htmlFor="telefono">Teléfono:</label>
-            <input
-              type="text"
-              id="telefono"
-              name="telefono"
-              value={formData.telefono}
-              onChange={handleChange}
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="direccion">
+                <Form.Label>Dirección</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="direccion"
+                  value={formData.direccion}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-          <div>
-            <label htmlFor="email">Email:</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              value={formData.email}
-              onChange={handleChange}
-              required
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="codigoPostal">
+                <Form.Label>Código Postal</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="codigoPostal"
+                  value={formData.codigoPostal}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-          <div>
-            <label htmlFor="web">Web:</label>
-            <input
-              type="url"
-              id="web"
-              name="web"
-              value={formData.web}
-              onChange={handleChange}
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="paradaMetro">
+                <Form.Label>Parada de Metro</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="paradaMetro"
+                  value={formData.paradaMetro}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-          <div className="array-input">
-            <label htmlFor="redes">Redes Sociales:</label>
-            <input
-              type="text"
-              id="redes"
-              name="redes"
-              value={formData.redes}
-              onChange={handleChange}
-            />
-          </div>
+              <Form.Group className="mb-3" controlId="locMapa">
+                <Form.Label>Ubicación en el Mapa</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="locMapa"
+                  value={formData.locMapa}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
 
-          <div className="checkbox-group">
-            <input
-              type="checkbox"
-              id="condiciones"
-              name="condiciones"
-              checked={formData.condiciones}
-              onChange={handleChange}
-              required
-            />
-            <label htmlFor="condiciones">
-              Acepto los términos y condiciones
-            </label>
-          </div>
+              <Form.Group className="mb-3" controlId="telefono">
+                <Form.Label>Teléfono</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="telefono"
+                  value={formData.telefono}
+                  onChange={handleChange}
+                />
+              </Form.Group>
 
-          <button type="submit">Crear Empresa</button>
-        </form>
+              <Form.Group className="mb-3" controlId="email">
+                <Form.Label>Email</Form.Label>
+                <Form.Control
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="web">
+                <Form.Label>Web</Form.Label>
+                <Form.Control
+                  type="url"
+                  name="web"
+                  value={formData.web}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3 array-input" controlId="redes">
+                <Form.Label>Redes Sociales</Form.Label>
+                <Form.Control
+                  type="text"
+                  name="redes"
+                  value={formData.redes}
+                  onChange={handleChange}
+                />
+              </Form.Group>
+
+              <Form.Group className="mb-3" controlId="condiciones">
+                <Form.Check
+                  type="checkbox"
+                  name="condiciones"
+                  label="Acepto los términos y condiciones"
+                  checked={formData.condiciones}
+                  onChange={handleChange}
+                  required
+                />
+              </Form.Group>
+
+              <Button variant="primary" type="submit">
+                Crear Empresa
+              </Button>
+            </Form>
+			</Col>
+			</Row>
+          </Container>
+        </div>
       </div>
     </>
   );
