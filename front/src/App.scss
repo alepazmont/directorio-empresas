@@ -9,6 +9,8 @@
 @import './pages/HomePage';
 @import './pages/Contacto';
 @import './pages/Perfil';
+@import './pages/EmpresaForm';
+@import './pages/EmpresaDetalle';
 
 @import 'Estilos_Provisional';
 
@@ -16,6 +18,10 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+}
+
+a{
+  color: #000;
 }
 
 .bg-purple{
@@ -37,29 +43,15 @@
   &:active{
       background-color: #7E57BC !important;
       opacity: .7;
+      color: #fff;
+      filter: none;
   }
 }
 
-.seccion-principal {
-  font-family: Arial, sans-serif;
+.jumbotron{
+  border: 3px solid #7E57BC;
   padding: 20px;
-}
-
-.tit-seccion {
-  color: #333;
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-
-.card-empresas-inicio img {
-  height: 75px;
-}
-
-.card-empresas-inicio-content h4, .card-empresas-inicio-content h3, .card-empresas-inicio-content p {
-  margin: 0;
-}
-
-.card-empresas-inicio-content {
-  text-align: left;
+  border-radius: 10px;
+  background-color: #7E57BC;
+  color: #fff;
 }

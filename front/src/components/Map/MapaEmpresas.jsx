@@ -1,3 +1,4 @@
+/* eslint-disable react-refresh/only-export-components */
 import { useState, useEffect } from "react";
 import {
   GoogleMap,
@@ -6,7 +7,6 @@ import {
   useJsApiLoader,
 } from "@react-google-maps/api";
 import { fetchEmpresas } from "../../services/empresaService";
-import Container from "react-bootstrap/esm/Container";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 
@@ -18,6 +18,43 @@ const containerStyle = {
 const center = {
   lat: 40.484859888817205,
   lng: -3.7230726779006367,
+};
+
+export const mapOptions = {
+  styles: [
+    {
+      featureType: "poi.business",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.attraction",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.government",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.medical",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.park",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.place_of_worship",
+      stylers: [{ visibility: "off" }],
+    },
+    {
+      featureType: "poi.school",
+      stylers: [{ visibility: "on" }],
+    },
+    {
+      featureType: "poi.sports_complex",
+      stylers: [{ visibility: "off" }],
+    }
+  ],
 };
 
 const MapaEmpresas = () => {
@@ -70,6 +107,7 @@ const MapaEmpresas = () => {
             mapContainerStyle={containerStyle}
             center={center}
             zoom={15}
+            options={mapOptions}
           >
             {empresas.map((empresa) => (
               <Marker
@@ -91,8 +129,8 @@ const MapaEmpresas = () => {
                 {selectedEmpresa && selectedEmpresa._id === empresa._id && (
                   <InfoWindow
                     position={{
-                      lat: parseFloat(empresa.lat),
-                      lng: parseFloat(empresa.lng),
+                      lat: parseFloat(empresa.locMapa[0]),
+                      lng: parseFloat(empresa.locMapa[1]),
                     }}
                     onCloseClick={() => setSelectedEmpresa(null)}
                   >

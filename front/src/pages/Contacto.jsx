@@ -13,6 +13,11 @@ const Contacto = () => {
   const [nombre, setNombre] = useState('');
   const [email, setEmail] = useState('');
   const [mensaje, setMensaje] = useState('');
+
+  const [pages] = useState([
+    { link: '', page: 'Contacto' }
+  ]);
+
 /*
   const sendEmail = async () => {
     
@@ -47,7 +52,7 @@ const Contacto = () => {
        <div className='landing-page'>
         <div className="content">
           <Container>
-            <BreadCrumb page="Contacto" />
+            <BreadCrumb pages={pages} />
             <Row>
             <Col lg={6} xs={12}>
               <Form>  {/*    onSubmit={sendEmail}  */}

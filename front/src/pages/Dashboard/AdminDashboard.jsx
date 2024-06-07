@@ -8,14 +8,20 @@ import Graficos from '../../components/AdminDashboard/Graficos';
 import ListadoUsuarios from '../../components/AdminDashboard/ListadoUsuarios';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
+import { useState } from 'react';
 
 const AdminDashboard = () => {
+
+  const [pages] = useState([
+    {link: '', page: 'Panel de administración' }
+  ]);
+
   // Aquí se manejará la lógica de aprobación y cancelación de solicitudes
   return (
     <div className='landing-page'>
       <div className='content'>
         <Container>
-          <BreadCrumb page="Panel de administración" />
+          <BreadCrumb pages={pages} />
         {/* Mostrar lista de solicitudes */}
           <Row>
             <Col lg={3} xs={6} className='mb-5'>
