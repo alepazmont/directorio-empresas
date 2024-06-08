@@ -1,6 +1,10 @@
 import axios from 'axios';
 import { apiUrl } from './ApiUrl/apiUrl';
 
+const getAuthToken = () => {
+  return localStorage.getItem('token'); // O la clave donde estés guardando el token
+};
+
 export const fetchEmpresas = async () => {
   try {
     const route = "/empresas";
@@ -14,8 +18,11 @@ export const fetchEmpresas = async () => {
 
 export const approveEmpresa = async (empresaId) => {
   try {
-    const response = await axios.patch(`${apiUrl}/empresas/${empresaId}`, { aprobada: true });
-    console.log(response.data);
+    const response = await axios.patch(`${apiUrl}/empresas/${empresaId}`, { aprobada: true }, {
+      headers: {
+        Authorization: `Bearer ${getAuthToken()}`,
+      },
+    });
     return response.data;
   } catch (error) {
     console.error('Error approving empresa:', error);

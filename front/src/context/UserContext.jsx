@@ -4,7 +4,6 @@ import { createContext, useState, useEffect, useContext } from "react";
 
 export const UserContext = createContext();
 
-
 export const useUser = () => {
   const context = useContext(UserContext);
   if (!context) {
@@ -31,21 +30,29 @@ export const UserProvider = ({ children }) => {
 
   const saveUser = (userData) => {
     localStorage.setItem("user", JSON.stringify(userData));
+    localStorage.setItem("token", userData.data.token);
     setUser(userData);
   };
 
   const logout = () => {
-
     localStorage.removeItem("user");
+    localStorage.removeItem("token");
     setUser(null);
   };
 
+  // Asegúrate de incluir `setUser` en el valor proporcionado por el contexto
+  const contextValue = {
+    user,
+    setUser: saveUser,
+    saveUser,
+    logout,
+  };
+
   return (
-    <UserContext.Provider value={{ user, setUser: saveUser, saveUser, logout }}>
+    <UserContext.Provider value={contextValue}>
       {!loading && children}
     </UserContext.Provider>
   );
 };
 
 export default UserContext;
-
