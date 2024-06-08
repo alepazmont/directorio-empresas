@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { fetchEmpresas, approveEmpresa } from '../../services/empresaService';
-
 import Card from "react-bootstrap/Card"
 
 const AprobarSolicitudes = () => {
@@ -31,7 +30,7 @@ const AprobarSolicitudes = () => {
   };
 
   return (
-    <Card >
+    <Card>
       <Card.Body>
         <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
         <ul className="requests-list">
@@ -52,7 +51,7 @@ const AprobarSolicitudes = () => {
             </li>
           ))}
         </ul>
-        </Card.Body>
+      </Card.Body>
     </Card>
   );
 };

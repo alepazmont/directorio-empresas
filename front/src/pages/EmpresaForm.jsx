@@ -418,12 +418,14 @@ const FileInput = ({ id, index, url, onChange, onRemove, moveItem }) => {
     <div ref={ref} className={`draggable-item ${isDragging ? "dragging" : ""}`}>
       <Form.Control type="file" id={id} onChange={onChange} />
       {url && (
+        <>
         <div className="image-preview">
           <img src={url} alt="Preview" />
-          <Button variant="danger" onClick={onRemove}>
-            Eliminar
-          </Button>
         </div>
+          <Button variant="danger" onClick={onRemove}>
+          <i className="fa-solid fa-xmark"></i>
+          </Button>
+        </>
       )}
     </div>
   );
@@ -467,7 +469,7 @@ const SocialInput = ({ index, platform, url, onChange, onRemove, moveItem }) => 
         onChange={(e) => onChange(e, index)}
       />
       <Button variant="danger" onClick={onRemove}>
-        Eliminar
+      <i className="fa-solid fa-xmark"></i>
       </Button>
     </div>
   );
