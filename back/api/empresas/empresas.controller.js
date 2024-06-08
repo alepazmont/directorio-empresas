@@ -114,4 +114,24 @@ const deleteOne = async (req, res, next) => {
   }
 };
 
-module.exports = { create, createMany, getOne, getAll, updateOne, deleteOne };
+const approveEmpresa = async (req, res) => {
+  const { empresaId } = req.params;
+  console.log(req.params)
+
+  try {
+    const empresa = await Empresa.findById(empresaId);
+    if (!empresa) {
+      return res.status(404).json({ message: 'Empresa no encontrada' });
+    }
+
+    empresa.aprobada = true;
+    await empresa.save();
+
+    res.json({ message: 'Empresa aprobada exitosamente', empresa });
+  } catch (error) {
+    console.error('Error al aprobar la empresa:', error);
+    res.status(500).json({ message: 'Error al aprobar la empresa', error });
+  }
+};
+
+module.exports = { create, createMany, getOne, getAll, updateOne, deleteOne, approveEmpresa };
