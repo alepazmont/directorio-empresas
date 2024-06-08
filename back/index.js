@@ -1,6 +1,6 @@
-// Inicialización
 const express = require("express");
 const path = require("path");
+const cors = require("cors");  // Importa el middleware cors
 require("dotenv").config();
 const userRouter = require("./api/user/user.router"); // Import user router
 const empresaRouter = require("./api/empresas/empresas.router");
@@ -16,13 +16,16 @@ const PORT = process.env.PORT || 3000;
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-app.use((req, res, next) => {
-  res.header("Access-Control-Allow-Methods", "GET, PUT, POST, DELETE, PATCH");
-  res.header("Access-Control-Allow-Credentials", true);
-  res.header("Access-Control-Allow-Headers", "Content-Type,Authorization");
-  res.header("Access-Control-Allow-Origin", "*");
-  next();
-});
+
+// Configurar CORS
+const corsOptions = {
+  origin: 'http://localhost:5173', // La URL de tu frontend
+  methods: "GET,PUT,POST,DELETE,PATCH",
+  allowedHeaders: "Content-Type,Authorization",
+  credentials: true
+};
+
+app.use(cors(corsOptions));
 
 connectMongo();
 
