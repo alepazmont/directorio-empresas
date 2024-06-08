@@ -16,6 +16,7 @@ const DirectorioGridPopulares = () => {
     const loadEmpresas = async () => {
       try {
         const empresasData = await fetchEmpresas();
+        // Filtrar empresas aprobadas y ordenar por popularidad descendente
         const empresasAprobadas = empresasData.filter(empresa => empresa.aprobada);
         const sortedEmpresas = empresasAprobadas.sort((a, b) => b.popularidad - a.popularidad);
         const empresasPopulares = sortedEmpresas.slice(0, 15);

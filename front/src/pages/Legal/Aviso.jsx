@@ -1,27 +1,33 @@
 /* eslint-disable react/no-unescaped-entities */
 import Container from "react-bootstrap/esm/Container";
 import BreadCrumb from "../../components/BreadCrumb/BreadCrumb";
+import { useState } from "react";
+import DarkTitle from "../../components/Title/DarkTitle";
 
 const Aviso = () => {
+  const [pages] = useState([
+    {link: '', page: 'Aviso legal' }
+  ]);
+
   return (
-    <div className="body">
+    <div className="landing-page">
+      <div className="content">
       <Container>
-        <BreadCrumb page="Aviso legal" />
+        <BreadCrumb pages={pages} />
         <div>
-          <h1>Aviso Legal</h1>
-          <p>
-            El sitio web "EmpresasYa! Directorio de Empresas" es propiedad de
-            [Nombre de la empresa/organización].
+          <DarkTitle title='Aviso Legal'/>
+          <p className="mb-3">
+            El sitio web "EmpresasYa! Directorio de Empresas" es propiedad de EmpresasYa S.L.
           </p>
-          <p>[Nombre de la empresa/organización]</p>
-          <p>Dirección: [Dirección de la empresa]</p>
-          <p>Teléfono: [Teléfono de contacto]</p>
-          <p>Email: [Email de contacto]</p>
-          <p>
+          <p><b>Nombre de la empresa:</b> EmpresasYa S.L.</p>
+          <p><b>Dirección:</b> Calle Inventada 42</p>
+          <p><b>Teléfono:</b> 666 55 44 33</p>
+          <p><b>Email:</b> info@empresasya.es</p>
+          <p className="mt-3">
             Los derechos de propiedad intelectual del sitio web, su código
             fuente, diseño, estructura de navegación, bases de datos y los
-            distintos elementos en él contenidos son propiedad de [Nombre de la
-            empresa/organización], a quien corresponde el ejercicio exclusivo de
+            distintos elementos en él contenidos son propiedad de EmpresasYa S.L.,
+            a quien corresponde el ejercicio exclusivo de
             los derechos de explotación de los mismos en cualquier forma y, en
             especial, los derechos de reproducción, distribución, comunicación
             pública y transformación.
@@ -29,7 +35,7 @@ const Aviso = () => {
           <p>
             El acceso al sitio web es responsabilidad exclusiva de los usuarios.
             El simple acceso al sitio web no implica entablar ningún tipo de
-            relación comercial entre [Nombre de la empresa/organización] y el
+            relación comercial entre EmpresasYa S.L. y el
             usuario.
           </p>
           <p>
@@ -39,6 +45,7 @@ const Aviso = () => {
           </p>
         </div>
       </Container>
+      </div>
     </div>
   );
 };

@@ -2,19 +2,23 @@ import Container from 'react-bootstrap/esm/Container'
 import BreadCrumb from '../components/BreadCrumb/BreadCrumb'
 
 import UserContext from '../context/UserContext'
-import { useContext } from 'react';
+import { useContext, useState } from 'react';
 
 
 const Perfil = () => {
 
+  const [pages] = useState([
+    { link: '', page: 'Perfil' }
+  ]);
+
   const { user } = useContext(UserContext);
-  const usuario = user.data.user
+  const usuario = user.data.user;
 
   return (
     <div className='landing-page'>
         <div className="content">
           <Container>
-            <BreadCrumb page="Perfil" />
+            <BreadCrumb pages={pages} />
             <div className="jumbotron">
               <h1 className="display-6 mb-2">Datos de perfil</h1>
               <p className="lead"><b>Nombre Completo:</b> { usuario.nombre } { usuario.apellido }</p>   

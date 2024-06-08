@@ -4,7 +4,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { fas } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
-
+import Form from 'react-bootstrap/Form';
+import FormLabel from "react-bootstrap/esm/FormLabel";
 
 const Directorio = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -42,8 +43,8 @@ const Directorio = () => {
       setFilteredEmpresas(
         categoriaFiltro
           ? filteredData.filter(
-              (empresa) => empresa.categoria === categoriaFiltro
-            )
+            (empresa) => empresa.categoria === categoriaFiltro
+          )
           : filteredData
       );
     }, 2000);
@@ -86,32 +87,37 @@ const Directorio = () => {
     <div className="directorio-container">
       <div className="barra-busqueda">
         <div className="filter-container">
-          <label htmlFor="search">Buscar:</label>
-          <input
-            id="search"
-            type="text"
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-          />
+          <Form.Group controlId="search" className="search-bar">
+            <FormLabel >Buscar:</FormLabel>
+            <Form.Control
+              name="search"
+              type="text"
+              value={searchTerm}
+              onChange={(e) => setSearchTerm(e.target.value)}
+            />
+          </Form.Group>
         </div>
         <div className="filter-container">
-          <label htmlFor="categoria">Filtrar por categoría:</label>
-          <select
-            id="categoria"
-            value={categoriaFiltro}
-            onChange={(e) => setCategoriaFiltro(e.target.value)}
-          >
-            <option value="">Todas</option>
-            {[...new Set(empresas.map((empresa) => empresa.categoria))].map(
-              (categoria) => (
-                <option key={categoria} value={categoria}>
-                  {categoria}
-                </option>
-              )
-            )}
-          </select>
+          <Form.Group className="filter-category">
+            <Form.Label htmlFor="categoria">Categorías:</Form.Label>
+            <Form.Select
+              id="categoria"
+              value={categoriaFiltro}
+              onChange={(e) => setCategoriaFiltro(e.target.value)}
+            >
+              <option value="">Todas</option>
+              {[...new Set(empresas.map((empresa) => empresa.categoria))].map(
+                (categoria) => (
+                  <option key={categoria} value={categoria}>
+                    {categoria}
+                  </option>
+                )
+              )}
+            </Form.Select>
+          </Form.Group>
         </div>
       </div>
+
       <table className="directorio-tabla">
         <thead>
           <tr>
@@ -126,7 +132,7 @@ const Directorio = () => {
             <th>Teléfono</th>
             <th>Correo</th>
             <th>Web</th>
-            <th>Localización</th>
+            <th>Ver en el mapa</th>
           </tr>
         </thead>
         <tbody>
