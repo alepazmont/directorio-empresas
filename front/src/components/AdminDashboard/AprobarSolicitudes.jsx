@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
-import { fetchEmpresas, approveEmpresa } from '../../services/empresaService';
-import Card from "react-bootstrap/Card"
+import { fetchEmpresas, approveEmpresa, deleteEmpresa } from '../../services/empresaService';
+import Card from "react-bootstrap/Card";
 
 const AprobarSolicitudes = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -9,7 +9,6 @@ const AprobarSolicitudes = () => {
     const loadEmpresas = async () => {
       try {
         const empresasData = await fetchEmpresas();
-        // Filtrar empresas no aprobadas antes de establecer el estado
         const empresasNoAprobadas = empresasData.filter(empresa => !empresa.aprobada);
         setEmpresas(empresasNoAprobadas);
       } catch (error) {
@@ -25,7 +24,16 @@ const AprobarSolicitudes = () => {
       await approveEmpresa(empresaId);
       setEmpresas(prevEmpresas => prevEmpresas.filter(empresa => empresa._id !== empresaId));
     } catch (error) {
-      console.error('Error approving empresa:', error);
+      console.error('Error aprobando empresa:', error);
+    }
+  };
+
+  const handleDelete = async (empresaId) => {
+    try {
+      await deleteEmpresa(empresaId);
+      setEmpresas(prevEmpresas => prevEmpresas.filter(empresa => empresa._id !== empresaId));
+    } catch (error) {
+      console.error('Error eliminando empresa:', error);
     }
   };
 
@@ -33,24 +41,31 @@ const AprobarSolicitudes = () => {
     <Card>
       <Card.Body>
         <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
-        <ul className="requests-list">
-          {empresas.map((empresa) => (
-            <li key={empresa._id} className="request-item">
-              {empresa.nameEmpresa}
-              <div className="request-buttons">
-                <button
-                  className="request-button approve-button"
-                  onClick={() => handleApprove(empresa._id)}
-                >
-                  Aprobar
-                </button>
-                <button className="request-button cancel-button">
-                  Cancelar
-                </button>
-              </div>
-            </li>
-          ))}
-        </ul>
+        {empresas.length === 0 ? (
+          <p>No hay solicitudes pendientes de aprobación</p>
+        ) : (
+          <ul className="requests-list">
+            {empresas.map((empresa) => (
+              <li key={empresa._id} className="request-item">
+                {empresa.nameEmpresa}
+                <div className="request-buttons">
+                  <button
+                    className="request-button approve-button"
+                    onClick={() => handleApprove(empresa._id)}
+                  >
+                    Aprobar
+                  </button>
+                  <button
+                    className="request-button cancel-button"
+                    onClick={() => handleDelete(empresa._id)}
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              </li>
+            ))}
+          </ul>
+        )}
       </Card.Body>
     </Card>
   );

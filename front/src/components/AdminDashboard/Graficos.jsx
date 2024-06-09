@@ -1,61 +1,100 @@
-import { useEffect, useState } from 'react';
-import { fetchEmpresas, approveEmpresa } from '../../services/empresaService';
-import Card from 'react-bootstrap/esm/Card';
+/* eslint-disable no-unused-vars */
+import { useEffect, useState } from "react";
+import { fetchEmpresas } from "../../services/empresaService";
+import Card from "react-bootstrap/esm/Card";
+import { BarChart } from "@tremor/react";
+import { fetchUsers } from "../../services/userService";
 
 const Graficos = () => {
   const [empresas, setEmpresas] = useState([]);
+  const [numEmpresas, setNumEmpresas] = useState(0);
+
+  const [usuarios, setUsuarios] = useState([]);
+  const [numUsuarios, setNumUsuarios] = useState(0);
 
   useEffect(() => {
     const loadEmpresas = async () => {
       try {
         const empresasData = await fetchEmpresas();
-        // Filtrar empresas no aprobadas antes de establecer el estado
-        const empresasNoAprobadas = empresasData.filter(empresa => !empresa.aprobada);
-        setEmpresas(empresasNoAprobadas);
+        setEmpresas(empresasData);
+        setNumEmpresas(empresasData.length);
+        console.log('Empresas cargadas:', empresasData);  // Verificación en la consola
       } catch (error) {
-        console.error('Error obteniendo empresas', error);
+        console.error("Error obteniendo empresas", error);
       }
     };
+
+
 
     loadEmpresas();
   }, []);
 
-  const handleApprove = async (empresaId) => {
-    try {
-      await approveEmpresa(empresaId);
-      setEmpresas(prevEmpresas => prevEmpresas.filter(empresa => empresa._id !== empresaId));
-    } catch (error) {
-      console.error('Error approving empresa:', error);
-    }
-  };
+  useEffect(() => {
+    const loadUsers = async () => {
+      try {
+        const usersData = await fetchUsers();
+        setUsuarios(usersData);
+        setNumUsuarios(usersData.length);        
+        console.log('Usuarios cargados:', usersData);  // Verificación en la consola
+
+      } catch (error) {
+        console.error("Error obteniendo usuarios", error);
+      }
+    };
+
+    loadUsers();
+  }, []);
+
+  const chartdata = [
+    {
+      name: "Amphibians",
+      "Number of threatened species": 2488,
+    },
+    {
+      name: "Birds",
+      "Number of threatened species": 1445,
+    },
+    {
+      name: "Crustaceans",
+      "Number of threatened species": 743,
+    },
+    {
+      name: "Ferns",
+      "Number of threatened species": 281,
+    },
+    {
+      name: "Arachnids",
+      "Number of threatened species": 251,
+    },
+    {
+      name: "Corals",
+      "Number of threatened species": 232,
+    },
+    {
+      name: "Algae",
+      "Number of threatened species": 98,
+    },
+  ];
+
+  const dataFormatter = (number) => Intl.NumberFormat("us").format(number).toString();
 
   return (
-    <Card>
+    <Card className="h-100">
+      <Card.Body>
+        <Card.Subtitle>Gráficos de uso</Card.Subtitle>
         <Card.Body>
-            <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
-        
-            <ul className="requests-list">
-                {empresas.map((empresa) => (
-                    <li key={empresa._id} className="request-item">
-                        {empresa.nameEmpresa}
-                        <div className="request-buttons">
-                            <button
-                            className="request-button approve-button"
-                            onClick={() => handleApprove(empresa._id)}
-                            >
-                            Aprobar
-                            </button>
-                            <button className="request-button cancel-button">
-                            Cancelar
-                            </button>
-                        </div>
-                    </li>
-                ))}
-            </ul>
+          <BarChart
+            data={chartdata}
+            index="name"
+            categories={["Number of threatened species"]}
+            colors={["blue"]}
+            valueFormatter={dataFormatter}
+            yAxisWidth={48}
+            onValueChange={(v) => console.log(v)}
+          />
+        </Card.Body>
       </Card.Body>
     </Card>
-
-    
   );
 };
 

@@ -7,8 +7,8 @@
     "listaServ": ["Servicio Z"],
     "logo": "https://url-del-logo.com/logo24.png",
     "galeriaFotos": [
-      "https://url-de-imagen24.com/foto1.jpg",
-      "https://url-de-imagen24.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Calle Innovación 123",
     "codigoPostal": 28024,
@@ -33,8 +33,8 @@
     "listaServ": ["Consultoría ambiental", "Energías renovables"],
     "logo": "https://url-del-logo.com/logo25.png",
     "galeriaFotos": [
-      "https://url-de-imagen25.com/foto1.jpg",
-      "https://url-de-imagen25.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Avenida Sostenibilidad 456",
     "codigoPostal": 28025,
@@ -59,8 +59,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo26.png",
     "galeriaFotos": [
-      "https://url-de-imagen26.com/foto1.jpg",
-      "https://url-de-imagen26.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Calle Saludable 789",
     "codigoPostal": 28026,
@@ -85,8 +85,8 @@
     "listaServ": ["Formación online", "Consultoría educativa"],
     "logo": "https://url-del-logo.com/logo27.png",
     "galeriaFotos": [
-      "https://url-de-imagen27.com/foto1.jpg",
-      "https://url-de-imagen27.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Avenida Educativa 123",
     "codigoPostal": 28027,
@@ -111,8 +111,8 @@
     "listaServ": ["Actividades al aire libre", "Escuelas de deporte"],
     "logo": "https://url-del-logo.com/logo28.png",
     "galeriaFotos": [
-      "https://url-de-imagen28.com/foto1.jpg",
-      "https://url-de-imagen28.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Calle Aventura 456",
     "codigoPostal": 28028,
@@ -137,8 +137,8 @@
     "listaServ": ["Proyectos de interiorismo", "Asesoría de decoración"],
     "logo": "https://url-del-logo.com/logo29.png",
     "galeriaFotos": [
-      "https://url-de-imagen29.com/foto1.jpg",
-      "https://url-de-imagen29.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Plaza Diseño 789",
     "codigoPostal": 28029,
@@ -163,8 +163,8 @@
     "listaServ": ["Soporte técnico", "Mantenimiento de sistemas"],
     "logo": "https://url-del-logo.com/logo30.png",
     "galeriaFotos": [
-      "https://url-de-imagen30.com/foto1.jpg",
-      "https://url-de-imagen30.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Calle Soporte 123",
     "codigoPostal": 28030,
@@ -189,8 +189,8 @@
     "listaServ": ["Spa y tratamientos", "Cuidado personal"],
     "logo": "https://url-del-logo.com/logo31.png",
     "galeriaFotos": [
-      "https://url-de-imagen31.com/foto1.jpg",
-      "https://url-de-imagen31.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Avenida Bienestar 456",
     "codigoPostal": 28031,
@@ -215,8 +215,8 @@
     "listaServ": ["Gestión inmobiliaria", "Asesoría legal"],
     "logo": "https://url-del-logo.com/logo32.png",
     "galeriaFotos": [
-      "https://url-de-imagen32.com/foto1.jpg",
-      "https://url-de-imagen32.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Calle Inmobiliaria 123",
     "codigoPostal": 28032,
@@ -241,8 +241,8 @@
     "listaServ": ["Planificación de eventos", "Organización de conferencias"],
     "logo": "https://url-del-logo.com/logo33.png",
     "galeriaFotos": [
-      "https://url-de-imagen33.com/foto1.jpg",
-      "https://url-de-imagen33.com/foto2.jpg"
+      "https://picsum.photos/200/300",
+      "https://picsum.photos/200/300"
     ],
     "direccion": "Plaza Eventos 789",
     "codigoPostal": 28033,

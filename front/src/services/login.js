@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const apiUrl = "https://directorio-empresas.vercel.app";
-//const apiUrl = "http://localhost:5173";
+//const apiUrl = "http://localhost:3000";
 
 const route = "/user/login";
 

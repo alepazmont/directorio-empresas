@@ -8,10 +8,9 @@ const UserCard = () => {
   const usuario = user.data.user;
 
   return (
-    <Card>
+    <Card className="h-100">
       <Card.Body>
         <Card.Subtitle>Datos de usuario</Card.Subtitle>
-        <Card.Title>{usuario.nombre} {usuario.apellido}</Card.Title>
         <Card.Body>
           <p ><b>Nombre Completo:</b> {usuario.nombre} {usuario.apellido}</p>
           <p ><b>Teléfono:</b> {usuario.telefono}</p>

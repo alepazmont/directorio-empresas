@@ -12,4 +12,5 @@ export default defineConfig({
       '@fortawesome/react-fontawesome',
     ],
   },
+  base: "/"
 });

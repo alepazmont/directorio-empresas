@@ -4,11 +4,13 @@ import AprobarSolicitudes from '../../components/AdminDashboard/AprobarSolicitud
 import UsageStats from '../../components/AdminDashboard/UsageStats';
 import Container from "react-bootstrap/esm/Container";
 import BreadCrumb from '../../components/BreadCrumb/BreadCrumb';
-import Graficos from '../../components/AdminDashboard/Graficos';
+/* import Graficos from '../../components/AdminDashboard/Graficos'; */
+/* import GraficosPrueba from '../../components/AdminDashboard/GraficosPrueba'; */
 import ListadoUsuarios from '../../components/AdminDashboard/ListadoUsuarios';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 import { useState } from 'react';
+import GraficosPrueba1 from '../../components/AdminDashboard/GraficosPrueba1';
 
 const AdminDashboard = () => {
 
@@ -22,7 +24,6 @@ const AdminDashboard = () => {
       <div className='content'>
         <Container>
           <BreadCrumb pages={pages} />
-        {/* Mostrar lista de solicitudes */}
           <Row>
             <Col lg={3} xs={6} className='mb-5'>
               <UserCard />
@@ -31,7 +32,7 @@ const AdminDashboard = () => {
               <UsageStats />
             </Col>
             <Col lg={6} xs={12} className='mb-5'>
-              <Graficos />
+              <GraficosPrueba1 />
             </Col>
           </Row>
           <Row>
