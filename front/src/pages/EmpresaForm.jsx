@@ -1,107 +1,15 @@
 import { useState, useRef } from "react";
+import axios from "axios";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
 import { HTML5Backend } from "react-dnd-html5-backend";
 import BreadCrumb from "../components/BreadCrumb/BreadCrumb";
+import { apiUrl } from "../services/ApiUrl/apiUrl";
 import Form from "react-bootstrap/Form";
 import Button from "react-bootstrap/Button";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
-import { createEmpresa } from "../services/empresaService";
-
-const ItemType = {
-  FILE: "file",
-  SOCIAL: "social",
-};
-
-const DraggableFileInput = ({ id, index, moveFileInput, handleFileChange, handleRemoveFile, url }) => {
-  const ref = useRef(null);
-  const [, drop] = useDrop({
-    accept: ItemType.FILE,
-    hover(item) {
-      if (item.index !== index) {
-        moveFileInput(item.index, index, "file");
-        item.index = index;
-      }
-    },
-  });
-
-  const [, drag] = useDrag({
-    type: ItemType.FILE,
-    item: { id, index },
-  });
-
-  drag(drop(ref));
-
-  return (
-    <div ref={ref} style={{ marginBottom: "10px" }}>
-      <Form.Control
-        type="file"
-        accept="image/*"
-        onChange={(e) => handleFileChange(e, index)}
-      />
-      {url && (
-        <div style={{ display: "flex", alignItems: "center", marginTop: "5px" }}>
-          <img src={url} alt="Preview" style={{ maxWidth: "100px", marginRight: "10px" }} />
-          <Button variant="danger" onClick={() => handleRemoveFile(index)}>
-            Eliminar
-          </Button>
-        </div>
-      )}
-    </div>
-  );
-};
-
-const DraggableSocialInput = ({ id, index, moveSocialInput, handleSocialChange, handleRemoveSocial, platform, url }) => {
-  const ref = useRef(null);
-  const [, drop] = useDrop({
-    accept: ItemType.SOCIAL,
-    hover(item) {
-      if (item.index !== index) {
-        moveSocialInput(item.index, index, "social");
-        item.index = index;
-      }
-    },
-  });
-
-  const [, drag] = useDrag({
-    type: ItemType.SOCIAL,
-    item: { id, index },
-  });
-
-  drag(drop(ref));
-
-  return (
-    <div ref={ref} style={{ marginBottom: "10px" }}>
-      <Row>
-        <Col>
-          <Form.Control
-            type="text"
-            name="platform"
-            placeholder="Plataforma"
-            value={platform}
-            onChange={(e) => handleSocialChange(e, index)}
-          />
-        </Col>
-        <Col>
-          <Form.Control
-            type="url"
-            name="url"
-            placeholder="URL"
-            value={url}
-            onChange={(e) => handleSocialChange(e, index)}
-          />
-        </Col>
-        <Col xs="auto">
-          <Button variant="danger" onClick={() => handleRemoveSocial(index)}>
-            Eliminar
-          </Button>
-        </Col>
-      </Row>
-    </div>
-  );
-};
 
 const FormularioEmpresa = () => {
   const [formData, setFormData] = useState({
@@ -199,7 +107,7 @@ const FormularioEmpresa = () => {
           data.append(`galeriaFotos[${index}]`, file);
         });
       } else if (key === "redes") {
-        socialInputs.forEach((red, index) => {
+        formData.redes.forEach((red, index) => {
           data.append(`redes[${index}][platform]`, red.platform);
           data.append(`redes[${index}][url]`, red.url);
         });
@@ -209,7 +117,11 @@ const FormularioEmpresa = () => {
     }
 
     try {
-      await createEmpresa(data);
+      await axios.post(`${apiUrl}/empresas/register`, data, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
 
       setFormData({
         nameEmpresa: "",
@@ -243,269 +155,364 @@ const FormularioEmpresa = () => {
     }
   };
 
-  const moveFileInput = (dragIndex, hoverIndex) => {
-    const newFileInputs = [...fileInputs];
-    const [draggedFile] = newFileInputs.splice(dragIndex, 1);
-    newFileInputs.splice(hoverIndex, 0, draggedFile);
-    setFileInputs(newFileInputs);
 
-    const newGaleriaFotos = [...formData.galeriaFotos];
-    const [draggedFoto] = newGaleriaFotos.splice(dragIndex, 1);
-    newGaleriaFotos.splice(hoverIndex, 0, draggedFoto);
-    setFormData((prevState) => ({ ...prevState, galeriaFotos: newGaleriaFotos }));
+  const handleCreate = () => {
+    const DESARROLLAR_FUNCIÓN = 0
+    DESARROLLAR_FUNCIÓN
+  }
+
+  const moveItem = (dragIndex, hoverIndex, type) => {
+    const newItems = type === "file" ? [...fileInputs] : [...socialInputs];
+    const [draggedItem] = newItems.splice(dragIndex, 1);
+    newItems.splice(hoverIndex, 0, draggedItem);
+
+    if (type === "file") {
+      setFileInputs(newItems);
+      const newGaleriaFotos = [...formData.galeriaFotos];
+      const [draggedFile] = newGaleriaFotos.splice(dragIndex, 1);
+      newGaleriaFotos.splice(hoverIndex, 0, draggedFile);
+      setFormData((prevState) => ({ ...prevState, galeriaFotos: newGaleriaFotos }));
+    } else {
+      setSocialInputs(newItems);
+    }
   };
 
-  const moveSocialInput = (dragIndex, hoverIndex) => {
-    const newSocialInputs = [...socialInputs];
-    const [draggedSocial] = newSocialInputs.splice(dragIndex, 1);
-    newSocialInputs.splice(hoverIndex, 0, draggedSocial);
-    setSocialInputs(newSocialInputs);
-    };
-    
-    const [pages] = useState([
+  const [pages] = useState([
     { link: "/admin", page: "Panel de administración" },
     { link: "", page: "Registra tu empresa" },
-    ]);
-    
-    return (
+  ]);
+
+  return (
     <DndProvider backend={HTML5Backend}>
-    <div className="landing-page">
-    <div className="content">
-    <Container>
-    <BreadCrumb pages={pages} />
-    <Row>
-    <Col lg={6} xs={12}>
-    {showAlert && (
-    <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
-    {alertMessage}
-    </Alert>
-    )}
-    
-    <Form onSubmit={handleSubmit}>
-              <Form.Group className="mb-3">
-                <Form.Label>Nombre de la Empresa:</Form.Label>
-                <Form.Control
-                  type="text"
-                  id="nameEmpresa"
-                  name="nameEmpresa"
-                  value={formData.nameEmpresa}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+      <div className="landing-page">
+        <div className="content">
+          <Container>
+            <BreadCrumb pages={pages} />
+            <Row>
+              <Col lg={6} xs={12}>
+                {showAlert && (
+                  <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
+                    {alertMessage}
+                  </Alert>
+                )}
 
-              <Form.Group className="mb-3" controlId="categoria">
-                <Form.Label>Categoría</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="categoria"
-                  value={formData.categoria}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                <Form onSubmit={handleSubmit}>
+                  <Form.Group className="mb-3">
+                    <Form.Label>Nombre de la Empresa:</Form.Label>
+                    <Form.Control
+                      type="text"
+                      id="nameEmpresa"
+                      name="nameEmpresa"
+                      value={formData.nameEmpresa}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="prodServ">
-                <Form.Label>Producto o Servicio</Form.Label>
-                <Form.Select
-                  name="prodServ"
-                  value={formData.prodServ}
-                  onChange={handleChange}
-                  required
-                >
-                  <option value="">Seleccione una opción</option>
-                  <option value="Productos">Productos</option>
-                  <option value="Servicios">Servicios</option>
-                  <option value="Ambos">Ambos</option>
-                </Form.Select>
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="categoria">
+                    <Form.Label>Categoría</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="categoria"
+                      value={formData.categoria}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              {(formData.prodServ === "Productos" || formData.prodServ === "Ambos") && (
-                <Form.Group className="mb-3" controlId="listaProd">
-                  <Form.Label>Lista de Productos (separados por comas)</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="listaProd"
-                    value={formData.listaProd}
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-              )}
+                  <Form.Group className="mb-3" controlId="prodServ">
+                    <Form.Label>Producto o Servicio</Form.Label>
+                    <Form.Select
+                      name="prodServ"
+                      value={formData.prodServ}
+                      onChange={handleChange}
+                      required
+                    >
+                      <option value="">Seleccione una opción</option>
+                      <option value="Productos">Productos</option>
+                      <option value="Servicios">Servicios</option>
+                      <option value="Ambos">Ambos</option>
+                    </Form.Select>
+                  </Form.Group>
 
-              {(formData.prodServ === "Servicios" || formData.prodServ === "Ambos") && (
-                <Form.Group className="mb-3" controlId="listaServ">
-                  <Form.Label>Lista de Servicios (separados por comas)</Form.Label>
-                  <Form.Control
-                    type="text"
-                    name="listaServ"
-                    value={formData.listaServ}
-                    onChange={handleChange}
-                  />
-                </Form.Group>
-              )}
-
-              <Form.Group className="mb-3" controlId="logo">
-                <Form.Label>Logo</Form.Label>
-                <div className="logo-upload">
-                  <Form.Control
-                    type="file"
-                    name="logo"
-                    onChange={(e) => handleFileChange(e, "logo")}
-                    required
-                  />
-                  {formData.logoPreview && (
-                    <div className="image-preview">
-                      <img src={formData.logoPreview} alt="Logo preview" />
-                    </div>
+                  {(formData.prodServ === "Productos" || formData.prodServ === "Ambos") && (
+                    <Form.Group className="mb-3" controlId="listaProd">
+                      <Form.Label>Lista de Productos (separados por comas)</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="listaProd"
+                        value={formData.listaProd}
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
                   )}
-                </div>
-              </Form.Group>
 
-              <Form.Group className="mb-3 array-input">
-                <Form.Label>Galeria de Fotos</Form.Label>
-                <p className="mb-1 sublabel">Ordena la galería de fotos arrastrando los elementos</p>
-                {fileInputs.map((fileInput, index) => (
-                  <DraggableFileInput
-                    key={fileInput.id}
-                    id={fileInput.id}
-                    index={index}
-                    url={fileInput.url}
-                    handleFileChange={handleFileChange}
-                    handleRemoveFile={handleRemoveFile}
-                    moveFileInput={moveFileInput}
-                  />
-                ))}
-                <Button
-                  type="button"
-                  className="array-action-btn"
-                  onClick={() => setFileInputs([...fileInputs, { id: Date.now(), url: "" }])}
-                >
-                  Añadir Foto
-                </Button>
-              </Form.Group>
+                  {(formData.prodServ === "Servicios" || formData.prodServ === "Ambos") && (
+                    <Form.Group className="mb-3" controlId="listaServ">
+                      <Form.Label>Lista de Servicios (separados por comas)</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="listaServ"
+                        value={formData.listaServ}
+                        onChange={handleChange}
+                      />
+                    </Form.Group>
+                  )}
 
-              <Form.Group className="mb-3" controlId="direccion">
-                <Form.Label>Dirección</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="direccion"
-                  value={formData.direccion}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="logo">
+                    <Form.Label>Logo</Form.Label>
+                    <div className="logo-upload">
+                      <Form.Control
+                        type="file"
+                        name="logo"
+                        onChange={(e) => handleFileChange(e, "logo")}
+                        required
+                      />
+                      {formData.logoPreview && (
+                        <div className="image-preview">
+                          <img src={formData.logoPreview} alt="Logo preview" />
+                        </div>
+                      )}
+                    </div>
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="codigoPostal">
-                <Form.Label>Código Postal</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="codigoPostal"
-                  value={formData.codigoPostal}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3 array-input">
+                    <Form.Label>Galeria de Fotos</Form.Label>
+                    <p className="mb-1 sublabel">Ordena la galería de fotos arrastrando los elementos</p>
+                    {fileInputs.map((fileInput, index) => (
+                      <FileInput
+                        key={fileInput.id}
+                        id={fileInput.id}
+                        index={index}
+                        url={fileInput.url}
+                        onChange={(e) => handleFileChange(e, index)}
+                        onRemove={() => handleRemoveFile(index)}
+                        moveItem={moveItem}
+                      />
+                    ))}
+                    <Button
+                      type="button"
+                      className="array-action-btn"
+                      onClick={() =>
+                        setFileInputs([...fileInputs, { id: Date.now(), url: "" }])
+                      }
+                    >
+                      Añadir Foto
+                    </Button>
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="paradaMetro">
-                <Form.Label>Parada de Metro</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="paradaMetro"
-                  value={formData.paradaMetro}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="direccion">
+                    <Form.Label>Dirección</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="direccion"
+                      value={formData.direccion}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="locMapa">
-                <Form.Label>Localización en el Mapa</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="locMapa"
-                  value={formData.locMapa}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="codigoPostal">
+                    <Form.Label>Código Postal</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="codigoPostal"
+                      value={formData.codigoPostal}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="telefono">
-                <Form.Label>Teléfono</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="telefono"
-                  value={formData.telefono}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="paradaMetro">
+                    <Form.Label>Parada de Metro</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="paradaMetro"
+                      value={formData.paradaMetro}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="email">
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="locMapa">
+                    <Form.Label>Localización en el Mapa</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="locMapa"
+                      value={formData.locMapa}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="web">
-                <Form.Label>Sitio web</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="web"
-                  value={formData.web}
-                  onChange={handleChange}
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="telefono">
+                    <Form.Label>Teléfono</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="telefono"
+                      value={formData.telefono}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3 array-input">
-                <Form.Label>Redes Sociales</Form.Label>
-                {socialInputs.map((socialInput, index) => (
-                  <DraggableSocialInput
-                    key={socialInput.id}
-                    id={socialInput.id}
-                    index={index}
-                    platform={socialInput.platform}
-                    url={socialInput.url}
-                    handleSocialChange={handleSocialChange}
-                    handleRemoveSocial={handleRemoveSocial}
-                    moveSocialInput={moveSocialInput}
-                  />
-                ))}
-                <Button
-                  type="button"
-                  className="array-action-btn"
-                  onClick={handleAddSocialInput}
-                >
-                  Añadir Red Social
-                </Button>
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="email">
+                    <Form.Label>Email</Form.Label>
+                    <Form.Control
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Form.Group className="mb-3" controlId="condiciones">
-                <Form.Check
-                  type="checkbox"
-                  name="condiciones"
-                  checked={formData.condiciones}
-                  onChange={handleChange}
-                  label="Acepto los términos y condiciones"
-                  required
-                />
-              </Form.Group>
+                  <Form.Group className="mb-3" controlId="web">
+                    <Form.Label>Sitio web</Form.Label>
+                    <Form.Control
+                      type="text"
+                      name="web"
+                      value={formData.web}
+                      onChange={handleChange}
+                      required
+                    />
+                  </Form.Group>
 
-              <Button type="submit" className="request-button approve-button">
-                Registrar Empresa
-              </Button>
-            </Form>
-          </Col>
-        </Row>
-      </Container>
+                  <Form.Group className="mb-3 array-input">
+                    <Form.Label>Redes Sociales</Form.Label>
+                    {socialInputs.map((socialInput, index) => (
+                      <SocialInput
+                        key={socialInput.id}
+                        id={socialInput.id}
+                        index={index}
+                        platform={socialInput.platform}
+                        url={socialInput.url}
+                        onChange={(e) => handleSocialChange(e, index)}
+                        onRemove={() => handleRemoveSocial(index)}
+                        moveItem={moveItem}
+                      />
+                    ))}
+                    <Button
+                      type="button"
+                      className="array-action-btn"
+                      onClick={handleAddSocialInput}
+                    >
+                      Añadir Red Social
+                    </Button>
+                  </Form.Group>
+
+                  <Form.Group className="mb-3" controlId="condiciones">
+                    <Form.Check
+                      type="checkbox"
+                      name="condiciones"
+                      checked={formData.condiciones}
+                      onChange={handleChange}
+                      label="Acepto los términos y condiciones"
+                      required
+                    />
+                  </Form.Group>
+                  <Button 
+                    type="submit"
+                    className="request-button approve-button"
+                    onClick={() => handleCreate()}
+                    >
+                    Registrar Empresa
+                    </Button>
+                </Form>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+      </div>
+    </DndProvider>
+  );
+};
+
+const FileInput = ({ id, index, url, onChange, onRemove, moveItem }) => {
+  const ref = useRef(null);
+  const [{ isDragging }, drag] = useDrag({
+    type: "file",
+    item: { index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+  const [, drop] = useDrop({
+    accept: "file",
+    hover: (item) => {
+      if (item.index !== index) {
+        moveItem(item.index, index, "file");
+        item.index = index;
+      }
+    },
+  });
+
+  drag(drop(ref));
+
+  return (
+    <div ref={ref} className={`draggable-item ${isDragging ? "dragging" : ""}`}>
+      <Form.Control type="file" id={id} onChange={onChange} />
+      {url && (
+        <>
+          <div className="image-preview">
+            <img src={url} alt="Preview" />
+          </div>
+          <Button variant="danger" onClick={onRemove}>
+            <i className="fa-solid fa-xmark"></i>
+          </Button>
+        </>
+      )}
     </div>
-  </div>
-</DndProvider>    
+  );
+};
 
+const SocialInput = ({ index, platform, url, onChange, onRemove, moveItem }) => {
+  const ref = useRef(null);
+  const [{ isDragging }, drag] = useDrag({
+    type: "social",
+    item: { index },
+    collect: (monitor) => ({
+      isDragging: monitor.isDragging(),
+    }),
+  });
+  const [, drop] = useDrop({
+    accept: "social",
+    hover: (item) => {
+      if (item.index !== index) {
+        moveItem(item.index, index, "social");
+        item.index = index;
+      }
+    },
+  });
+
+  drag(drop(ref));
+
+  return (
+    <div ref={ref} className={`draggable-item ${isDragging ? "dragging" : ""}`}>
+      <Form.Select
+        name="platform"
+        onChange={(e) => onChange(e, index)}
+        value={platform}
+      >
+        <option value="">Elige una red social</option>
+        <option value="Facebook">Facebook</option>
+        <option value="Twitter">Twitter</option>
+        <option value="Instagram">Instagram</option>
+        <option value="LinkedIn">LinkedIn</option>
+        <option value="YouTube">YouTube</option>
+        <option value="Otra">Otra</option>
+      </Form.Select>
+      <Form.Control
+        type="text"
+        name="url"
+        placeholder="URL"
+        value={url}
+        onChange={(e) => onChange(e, index)}
+      />
+      <Button variant="danger" onClick={onRemove}>
+      <i className="fa-solid fa-xmark"></i>
+      </Button>
+    </div>
   );
 };
 
