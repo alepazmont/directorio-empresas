@@ -1,6 +1,7 @@
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
 const cloudinary = require('./cloudinary');
+const path = require('path');
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -11,7 +12,10 @@ const storage = new CloudinaryStorage({
       const extension = file.mimetype.split('/')[1];
       return allowedFormats.includes(extension) ? extension : 'jpg';
     },
-    public_id: (req, file) => `${Date.now()}-${file.originalname}`,
+    public_id: (req, file) => {
+      const fileName = path.parse(file.originalname).name;
+      return `${Date.now()}-${fileName}`;
+    },
   },
 });
 
