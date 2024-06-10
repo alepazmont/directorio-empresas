@@ -1,8 +1,26 @@
 .d-company{
 
+    .d-company-name{
+        img{
+            width: 100%;
+            max-width: 90px;
+            margin-right: 1rem;
+        }
+    }
+
     .d-company-info{
-        ul{
+        .d-company--social-links{
             list-style: none;
+            display: flex;
+
+            li{
+                margin: 1rem;
+
+                .svg-inline--fa{
+                    width: 20px;
+                    height: 20px;
+                }
+            }
         }
     }
 }

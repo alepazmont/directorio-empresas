@@ -1,26 +1,31 @@
 import { useEffect, useState } from "react";
+
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import HomePage from "./pages/HomePage";
-import Contacto from "./pages/Contacto";
-import AdminDashboard from "./pages/Dashboard/AdminDashboard";
-import UserDashboard from "./pages/Dashboard/UserDashboard";
-import Dashboard from "./components/Dashboard/Dashboard";
+import axios from "axios";
+
 import { UserProvider } from "./context/UserContext";
-import Perfil from "./pages/Perfil";
-import ListaEmpresas from "./pages/ListaEmpresas";
-import EmpresaDetalle from "./pages/EmpresaDetalle";
-import EmpresasComercial from "./pages/EmpresasComercial";
 import AuthRoute from "./components/AuthRoute/AuthRoute";
+
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
-import './App.scss';
+
+
+import HomePage from "./pages/HomePage";
+import Contacto from "./pages/Contacto";
+import Dashboard from "./pages/Dashboard/Dashboard";
+import AdminDashboard from "./pages/Dashboard/AdminDashboard";
+import UserDashboard from "./pages/Dashboard/UserDashboard";
 import Login from "./components/Header/Login";
-import axios from "axios";
 import Aviso from "./pages/Legal/Aviso";
 import Cookies from "./pages/Legal/Cookies";
 import Masinfo from "./pages/Legal/Masinfo"
 import EmpresaForm from "./pages/EmpresaForm";
+import Perfil from "./pages/Perfil";
+import ListaEmpresas from "./pages/ListaEmpresas";
+import EmpresaDetalle from "./pages/EmpresaDetalle";
+import EmpresasComercial from "./pages/EmpresasComercial";
 
+import './App.scss';
 
 const App = () => {
   const [listUsers, setListUsers] = useState([])
@@ -31,6 +36,7 @@ const App = () => {
         setListUsers(response.data)
       })
   }, [])
+
 
   return (
     <UserProvider>
@@ -44,10 +50,19 @@ const App = () => {
             <AuthRoute component={<EmpresaForm />} />
           } />
           <Route path="/login" element={<Login listUsers={listUsers} />} />
+          <Route path="/dashboard" element={
+            <AuthRoute component={<Dashboard />} />
+          } />
+         
           <Route path="/admin" element={
             <AuthRoute component={<AdminDashboard />} />
           } />
-          <Route path="/user" element={<UserDashboard />} />
+
+          <Route path="/user" element={
+            <AuthRoute component={<UserDashboard />} />
+          } />
+
+
           <Route path="/panel" element={
             <AuthRoute component={<Dashboard />} />
           } />

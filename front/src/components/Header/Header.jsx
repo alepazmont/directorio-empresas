@@ -30,7 +30,7 @@ const Header = () => {
                 {
                   user ? (
                     <ul>
-                      <li className='btn-nav-item'><Link className='btn btn-option-user btn-option-user-first' to="/admin">Panel de adminitración</Link></li>
+                      <li className='btn-nav-item'><Link className='btn btn-option-user btn-option-user-first' to="/dashboard">Panel de adminitración</Link></li>
                       <li className='btn-nav-item'><Link className='btn btn-option-user' to="/perfil">Perfil</Link></li>
                       <li className='btn-nav-item'><Link className='btn btn-option-user' to="/" onClick={logout}>Logout</Link></li>
                     </ul> 

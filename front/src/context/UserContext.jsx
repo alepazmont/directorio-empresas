@@ -40,7 +40,6 @@ export const UserProvider = ({ children }) => {
     setUser(null);
   };
 
-  // Asegúrate de incluir `setUser` en el valor proporcionado por el contexto
   const contextValue = {
     user,
     setUser: saveUser,

@@ -1,5 +1,4 @@
 import UserCard from '../../components/UserDashboard/UserCard';
-import './AdminDashboard.scss';
 import AprobarSolicitudes from '../../components/AdminDashboard/AprobarSolicitudes';
 import UsageStats from '../../components/AdminDashboard/UsageStats';
 import Container from "react-bootstrap/esm/Container";
@@ -22,7 +21,7 @@ const AdminDashboard = () => {
   return (
     <div className='landing-page'>
       <div className='content'>
-        <Container>
+        <Container className='admin-dashboard'>
           <BreadCrumb pages={pages} />
           <Row>
             <Col lg={3} xs={6} className='mb-5'>
