@@ -1,6 +1,6 @@
 const multer = require('multer');
 const { CloudinaryStorage } = require('multer-storage-cloudinary');
-const cloudinary = require('./cloudinary');
+const cloudinary = require('../config/cloudinary');
 
 const storage = new CloudinaryStorage({
   cloudinary: cloudinary,
@@ -32,5 +32,10 @@ exports.uploadMultiple = upload.fields([
 ]);
 
 exports.uploadFile = (req, res) => {
-  res.send({ data: 'Archivos subidos exitosamente', files: req.files });
+  try {
+    res.send({ data: 'Archivos subidos exitosamente', files: req.files });
+  } catch (error) {
+    console.error('Error subiendo archivos a Cloudinary:', error);
+    res.status(500).send({ error: 'Error subiendo archivos a Cloudinary' });
+  }
 };
