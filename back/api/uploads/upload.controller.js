@@ -60,6 +60,10 @@ exports.uploadFile = async (req, res, next) => {
     });
   } catch (error) {
     console.error('Error subiendo archivos a Cloudinary:', error);
-    next(error); // Pasar el error al middleware de manejo de errores
+    res.status(500).json({
+      status: 500,
+      message: 'Error subiendo archivos a Cloudinary',
+      error: error.message
+    });
   }
 };
