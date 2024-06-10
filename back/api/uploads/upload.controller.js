@@ -1,25 +1,36 @@
 const multer = require('multer');
+const { CloudinaryStorage } = require('multer-storage-cloudinary');
+const cloudinary = require('./cloudinary');
 
-// Configuración del almacenamiento para Multer
-const storage = multer.diskStorage({
-    destination: function (req, file, cb) {
-        cb(null, 'uploads'); // Ruta donde se guardarán los archivos subidos
+const storage = new CloudinaryStorage({
+  cloudinary: cloudinary,
+  params: {
+    folder: 'uploads',
+    format: async (req, file) => {
+      const allowedFormats = ['jpg', 'jpeg', 'png', 'webp'];
+      const extension = file.mimetype.split('/')[1];
+      return allowedFormats.includes(extension) ? extension : 'jpg';
     },
-    filename: function (req, file, cb) {
-        cb(null, `${Date.now()}-${file.originalname}`); // Nombre de archivo único
-    }
+    public_id: (req, file) => `${Date.now()}-${file.originalname}`,
+  },
 });
 
-// Configuración del middleware de Multer
-const upload = multer({ storage: storage });
+const fileFilter = (req, file, cb) => {
+  const allowedTypes = ['image/jpeg', 'image/png', 'image/webp'];
+  if (allowedTypes.includes(file.mimetype)) {
+    cb(null, true);
+  } else {
+    cb(new Error('Formato de archivo no permitido. Solo se permiten jpg, jpeg, png y webp.'));
+  }
+};
 
-// Middleware para subir múltiples archivos
+const upload = multer({ storage: storage, fileFilter: fileFilter });
+
 exports.uploadMultiple = upload.fields([
-    { name: 'logo', maxCount: 1 }, // Campo para el logo (1 archivo máximo)
-    { name: 'galeriaFotos', maxCount: 10 } // Campo para la galería de fotos (hasta 10 archivos)
+  { name: 'logo', maxCount: 1 },
+  { name: 'galeriaFotos', maxCount: 10 }
 ]);
 
-// Controlador para enviar la respuesta después de subir los archivos
 exports.uploadFile = (req, res) => {
-    res.send({ data: 'Archivos subidos exitosamente', files: req.files }); // Respuesta con los archivos subidos
+  res.send({ data: 'Archivos subidos exitosamente', files: req.files });
 };

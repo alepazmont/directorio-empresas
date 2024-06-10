@@ -14,7 +14,7 @@ const create = async (req, res, next) => {
     const empresa = await Empresas.create(empresaData);
     res.json({
       status: 201,
-      msg: "creado",
+      msg: 'creado',
       data: empresa,
     });
   } catch (error) {
