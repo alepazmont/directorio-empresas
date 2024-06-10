@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useRef } from "react";
 import axios from "axios";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
@@ -10,6 +11,7 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
+
 
 const FormularioEmpresa = () => {
   const [formData, setFormData] = useState({
@@ -182,6 +184,8 @@ const FormularioEmpresa = () => {
     { link: "", page: "Registra tu empresa" },
   ]);
 
+
+  
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="landing-page">
