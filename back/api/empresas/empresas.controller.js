@@ -1,4 +1,5 @@
 const Empresas = require("./empresas.model");
+const axios = require('axios');
 
 const create = async (req, res, next) => {
   try {
@@ -33,8 +34,21 @@ const createMany = async (req, res, next) => {
     const empresasCreated = [];
 
     for (let empresaData of empresasData) {
-      const logo = empresaData.logo ? empresaData.logo.path : null;
-      const galeriaFotos = empresaData.galeriaFotos ? empresaData.galeriaFotos.map(file => file.path) : [];
+      let logo;
+      let galeriaFotos = [];
+
+      if (empresaData.logoUrl) {
+        const response = await axios.get(empresaData.logoUrl, { responseType: 'arraybuffer' });
+        logo = Buffer.from(response.data, 'binary').toString('base64');
+      }
+
+      if (empresaData.galeriaFotosUrls && Array.isArray(empresaData.galeriaFotosUrls)) {
+        for (const url of empresaData.galeriaFotosUrls) {
+          const response = await axios.get(url, { responseType: 'arraybuffer' });
+          const base64Image = Buffer.from(response.data, 'binary').toString('base64');
+          galeriaFotos.push(base64Image);
+        }
+      }
 
       const newEmpresaData = {
         ...empresaData,

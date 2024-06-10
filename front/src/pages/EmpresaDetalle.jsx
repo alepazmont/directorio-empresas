@@ -9,6 +9,10 @@ import MapaEmpresaDetalle from "../components/Map/MapaEmpresaDetalle";
 import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Carousel from 'react-bootstrap/Carousel'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faTwitter, faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
+
 
 const EmpresaDetalle = () => {
   const { nombre, id } = useParams();
@@ -22,9 +26,10 @@ const EmpresaDetalle = () => {
   useEffect(() => {
     const fetchEmpresa = async () => {
       try {
-        const route = `/empresas/${id}`; // Suponiendo que la API tiene un endpoint para obtener una empresa por ID
+        const route = `/empresas/${id}`;
         const response = await axios.get(apiUrl + route);
-        setEmpresa(response.data.data); // Asumiendo que la respuesta de la API contiene todos los datos de la empresa
+        setEmpresa(response.data.data);
+        console.log(response.data.data);
       } catch (error) {
         console.error("Error obteniendo empresa", error);
       }
@@ -36,7 +41,7 @@ const EmpresaDetalle = () => {
   if (!empresa) {
     return <div>Cargando...</div>;
   }
-  console.log(empresa.redes); // ELIMINR DESPUES DE ARREGLAR
+
   const chunkArray = (array, size) => {
     const result = [];
     for (let i = 0; i < array.length; i += size) {
@@ -69,7 +74,6 @@ const EmpresaDetalle = () => {
               </div>
             </Col>
           </Row>
-
           <Row className="mt-5">
             <Col lg={6} xs={12} className="d-company-info">
               {empresa.listaProd && empresa.listaProd.length > 0 && (
@@ -116,20 +120,35 @@ const EmpresaDetalle = () => {
               <p>
                 <strong>Redes Sociales:</strong>
               </p>
-              
               {empresa.redes && empresa.redes.length > 0 && (
-                
                 <div>
-                  <ul>
+                  <ul className="d-company--social-links">
                     {empresa.redes.map((red, index) => (
-                      <li key={index}>
+                      <li key={red._id} className="m-3">
                         <a
-                          key={index}
-                          href={red}
+                          href={red.url} // Corregido para usar red.url en lugar de url
                           target="_blank"
                           rel="noopener noreferrer"
                         >
-                          {red}
+                          {red.redSocial === 'Twitter' && (
+                            <FontAwesomeIcon icon={faTwitter} />
+                          )}
+                          {red.redSocial === 'Facebook' && (
+                            <FontAwesomeIcon icon={faFacebook} />
+                          )}
+                          {red.redSocial === 'Instagram' && (
+                            <FontAwesomeIcon icon={faInstagram} />
+                          )}
+                          {red.redSocial === 'LinkedIn' && (
+                            <FontAwesomeIcon icon={faLinkedin} />
+                          )}
+                          {red.redSocial === 'YouTube' && (
+                            <FontAwesomeIcon icon={faYoutube} />
+                          )}
+                          {/* Mostrar un icono genérico en caso de no coincidir con ninguna red social conocida */}
+                          {['Twitter', 'Facebook', 'Instagram', 'LinkedIn', 'YouTube'].indexOf(red.redSocial) === -1 && (
+                            <FontAwesomeIcon icon={faLink} />
+                          )}
                         </a>
                       </li>
                     ))}
@@ -139,6 +158,19 @@ const EmpresaDetalle = () => {
             </Col>
             <Col lg={6} xs={12} className="d-company-map">
               <MapaEmpresaDetalle empresa={empresa} />
+            </Col>
+          </Row>
+          <Row className="mt-5">
+            <Col lg={12} xs={12} className="d-company-photos">
+              <Carousel interval='3000' indicators={false}>
+                {empresa.galeriaFotos &&
+                  empresa.galeriaFotos.length > 0 &&
+                  fotoChunks.map((foto, index) => (
+                    <Carousel.Item key={index}>
+                      <img key={index} src={foto} alt={`Foto ${index + 1}`} />
+                    </Carousel.Item>
+                  ))}
+              </Carousel>
             </Col>
           </Row>
         </Container>

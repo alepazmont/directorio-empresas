@@ -21,9 +21,11 @@
     "email": "info@techsolutionsinc.com",
     "web": "https://www.techsolutionsinc.com",
     "redes": [
-      "https://twitter.com/techsolutions",
-      "https://facebook.com/techsolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/techsolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/techsolutions" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
     "popularidad": 53
@@ -47,9 +49,11 @@
     "email": "info@artdesignstudio.com",
     "web": "https://www.artdesignstudio.com",
     "redes": [
-      "https://twitter.com/artdesignstudio",
-      "https://facebook.com/artdesignstudio"
+      { "redSocial": "Twitter", "url": "https://twitter.com/artdesignstudio" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/artdesignstudio" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
     "popularidad": 82
@@ -73,9 +77,11 @@
     "email": "info@financialadvisors.com",
     "web": "https://www.financialadvisors.com",
     "redes": [
-      "https://twitter.com/financialadvisors",
-      "https://facebook.com/financialadvisors"
+      { "redSocial": "Twitter", "url": "https://twitter.com/financialadvisors" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/financialadvisors" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
     "popularidad": 37
@@ -99,9 +105,11 @@
     "email": "info@fashionstyleshop.com",
     "web": "https://www.fashionstyleshop.com",
     "redes": [
-      "https://twitter.com/fashionstyleshop",
-      "https://facebook.com/fashionstyleshop"
+      { "redSocial": "Twitter", "url": "https://twitter.com/fashionstyleshop" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/fashionstyleshop" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": false,
     "aprobada": true,
     "popularidad": 61
@@ -125,9 +133,11 @@
     "email": "info@traveladventures.com",
     "web": "https://www.traveladventures.com",
     "redes": [
-      "https://twitter.com/traveladventures",
-      "https://facebook.com/traveladventures"
+      { "redSocial": "Twitter", "url": "https://twitter.com/traveladventures" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/traveladventures" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": false,
     "popularidad": 28
@@ -151,9 +161,11 @@
     "email": "info@healthfitness.com",
     "web": "https://www.healthfitness.com",
     "redes": [
-      "https://twitter.com/healthfitness",
-      "https://facebook.com/healthfitness"
+      { "redSocial": "Twitter", "url": "https://twitter.com/healthfitness" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/healthfitness" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
     "popularidad": 74
@@ -177,9 +189,11 @@
     "email": "info@constructionsolutions.com",
     "web": "https://www.constructionsolutions.com",
     "redes": [
-      "https://twitter.com/constructionsolutions",
-      "https://facebook.com/constructionsolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/constructionsolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/constructionsolutions" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
     "popularidad": 45
@@ -198,68 +212,74 @@
     "direccion": "Plaza Legal 789",
     "codigoPostal": 28022,
     "paradaMetro": "Estación Legal",
-    "locMapa": [40.482471, -3.719299],
-    "telefono": ["789012345", "901234567"],
+    "locMapa": [40.481895, -3.716245],
+    "telefono": ["567890123", "345678901"],
     "email": "info@legaladvisors.com",
     "web": "https://www.legaladvisors.com",
     "redes": [
-      "https://twitter.com/legaladvisors",
-      "https://facebook.com/legaladvisors"
+      { "redSocial": "Twitter", "url": "https://twitter.com/legaladvisors" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/legaladvisors" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
-    "popularidad": 91
+    "popularidad": 66
   },
   {
-    "nameEmpresa": "Pet Paradise",
-    "categoria": "Mascotas",
-    "prodServ": "Productos",
-    "listaProd": ["Alimentos para mascotas", "Juguetes"],
-    "listaServ": [],
+    "nameEmpresa": "Education Hub",
+    "categoria": "Educación",
+    "prodServ": "Servicios",
+    "listaProd": [],
+    "listaServ": ["Cursos en línea", "Tutorías"],
     "logo": "https://alepaz.online/proyectoFinal/logo/logo09.png",
     "galeriaFotos": [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "direccion": "Calle Mascotas 123",
+    "direccion": "Calle Educación 123",
     "codigoPostal": 28023,
-    "paradaMetro": "Estación Mascotas",
-    "locMapa": [40.479451, -3.705926],
-    "telefono": ["890123456", "012345678"],
-    "email": "info@petparadise.com",
-    "web": "https://www.petparadise.com",
+    "paradaMetro": "Estación Educación",
+    "locMapa": [40.480291, -3.713896],
+    "telefono": ["678901234", "123456789"],
+    "email": "info@educationhub.com",
+    "web": "https://www.educationhub.com",
     "redes": [
-      "https://twitter.com/petparadise",
-      "https://facebook.com/petparadise"
+      { "redSocial": "Twitter", "url": "https://twitter.com/educationhub" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/educationhub" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
-    "popularidad": 19
+    "popularidad": 79
   },
   {
-    "nameEmpresa": "Organic Food Market",
-    "categoria": "Alimentación",
-    "prodServ": "Productos",
-    "listaProd": ["Frutas", "Verduras", "Productos Orgánicos"],
-    "listaServ": [],
+    "nameEmpresa": "Green Energy Solutions",
+    "categoria": "Energía",
+    "prodServ": "Ambos",
+    "listaProd": ["Paneles solares", "Turbinas eólicas"],
+    "listaServ": ["Instalación de energías renovables", "Consultoría energética"],
     "logo": "https://alepaz.online/proyectoFinal/logo/logo10.png",
     "galeriaFotos": [
       "https://picsum.photos/200/300",
       "https://picsum.photos/200/300"
     ],
-    "direccion": "Calle Orgánica 456",
+    "direccion": "Avenida Energía 456",
     "codigoPostal": 28024,
-    "paradaMetro": "Estación Orgánica",
-    "locMapa": [40.482854, -3.712558],
-    "telefono": ["234567890", "456789012"],
-    "email": "info@organicfoodmarket.com",
-    "web": "https://www.organicfoodmarket.com",
+    "paradaMetro": "Estación Energía",
+    "locMapa": [40.484012, -3.719123],
+    "telefono": ["345678901", "567890123"],
+    "email": "info@greenenergysolutions.com",
+    "web": "https://www.greenenergysolutions.com",
     "redes": [
-      "https://twitter.com/organicfoodmarket",
-      "https://facebook.com/organicfoodmarket"
+      { "redSocial": "Twitter", "url": "https://twitter.com/greenenergysolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/greenenergysolutions" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "aprobada": true,
-    "popularidad": 63
+    "popularidad": 55
   }
 ]

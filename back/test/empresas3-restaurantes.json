@@ -18,9 +18,11 @@
     "email": "info@gourmetdelights.com",
     "web": "https://www.gourmetdelights.com",
     "redes": [
-      "https://twitter.com/gourmetdelights",
-      "https://facebook.com/gourmetdelights"
+      { "redSocial": "Twitter", "url": "https://twitter.com/gourmetdelights" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/gourmetdelights" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 42,
     "aprobada": true
@@ -44,9 +46,11 @@
     "email": "info@sushihouse.com",
     "web": "https://www.sushihouse.com",
     "redes": [
-      "https://twitter.com/sushihouse",
-      "https://facebook.com/sushihouse"
+      { "redSocial": "Twitter", "url": "https://twitter.com/sushihouse" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/sushihouse" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 88,
     "aprobada": true
@@ -70,9 +74,11 @@
     "email": "info@laparrillaargentina.com",
     "web": "https://www.laparrillaargentina.com",
     "redes": [
-      "https://twitter.com/laparrillaargentina",
-      "https://facebook.com/laparrillaargentina"
+      { "redSocial": "Twitter", "url": "https://twitter.com/laparrillaargentina" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/laparrillaargentina" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 75,
     "aprobada": true
@@ -96,9 +102,11 @@
     "email": "info@seafoodlovers.com",
     "web": "https://www.seafoodlovers.com",
     "redes": [
-      "https://twitter.com/seafoodlovers",
-      "https://facebook.com/seafoodlovers"
+      { "redSocial": "Twitter", "url": "https://twitter.com/seafoodlovers" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/seafoodlovers" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 60,
     "aprobada": true
@@ -122,9 +130,11 @@
     "email": "info@vegetariandelights.com",
     "web": "https://www.vegetariandelights.com",
     "redes": [
-      "https://twitter.com/vegetariandelights",
-      "https://facebook.com/vegetariandelights"
+      { "redSocial": "Twitter", "url": "https://twitter.com/vegetariandelights" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/vegetariandelights" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 47,
     "aprobada": true
@@ -148,9 +158,11 @@
     "email": "info@pastaitaliana.com",
     "web": "https://www.pastaitaliana.com",
     "redes": [
-      "https://twitter.com/pastaitaliana",
-      "https://facebook.com/pastaitaliana"
+      { "redSocial": "Twitter", "url": "https://twitter.com/pastaitaliana" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/pastaitaliana" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 92,
     "aprobada": true
@@ -163,8 +175,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo40.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=1",
+      "https://picsum.photos/200/300?random=2"
     ],
     "direccion": "Calle Hamburguesas 123",
     "codigoPostal": 28040,
@@ -174,9 +186,11 @@
     "email": "info@burgerjoint.com",
     "web": "https://www.burgerjoint.com",
     "redes": [
-      "https://twitter.com/burgerjoint",
-      "https://facebook.com/burgerjoint"
+      { "redSocial": "Twitter", "url": "https://twitter.com/burgerjoint" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/burgerjoint" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 58,
     "aprobada": true
@@ -189,8 +203,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo42.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=3",
+      "https://picsum.photos/200/300?random=4"
     ],
     "direccion": "Calle Fiesta 789",
     "codigoPostal": 28042,
@@ -200,12 +214,14 @@
     "email": "info@mexicanfiesta.com",
     "web": "https://www.mexicanfiesta.com",
     "redes": [
-      "https://twitter.com/mexicanfiesta",
-      "https://facebook.com/mexicanfiesta"
+      { "redSocial": "Twitter", "url": "https://twitter.com/mexicanfiesta" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/mexicanfiesta" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 64,
-    "approved": true
+    "aprobada": true
   },
   {
     "nameEmpresa": "Pizzeria Italiana",
@@ -215,8 +231,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo51.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=5",
+      "https://picsum.photos/200/300?random=6"
     ],
     "direccion": "Calle Pizzeria 123",
     "codigoPostal": 28051,
@@ -226,12 +242,14 @@
     "email": "info@pizzeriaitaliana.com",
     "web": "https://www.pizzeriaitaliana.com",
     "redes": [
-      "https://twitter.com/pizzeriaitaliana",
-      "https://facebook.com/pizzeriaitaliana"
+      { "redSocial": "Twitter", "url": "https://twitter.com/pizzeriaitaliana" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/pizzeriaitaliana" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
-    "popularity": 62,
-    "approved": true
+    "popularidad": 62,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Thai Cuisine",
@@ -241,8 +259,8 @@
     "listaServ": ["Catering", "Reservas de mesa"],
     "logo": "https://url-del-logo.com/logo52.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=7",
+      "https://picsum.photos/200/300?random=8"
     ],
     "direccion": "Avenida Thai 456",
     "codigoPostal": 28052,
@@ -252,12 +270,14 @@
     "email": "info@thaicuisine.com",
     "web": "https://www.thaicuisine.com",
     "redes": [
-      "https://twitter.com/thaicuisine",
-      "https://facebook.com/thaicuisine"
+      { "redSocial": "Twitter", "url": "https://twitter.com/thaicuisine" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/thaicuisine" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
-    "popularity": 85,
-    "approved": true
+    "popularidad": 85,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Café Parisien",
@@ -267,8 +287,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo53.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=9",
+      "https://picsum.photos/200/300?random=10"
     ],
     "direccion": "Plaza Café 456",
     "codigoPostal": 28053,
@@ -278,12 +298,14 @@
     "email": "info@cafeparisien.com",
     "web": "https://www.cafeparisien.com",
     "redes": [
-      "https://twitter.com/cafeparisien",
-      "https://facebook.com/cafeparisien"
+      { "redSocial": "Twitter", "url": "https://twitter.com/cafeparisien" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/cafeparisien" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
-    "popularity": 74,
-    "approved": true
+    "popularidad": 74,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Casa del Taco",
@@ -293,8 +315,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo54.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=11",
+      "https://picsum.photos/200/300?random=12"
     ],
     "direccion": "Calle Taco 789",
     "codigoPostal": 28054,
@@ -304,12 +326,14 @@
     "email": "info@casadeltaco.com",
     "web": "https://www.casadeltaco.com",
     "redes": [
-      "https://twitter.com/casadeltaco",
-      "https://facebook.com/casadeltaco"
+      { "redSocial": "Twitter", "url": "https://twitter.com/casadeltaco" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/casadeltaco" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
-    "popularity": 91,
-    "approved": true
+    "popularidad": 91,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Deli Sandwiches",
@@ -319,8 +343,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo55.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=13",
+      "https://picsum.photos/200/300?random=14"
     ],
     "direccion": "Avenida Deli 123",
     "codigoPostal": 28055,
@@ -330,12 +354,14 @@
     "email": "info@delisandwiches.com",
     "web": "https://www.delisandwiches.com",
     "redes": [
-      "https://twitter.com/delisandwiches",
-      "https://facebook.com/delisandwiches"
+      { "redSocial": "Twitter", "url": "https://twitter.com/delisandwiches" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/delisandwiches" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
-    "popularity": 81,
-    "approved": true
+    "popularidad": 81,
+    "aprobada": true
   },
   {
     "nameEmpresa": "Steakhouse Deluxe",
@@ -345,8 +371,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo42.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=15",
+      "https://picsum.photos/200/300?random=16"
     ],
     "direccion": "Calle Steakhouse 123",
     "codigoPostal": 28042,
@@ -356,9 +382,11 @@
     "email": "info@steakhousedeluxe.com",
     "web": "https://www.steakhousedeluxe.com",
     "redes": [
-      "https://twitter.com/steakhousedeluxe",
-      "https://facebook.com/steakhousedeluxe"
+      { "redSocial": "Twitter", "url": "https://twitter.com/steakhousedeluxe" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/steakhousedeluxe" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 63,
     "aprobada": true
@@ -371,8 +399,8 @@
     "listaServ": ["Catering", "Reservas de mesa"],
     "logo": "https://url-del-logo.com/logo43.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=17",
+      "https://picsum.photos/200/300?random=18"
     ],
     "direccion": "Avenida Café 789",
     "codigoPostal": 28043,
@@ -382,9 +410,11 @@
     "email": "info@coffeeandteahouse.com",
     "web": "https://www.coffeeandteahouse.com",
     "redes": [
-      "https://twitter.com/coffeeandtea",
-      "https://facebook.com/coffeeandtea"
+      { "redSocial": "Twitter", "url": "https://twitter.com/coffeeandtea" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/coffeeandtea" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 79,
     "aprobada": true
@@ -397,8 +427,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo44.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=19",
+      "https://picsum.photos/200/300?random=20"
     ],
     "direccion": "Calle Smoothie 123",
     "codigoPostal": 28044,
@@ -408,9 +438,11 @@
     "email": "info@smoothieparadise.com",
     "web": "https://www.smoothieparadise.com",
     "redes": [
-      "https://twitter.com/smoothieparadise",
-      "https://facebook.com/smoothieparadise"
+      { "redSocial": "Twitter", "url": "https://twitter.com/smoothieparadise" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/smoothieparadise" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 54,
     "aprobada": true
@@ -423,8 +455,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo45.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=21",
+      "https://picsum.photos/200/300?random=22"
     ],
     "direccion": "Avenida Panadería 456",
     "codigoPostal": 28045,
@@ -434,9 +466,11 @@
     "email": "info@bakerydelights.com",
     "web": "https://www.bakerydelights.com",
     "redes": [
-      "https://twitter.com/bakerydelights",
-      "https://facebook.com/bakerydelights"
+      { "redSocial": "Twitter", "url": "https://twitter.com/bakerydelights" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/bakerydelights" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 87,
     "aprobada": true
@@ -449,8 +483,8 @@
     "listaServ": [],
     "logo": "https://url-del-logo.com/logo46.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=23",
+      "https://picsum.photos/200/300?random=24"
     ],
     "direccion": "Calle Heladería 123",
     "codigoPostal": 28046,
@@ -460,9 +494,11 @@
     "email": "info@icecreamdreams.com",
     "web": "https://www.icecreamdreams.com",
     "redes": [
-      "https://twitter.com/icecreamdreams",
-      "https://facebook.com/icecreamdreams"
+      { "redSocial": "Twitter", "url": "https://twitter.com/icecreamdreams" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/icecreamdreams" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 69,
     "aprobada": true
@@ -475,8 +511,8 @@
     "listaServ": ["Catering", "Reservas de mesa"],
     "logo": "https://url-del-logo.com/logo47.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=25",
+      "https://picsum.photos/200/300?random=26"
     ],
     "direccion": "Avenida Zumos 789",
     "codigoPostal": 28047,
@@ -485,7 +521,12 @@
     "telefono": ["678901234", "890123456"],
     "email": "info@juicebar.com",
     "web": "https://www.juicebar.com",
-    "redes": ["https://twitter.com/juicebar", "https://facebook.com/juicebar"],
+    "redes": [
+      { "redSocial": "Twitter", "url": "https://twitter.com/juicebar" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/juicebar" }
+    ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 81,
     "aprobada": true
@@ -498,8 +539,8 @@
     "listaServ": ["Catering", "Reservas de mesa"],
     "logo": "https://url-del-logo.com/logo48.png",
     "galeriaFotos": [
-      "https://picsum.photos/200/300",
-      "https://picsum.photos/200/300"
+      "https://picsum.photos/200/300?random=27",
+      "https://picsum.photos/200/300?random=28"
     ],
     "direccion": "Calle Té 123",
     "codigoPostal": 28048,
@@ -508,9 +549,70 @@
     "telefono": ["890123456", "012345678"],
     "email": "info@teatime.com",
     "web": "https://www.teatime.com",
-    "redes": ["https://twitter.com/teatime", "https://facebook.com/teatime"],
+    "redes": [
+      { "redSocial": "Twitter", "url": "https://twitter.com/teatime" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/teatime" }
+    ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 70,
+    "aprobada": true
+  },
+  {
+    "nameEmpresa": "Brewing Happiness",
+    "categoria": "Cafetería",
+    "prodServ": "Ambos",
+    "listaProd": ["Café", "Té", "Bocadillos"],
+    "listaServ": ["Catering", "Reservas de mesa"],
+    "logo": "https://url-del-logo.com/logo49.png",
+    "galeriaFotos": [
+      "https://picsum.photos/200/300?random=29",
+      "https://picsum.photos/200/300?random=30"
+    ],
+    "direccion": "Avenida Brewing 789",
+    "codigoPostal": 28049,
+    "paradaMetro": "Estación Brewing",
+    "locMapa": [40.48682970017505, -3.7068389916307395],
+    "telefono": ["678901234", "890123456"],
+    "email": "info@brewinghappiness.com",
+    "web": "https://www.brewinghappiness.com",
+    "redes": [
+      { "redSocial": "Twitter", "url": "https://twitter.com/brewinghappiness" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/brewinghappiness" }
+    ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
+    "condiciones": true,
+    "popularidad": 75,
+    "aprobada": true
+  },
+  {
+    "nameEmpresa": "Donut House",
+    "categoria": "Panadería",
+    "prodServ": "Productos",
+    "listaProd": ["Donuts", "Café"],
+    "listaServ": [],
+    "logo": "https://url-del-logo.com/logo50.png",
+    "galeriaFotos": [
+      "https://picsum.photos/200/300?random=31",
+      "https://picsum.photos/200/300?random=32"
+    ],
+    "direccion": "Calle Donut 123",
+    "codigoPostal": 28050,
+    "paradaMetro": "Estación Donut",
+    "locMapa": [40.48481043571188, -3.715485571141242],
+    "telefono": ["012345678", "234567890"],
+    "email": "info@donuthouse.com",
+    "web": "https://www.donuthouse.com",
+    "redes": [
+      { "redSocial": "Twitter", "url": "https://twitter.com/donuthouse" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/donuthouse" }
+    ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
+    "condiciones": true,
+    "popularidad": 68,
     "aprobada": true
   }
 ]

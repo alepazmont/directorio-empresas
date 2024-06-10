@@ -1,5 +1,8 @@
 [
   {
+    "// comentario": "10 entradas en el documento"
+  },
+  {
     "nameEmpresa": "Tech Innovations",
     "categoria": "Tecnología",
     "prodServ": "Ambos",
@@ -18,9 +21,11 @@
     "email": "info@techinnovations.com",
     "web": "https://www.techinnovations.com",
     "redes": [
-      "https://twitter.com/techinnovations",
-      "https://facebook.com/techinnovations"
+      { "redSocial": "Twitter", "url": "https://twitter.com/techinnovations" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/techinnovations" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 55,
     "aprobada": true
@@ -44,9 +49,11 @@
     "email": "info@greenecosolutions.com",
     "web": "https://www.greenecosolutions.com",
     "redes": [
-      "https://twitter.com/greenecosolutions",
-      "https://facebook.com/greenecosolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/greenecosolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/greenecosolutions" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 72,
     "aprobada": true
@@ -70,9 +77,11 @@
     "email": "info@healthyfooddelights.com",
     "web": "https://www.healthyfooddelights.com",
     "redes": [
-      "https://twitter.com/healthyfooddelights",
-      "https://facebook.com/healthyfooddelights"
+      { "redSocial": "Twitter", "url": "https://twitter.com/healthyfooddelights" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/healthyfooddelights" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 88,
     "aprobada": true
@@ -96,12 +105,14 @@
     "email": "info@educationalsolutions.com",
     "web": "https://www.educationalsolutions.com",
     "redes": [
-      "https://twitter.com/educationalsolutions",
-      "https://facebook.com/educationalsolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/educationalsolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/educationalsolutions" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 61,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Adventure Sports",
@@ -122,12 +133,14 @@
     "email": "info@adventuresports.com",
     "web": "https://www.adventuresports.com",
     "redes": [
-      "https://twitter.com/adventuresports",
-      "https://facebook.com/adventuresports"
+      { "redSocial": "Twitter", "url": "https://twitter.com/adventuresports" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/adventuresports" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 47,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Interior Design Solutions",
@@ -148,12 +161,14 @@
     "email": "info@interiordesignsolutions.com",
     "web": "https://www.interiordesignsolutions.com",
     "redes": [
-      "https://twitter.com/interiordesignsolutions",
-      "https://facebook.com/interiordesignsolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/interiordesignsolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/interiordesignsolutions" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 94,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Tech Support Experts",
@@ -174,12 +189,14 @@
     "email": "info@techsupportexperts.com",
     "web": "https://www.techsupportexperts.com",
     "redes": [
-      "https://twitter.com/techsupportexperts",
-      "https://facebook.com/techsupportexperts"
+      { "redSocial": "Twitter", "url": "https://twitter.com/techsupportexperts" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/techsupportexperts" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 38,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Beauty & Wellness Spa",
@@ -200,12 +217,14 @@
     "email": "info@beautywellnessspa.com",
     "web": "https://www.beautywellnessspa.com",
     "redes": [
-      "https://twitter.com/beautywellnessspa",
-      "https://facebook.com/beautywellnessspa"
+      { "redSocial": "Twitter", "url": "https://twitter.com/beautywellnessspa" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/beautywellnessspa" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 80,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Real Estate Solutions",
@@ -226,12 +245,14 @@
     "email": "info@realestatesolutions.com",
     "web": "https://www.realestatesolutions.com",
     "redes": [
-      "https://twitter.com/realestatesolutions",
-      "https://facebook.com/realestatesolutions"
+      { "redSocial": "Twitter", "url": "https://twitter.com/realestatesolutions" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/realestatesolutions" }
     ],
+    "whatsapp": true,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 76,
-    "aprobada": true
+    "aprobada": false
   },
   {
     "nameEmpresa": "Event Planning Experts",
@@ -252,11 +273,13 @@
     "email": "info@eventplanningexperts.com",
     "web": "https://www.eventplanningexperts.com",
     "redes": [
-      "https://twitter.com/eventplanningexperts",
-      "https://facebook.com/eventplanningexperts"
+      { "redSocial": "Twitter", "url": "https://twitter.com/eventplanningexperts" },
+      { "redSocial": "Facebook", "url": "https://facebook.com/eventplanningexperts" }
     ],
+    "whatsapp": false,
+    "telWhatsapp": "666778899",
     "condiciones": true,
     "popularidad": 65,
-    "aprobada": true
+    "aprobada": false
   }
 ]
