@@ -22,6 +22,8 @@ const empresasSchema = new mongoose.Schema({
         },
         url: String
     }],
+    whatsapp: { type: Boolean },
+    telWhatsapp: { type: Number, trim: true },
     condiciones: { type: Boolean },
     aprobada: { type: Boolean, required: true, default: false },
     popularidad: { type: Number, default: 0, min: [0, 'La popularidad debe ser un número positivo'] }
