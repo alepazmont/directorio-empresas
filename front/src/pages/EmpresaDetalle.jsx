@@ -36,7 +36,7 @@ const EmpresaDetalle = () => {
   if (!empresa) {
     return <div>Cargando...</div>;
   }
-
+  console.log(empresa.redes); // ELIMINR DESPUES DE ARREGLAR
   const chunkArray = (array, size) => {
     const result = [];
     for (let i = 0; i < array.length; i += size) {
@@ -69,6 +69,7 @@ const EmpresaDetalle = () => {
               </div>
             </Col>
           </Row>
+
           <Row className="mt-5">
             <Col lg={6} xs={12} className="d-company-info">
               {empresa.listaProd && empresa.listaProd.length > 0 && (
@@ -115,7 +116,9 @@ const EmpresaDetalle = () => {
               <p>
                 <strong>Redes Sociales:</strong>
               </p>
+              
               {empresa.redes && empresa.redes.length > 0 && (
+                
                 <div>
                   <ul>
                     {empresa.redes.map((red, index) => (
@@ -136,19 +139,6 @@ const EmpresaDetalle = () => {
             </Col>
             <Col lg={6} xs={12} className="d-company-map">
               <MapaEmpresaDetalle empresa={empresa} />
-            </Col>
-          </Row>
-          <Row className="mt-5">
-            <Col lg={12} xs={12} className="d-company-photos">
-              <Carousel interval='3000' indicators={false}>
-                {empresa.galeriaFotos &&
-                  empresa.galeriaFotos.length > 0 &&
-                  fotoChunks.map((foto, index) => (
-                    <Carousel.Item key={index}>
-                      <img key={index} src={foto} alt={`Foto ${index + 1}`} />
-                    </Carousel.Item>
-                  ))}
-              </Carousel>
             </Col>
           </Row>
         </Container>

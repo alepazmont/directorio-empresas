@@ -95,7 +95,7 @@ const Contacto = () => {
             </Col>
             <Col lg={6} xs={12}>
               <Container className='ml-5'>
-              <h4 className='contact-title mt-3 mb-3'>Información de contacto</h4>
+              <h3 className='contact-title mt-3 mb-3'>Información de contacto</h3>
               <p className='mb-3'><b>Email:</b> info@empresasya.es</p>
               <p className='mb-3'><b>Telefono:</b> 666 55 44 33</p>
               <p className='mb-3'><b>Dirección:</b> Calle Inventada 42 (TomorrowLand)</p>

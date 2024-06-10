@@ -189,7 +189,7 @@ const FormularioEmpresa = () => {
           <Container>
             <BreadCrumb pages={pages} />
             <Row>
-              <Col lg={6} xs={12}>
+              <Col lg={12} xs={12}>
                 {showAlert && (
                   <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
                     {alertMessage}

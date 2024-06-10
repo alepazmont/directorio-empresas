@@ -1,4 +1,8 @@
 @import 'bootstrap/dist/css/bootstrap.min.css';
+
+@import  './Variables';
+@import  './Common';
+
 @import './components/Header/Header';
 @import './components/Footer/Footer';
 @import './components/BreadCrumb/BreadCrumb';
@@ -13,45 +17,3 @@
 @import './pages/EmpresaDetalle';
 
 @import 'Estilos_Provisional';
-
-#root{
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-a{
-  color: #000;
-}
-
-.bg-purple{
-  background-color: #7e57bc;
-}
-
-.content{
-  margin-bottom: 30px;
-}
-
-.btn{
-  background-color: #7E57BC;
-  color: #fff;
-  font-weight: bold;
-  border: none;
-
-  &:hover,
-  &:focus,
-  &:active{
-      background-color: #7E57BC !important;
-      opacity: .7;
-      color: #fff;
-      filter: none;
-  }
-}
-
-.jumbotron{
-  border: 3px solid #7E57BC;
-  padding: 20px;
-  border-radius: 10px;
-  background-color: #7E57BC;
-  color: #fff;
-}
