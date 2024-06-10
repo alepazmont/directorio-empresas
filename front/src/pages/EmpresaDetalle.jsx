@@ -10,7 +10,8 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Carousel from 'react-bootstrap/Carousel'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter, faFacebook, faInstagram, faLinkedin, faYoutube, faLinkSolid } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faFacebook, faInstagram, faLinkedin, faYoutube } from '@fortawesome/free-brands-svg-icons';
+import { faLink } from '@fortawesome/free-solid-svg-icons';
 
 
 const EmpresaDetalle = () => {
@@ -25,10 +26,10 @@ const EmpresaDetalle = () => {
   useEffect(() => {
     const fetchEmpresa = async () => {
       try {
-        const route = `/empresas/${id}`; 
+        const route = `/empresas/${id}`;
         const response = await axios.get(apiUrl + route);
-        setEmpresa(response.data.data); 
-        console.log(response.data.data); 
+        setEmpresa(response.data.data);
+        console.log(response.data.data);
       } catch (error) {
         console.error("Error obteniendo empresa", error);
       }
@@ -117,43 +118,43 @@ const EmpresaDetalle = () => {
                 </a>
               </p>
               <p>
-  <strong>Redes Sociales:</strong>
-</p>
-{empresa.redes && empresa.redes.length > 0 && (
-  <div>
-    <ul>
-      {empresa.redes.map((red, index) => (
-        <li key={index}>
-          <a
-            href={red.url} // Corregido para usar red.url en lugar de url
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {red.redSocial === 'Twitter' && (
-              <FontAwesomeIcon icon={faTwitter} />
-            )}
-            {red.redSocial === 'Facebook' && (
-              <FontAwesomeIcon icon={faFacebook} />
-            )}
-            {red.redSocial === 'Instagram' && (
-              <FontAwesomeIcon icon={faInstagram} />
-            )}
-            {red.redSocial === 'LinkedIn' && (
-              <FontAwesomeIcon icon={faLinkedin} />
-            )}
-            {red.redSocial === 'YouTube' && (
-              <FontAwesomeIcon icon={faYoutube} />
-            )}
-            {/* Mostrar un icono genérico en caso de no coincidir con ninguna red social conocida */}
-            {['Twitter', 'Facebook', 'Instagram', 'LinkedIn', 'YouTube'].indexOf(red.redSocial) === -1 && (
-              <FontAwesomeIcon icon={faLinkSolid} />
-            )}
-          </a>
-        </li>
-      ))}
-    </ul>
-  </div>
-)}
+                <strong>Redes Sociales:</strong>
+              </p>
+              {empresa.redes && empresa.redes.length > 0 && (
+                <div>
+                  <ul className="d-company--social-links">
+                    {empresa.redes.map((red, index) => (
+                      <li key={red._id} className="m-3">
+                        <a
+                          href={red.url} // Corregido para usar red.url en lugar de url
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          {red.redSocial === 'Twitter' && (
+                            <FontAwesomeIcon icon={faTwitter} />
+                          )}
+                          {red.redSocial === 'Facebook' && (
+                            <FontAwesomeIcon icon={faFacebook} />
+                          )}
+                          {red.redSocial === 'Instagram' && (
+                            <FontAwesomeIcon icon={faInstagram} />
+                          )}
+                          {red.redSocial === 'LinkedIn' && (
+                            <FontAwesomeIcon icon={faLinkedin} />
+                          )}
+                          {red.redSocial === 'YouTube' && (
+                            <FontAwesomeIcon icon={faYoutube} />
+                          )}
+                          {/* Mostrar un icono genérico en caso de no coincidir con ninguna red social conocida */}
+                          {['Twitter', 'Facebook', 'Instagram', 'LinkedIn', 'YouTube'].indexOf(red.redSocial) === -1 && (
+                            <FontAwesomeIcon icon={faLink} />
+                          )}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </Col>
             <Col lg={6} xs={12} className="d-company-map">
               <MapaEmpresaDetalle empresa={empresa} />

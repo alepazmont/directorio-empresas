@@ -32,7 +32,7 @@ const Login = () => {
             password
         });
         setUser(user); //Guarda el usuario en el contexto y en el localStorage
-        navigate('/admin');
+        navigate('/dashboard');
     } catch (error) {
         setErrorMessage ("Error iniciando sesión");
         setTimeout(() => {
