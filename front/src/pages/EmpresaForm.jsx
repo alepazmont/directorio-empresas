@@ -178,7 +178,7 @@ const FormularioEmpresa = () => {
   };
 
   const [pages] = useState([
-    { link: "/admin", page: "Panel de administración" },
+    { link: "/dashboard", page: "Panel de administración" },
     { link: "", page: "Registra tu empresa" },
   ]);
 

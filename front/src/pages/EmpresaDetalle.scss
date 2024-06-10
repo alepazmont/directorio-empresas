@@ -1,5 +1,13 @@
 .d-company{
 
+    .d-company-name{
+        img{
+            width: 100%;
+            max-width: 90px;
+            margin-right: 1rem;
+        }
+    }
+
     .d-company-info{
         .d-company--social-links{
             list-style: none;
