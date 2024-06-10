@@ -1,6 +1,4 @@
 const Empresas = require("./empresas.model");
-const axios = require('axios');
-const { uploadMultiple } = require("../uploads/upload.controller");
 
 const create = async (req, res, next) => {
   try {
@@ -24,7 +22,7 @@ const create = async (req, res, next) => {
   }
 };
 
-const createMany = async (req, res, next) => {
+/* const createMany = async (req, res, next) => {
   try {
     let empresasData = req.body;
 
@@ -69,7 +67,7 @@ const createMany = async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-};
+}; */
 
 const getOne = async (req, res, next) => {
   try {
@@ -148,4 +146,4 @@ const approveEmpresa = async (req, res) => {
   }
 };
 
-module.exports = { create, createMany, getOne, getAll, updateOne, deleteOne, approveEmpresa };
+module.exports = { create, /* createMany, */ getOne, getAll, updateOne, deleteOne, approveEmpresa };
