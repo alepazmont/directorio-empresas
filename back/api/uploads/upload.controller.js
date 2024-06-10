@@ -32,5 +32,10 @@ exports.uploadMultiple = upload.fields([
 ]);
 
 exports.uploadFile = (req, res) => {
-  res.send({ data: 'Archivos subidos exitosamente', files: req.files });
+  try {
+    res.send({ data: 'Archivos subidos exitosamente', files: req.files });
+  } catch (error) {
+    console.error('Error subiendo archivos a Cloudinary:', error);
+    res.status(500).send({ error: 'Error subiendo archivos a Cloudinary' });
+  }
 };
