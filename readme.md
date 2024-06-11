@@ -40,7 +40,6 @@ Este proyecto se distribuye bajo la licencia MIT. Para más detalles, consulta e
 ## Autores
 
 - Alejandro Paz
-- Marian Molina
 - Laura Guijarro
 
 ## Recursos Adicionales
@@ -52,5 +51,4 @@ Se creará un manual con instrucciones detalladas para el registro y la inscripc
 Para cualquier consulta, puedes contactar a los autores a través de sus correos electrónicos:
 
 - Alejandro Paz: alepazmont@gmail.com
-- Marian Molina: marianmolina29@hotmail.com
 - Laura Guijarro: lauraguijarro92@gmail.com
