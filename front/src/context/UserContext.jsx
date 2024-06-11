@@ -30,7 +30,7 @@ export const UserProvider = ({ children }) => {
 
   const saveUser = (userData) => {
     localStorage.setItem("user", JSON.stringify(userData));
-    //localStorage.setItem("token", userData.data.token);
+    localStorage.setItem("token", userData.data.token);
     setUser(userData);
   };
 
