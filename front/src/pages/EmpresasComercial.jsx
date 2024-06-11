@@ -9,6 +9,7 @@ import { Link } from "react-router-dom"
 
 const EmpresasComercial = () => {
     const { user } = useContext(UserContext);
+
     const [pages] = useState([
         { link: '', page: 'Registra tu empresa' }
       ]);
@@ -34,7 +35,8 @@ const EmpresasComercial = () => {
                         <Col lg={12} xs={12} className="text-center">
                         
                         {
-                            user && 
+                            user && !user.data.user.admin
+                             && 
                             <Link className="btn" to="/empresas/crear">Registrar empresa</Link> 
                         }
                         </Col>

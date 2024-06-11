@@ -18,6 +18,8 @@ import {
   faYoutube,
 } from "@fortawesome/free-brands-svg-icons";
 
+import Lightbox from "bs5-lightbox";
+
 const EmpresaDetalle = () => {
   const { id } = useParams();
   const [empresa, setEmpresa] = useState(null);
@@ -41,11 +43,19 @@ const EmpresaDetalle = () => {
     fetchEmpresa();
   }, [id]);
 
+  useEffect(() => {
+    if (empresa) {
+      const lightboxElements = document.querySelectorAll('[data-toggle="lightbox"]');
+      lightboxElements.forEach(
+        el => el.addEventListener('click', Lightbox.initialize)
+      );
+    }
+  }, [empresa]);
+
   if (!empresa) {
     return <div>Cargando...</div>;
   }
 
-  // Función para dividir el array de fotos en chunks de hasta 3 fotos por slide
   const chunkArray = (array, size) => {
     const result = [];
     for (let i = 0; i < array.length; i += size) {
@@ -54,8 +64,10 @@ const EmpresaDetalle = () => {
     return result;
   };
 
-  // Dividir las fotos en chunks de hasta 3 fotos por slide
-  const fotoChunks = chunkArray(empresa.galeriaFotos, 3);
+  const isMobile = window.innerWidth <= 992;
+  const fotoChunks = chunkArray(empresa.galeriaFotos, isMobile ? 1 : 3);
+
+
 
   return (
     <div className="landing-page">
@@ -134,7 +146,7 @@ const EmpresaDetalle = () => {
                     {empresa.redes.map((red, index) => (
                       <li key={index}>
                         <a
-                          href={red.url} // Corregido para usar red.url en lugar de url
+                          href={red.url}
                           target="_blank"
                           rel="noopener noreferrer"
                         >
@@ -176,18 +188,19 @@ const EmpresaDetalle = () => {
           </Row>
           <Row className="mt-5">
             <Col lg={12} xs={12} className="d-company-photos">
-              <Carousel interval={3000} indicators={false}>
+              <Carousel indicators={false}  interval={null}>
                 {fotoChunks.map((fotoChunk, index) => (
                   <Carousel.Item key={index}>
                     <div className="d-flex justify-content-around">
                       {fotoChunk.map((foto, idx) => (
-                        <img
-                          style={{ maxWidth: "25%", height: "auto" }}
-                          key={idx}
-                          src={foto}
-                          className="d-block w-100"
-                          alt={`Foto ${index * 3 + idx + 1}`}
-                        />
+                        <a key={idx} href={foto} data-toggle="lightbox" data-gallery="photos-gallery">
+
+                          <img
+                            key={idx}
+                            src={foto}
+                            alt={`Foto ${index * 3 + idx + 1}`}
+                          />
+                       </a>
                       ))}
                     </div>
                   </Carousel.Item>
