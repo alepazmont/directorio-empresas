@@ -1,7 +1,11 @@
 const Empresas = require("./empresas.model");
+const User = require("../user/user.model");
 
 const create = async (req, res, next) => {
   try {
+    console.log(req.body); // Verificar los datos del formulario
+    console.log(req.files); // Verificar los archivos cargados
+
     const logo = req.files['logo'] ? req.files['logo'][0].path : null;
     const galeriaFotos = req.files['galeriaFotos'] ? req.files['galeriaFotos'].map(file => file.path) : [];
 
@@ -11,13 +15,22 @@ const create = async (req, res, next) => {
       galeriaFotos
     };
 
+    console.log(empresaData); // Verificar los datos antes de crear la empresa
+
     const empresa = await Empresas.create(empresaData);
+
+    const userId = req.authority.id;
+    console.log(userId); // Verificar el ID del usuario
+
+    await User.findByIdAndUpdate(userId, { $push: { empresasCreadas: empresa._id } });
+
     res.json({
       status: 201,
-      msg: 'creado',
+      msg: 'Empresa creada y añadida al usuario',
       data: empresa,
     });
   } catch (error) {
+    console.error(error); // Log del error
     next(error);
   }
 };
