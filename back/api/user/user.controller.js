@@ -31,7 +31,7 @@ const register = async (req, res, next) => {
 
     return res.status(201).json({
       status: 201,
-      data: { message: "ok", user: userInfo, token: token },
+      data: { message: "ok", user: userDB, token: token },
       message: `User ${userDB.email} created`,
     });
   } catch (error) {
