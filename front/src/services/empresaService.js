@@ -1,5 +1,3 @@
-// EmpresaService.jsx
-
 import axios from 'axios';
 import { apiUrl } from './ApiUrl/apiUrl';
 

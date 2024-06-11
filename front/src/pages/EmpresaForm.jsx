@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { useState, useRef } from "react";
 import axios from "axios";
 import { DndProvider, useDrag, useDrop } from "react-dnd";
@@ -11,7 +10,6 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
-
 
 const FormularioEmpresa = () => {
   const [formData, setFormData] = useState({
@@ -32,12 +30,11 @@ const FormularioEmpresa = () => {
     web: "",
     redes: [],
     condiciones: false,
+    whatsappContacto: 'No'
   });
 
   const [fileInputs, setFileInputs] = useState([{ id: Date.now(), url: "" }]);
-  const [socialInputs, setSocialInputs] = useState([
-    { id: Date.now(), platform: "", url: "" },
-  ]);
+  const [socialInputs, setSocialInputs] = useState([{ id: Date.now(), platform: "", url: "" }]);
 
   const [showAlert, setShowAlert] = useState(false);
   const [alertMessage, setAlertMessage] = useState("");
@@ -64,7 +61,10 @@ const FormularioEmpresa = () => {
       newGaleriaFotos[index] = file;
       const newFileInputs = [...fileInputs];
       newFileInputs[index].url = URL.createObjectURL(file);
-      setFormData((prevState) => ({ ...prevState, galeriaFotos: newGaleriaFotos }));
+      setFormData((prevState) => ({
+        ...prevState,
+        galeriaFotos: newGaleriaFotos,
+      }));
       setFileInputs(newFileInputs);
     }
   };
@@ -73,8 +73,13 @@ const FormularioEmpresa = () => {
     const newGaleriaFotos = formData.galeriaFotos.filter((_, i) => i !== index);
     const newFileInputs = fileInputs.filter((_, i) => i !== index);
 
-    setFormData((prevState) => ({ ...prevState, galeriaFotos: newGaleriaFotos }));
-    setFileInputs(newFileInputs.length > 0 ? newFileInputs : [{ id: Date.now(), url: "" }]);
+    setFormData((prevState) => ({
+      ...prevState,
+      galeriaFotos: newGaleriaFotos,
+    }));
+    setFileInputs(
+      newFileInputs.length > 0 ? newFileInputs : [{ id: Date.now(), url: "" }]
+    );
   };
 
   const handleSocialChange = (e, index) => {
@@ -85,12 +90,19 @@ const FormularioEmpresa = () => {
   };
 
   const handleAddSocialInput = () => {
-    setSocialInputs((prevState) => [...prevState, { id: Date.now(), platform: "", url: "" }]);
+    setSocialInputs((prevState) => [
+      ...prevState,
+      { id: Date.now(), platform: "", url: "" },
+    ]);
   };
 
   const handleRemoveSocial = (index) => {
     const newSocialInputs = socialInputs.filter((_, i) => i !== index);
-    setSocialInputs(newSocialInputs.length > 0 ? newSocialInputs : [{ id: Date.now(), platform: "", url: "" }]);
+    setSocialInputs(
+      newSocialInputs.length > 0
+        ? newSocialInputs
+        : [{ id: Date.now(), platform: "", url: "" }]
+    );
   };
 
   const handleSubmit = async (e) => {
@@ -109,7 +121,7 @@ const FormularioEmpresa = () => {
           data.append(`galeriaFotos[${index}]`, file);
         });
       } else if (key === "redes") {
-        formData.redes.forEach((red, index) => {
+        socialInputs.forEach((red, index) => {
           data.append(`redes[${index}][platform]`, red.platform);
           data.append(`redes[${index}][url]`, red.url);
         });
@@ -119,6 +131,7 @@ const FormularioEmpresa = () => {
     }
 
     try {
+      console.log("Enviando datos:", Object.fromEntries(data.entries()));
       await axios.post(`${apiUrl}/empresas/register`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
@@ -143,25 +156,22 @@ const FormularioEmpresa = () => {
         web: "",
         redes: [],
         condiciones: false,
+        whatsappContacto: 'No'
       });
       setFileInputs([{ id: Date.now(), url: "" }]);
 
       setAlertMessage("Empresa pendiente de validación.");
       setAlertVariant("success");
       setShowAlert(true);
+      alert("Empresa registrada exitosamente.");
     } catch (error) {
       console.error("Error al crear la empresa", error);
       setAlertMessage("Error al crear la empresa. Inténtelo de nuevo.");
       setAlertVariant("danger");
       setShowAlert(true);
+      alert("Error al crear la empresa. Inténtelo de nuevo.");
     }
   };
-
-
-  const handleCreate = () => {
-    const DESARROLLAR_FUNCIÓN = 0
-    DESARROLLAR_FUNCIÓN
-  }
 
   const moveItem = (dragIndex, hoverIndex, type) => {
     const newItems = type === "file" ? [...fileInputs] : [...socialInputs];
@@ -173,7 +183,10 @@ const FormularioEmpresa = () => {
       const newGaleriaFotos = [...formData.galeriaFotos];
       const [draggedFile] = newGaleriaFotos.splice(dragIndex, 1);
       newGaleriaFotos.splice(hoverIndex, 0, draggedFile);
-      setFormData((prevState) => ({ ...prevState, galeriaFotos: newGaleriaFotos }));
+      setFormData((prevState) => ({
+        ...prevState,
+        galeriaFotos: newGaleriaFotos,
+      }));
     } else {
       setSocialInputs(newItems);
     }
@@ -184,8 +197,10 @@ const FormularioEmpresa = () => {
     { link: "", page: "Registra tu empresa" },
   ]);
 
+  const handleRadioChange = (e) => {
+    setFormData({ ...formData, whatsappContacto: e.target.id === 'whatsapp-si' ? 'Sí' : 'No' });
+  };
 
-  
   return (
     <DndProvider backend={HTML5Backend}>
       <div className="landing-page">
@@ -195,7 +210,11 @@ const FormularioEmpresa = () => {
             <Row>
               <Col lg={12} xs={12}>
                 {showAlert && (
-                  <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
+                  <Alert
+                    variant={alertVariant}
+                    onClose={() => setShowAlert(false)}
+                    dismissible
+                  >
                     {alertMessage}
                   </Alert>
                 )}
@@ -241,7 +260,9 @@ const FormularioEmpresa = () => {
 
                   {(formData.prodServ === "Productos" || formData.prodServ === "Ambos") && (
                     <Form.Group className="mb-3" controlId="listaProd">
-                      <Form.Label>Lista de Productos (separados por comas)</Form.Label>
+                      <Form.Label>
+                        Lista de Productos (separados por comas)
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="listaProd"
@@ -253,7 +274,9 @@ const FormularioEmpresa = () => {
 
                   {(formData.prodServ === "Servicios" || formData.prodServ === "Ambos") && (
                     <Form.Group className="mb-3" controlId="listaServ">
-                      <Form.Label>Lista de Servicios (separados por comas)</Form.Label>
+                      <Form.Label>
+                        Lista de Servicios (separados por comas)
+                      </Form.Label>
                       <Form.Control
                         type="text"
                         name="listaServ"
@@ -282,7 +305,9 @@ const FormularioEmpresa = () => {
 
                   <Form.Group className="mb-3 array-input">
                     <Form.Label>Galeria de Fotos</Form.Label>
-                    <p className="mb-1 sublabel">Ordena la galería de fotos arrastrando los elementos</p>
+                    <p className="mb-1 sublabel">
+                      Ordena la galería de fotos arrastrando los elementos
+                    </p>
                     {fileInputs.map((fileInput, index) => (
                       <FileInput
                         key={fileInput.id}
@@ -298,7 +323,10 @@ const FormularioEmpresa = () => {
                       type="button"
                       className="array-action-btn"
                       onClick={() =>
-                        setFileInputs([...fileInputs, { id: Date.now(), url: "" }])
+                        setFileInputs([
+                          ...fileInputs,
+                          { id: Date.now(), url: "" },
+                        ])
                       }
                     >
                       Añadir Foto
@@ -360,6 +388,43 @@ const FormularioEmpresa = () => {
                     />
                   </Form.Group>
 
+                  <Form.Group className="mb-3" controlId="whatsapp-contacto">
+                    <Form.Label>
+                      ¿Quieres que los clientes te puedan contactar por WhatsApp?
+                    </Form.Label>
+                    <div key={`default-radio`} className="mb-3">
+                      <Form.Check
+                        type="radio"
+                        id="whatsapp-si"
+                        label="Sí"
+                        name="whatsapp-contacto"
+                        onChange={handleRadioChange}
+                        checked={formData.whatsappContacto === "Sí"}
+                      />
+                      <Form.Check
+                        type="radio"
+                        id="whatsapp-no"
+                        label="No"
+                        name="whatsapp-contacto"
+                        onChange={handleRadioChange}
+                        checked={formData.whatsappContacto === "No"}
+                      />
+                    </div>
+                  </Form.Group>
+
+                  {formData.whatsappContacto === "Sí" && (
+                    <Form.Group className="mb-3" controlId="telefonoWhatsapp">
+                      <Form.Label>Teléfono para WhatsApp</Form.Label>
+                      <Form.Control
+                        type="tel"
+                        name="telefonoWhatsapp"
+                        value={formData.telefono}
+                        onChange={handleChange}
+                        required
+                      />
+                    </Form.Group>
+                  )}
+
                   <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email</Form.Label>
                     <Form.Control
@@ -415,13 +480,9 @@ const FormularioEmpresa = () => {
                       required
                     />
                   </Form.Group>
-                  <Button 
-                    type="submit"
-                    className="request-button approve-button"
-                    onClick={() => handleCreate()}
-                    >
+                  <Button type="submit" className="request-button approve-button">
                     Registrar Empresa
-                    </Button>
+                  </Button>
                 </Form>
               </Col>
             </Row>
@@ -514,7 +575,7 @@ const SocialInput = ({ index, platform, url, onChange, onRemove, moveItem }) => 
         onChange={(e) => onChange(e, index)}
       />
       <Button variant="danger" onClick={onRemove}>
-      <i className="fa-solid fa-xmark"></i>
+        <i className="fa-solid fa-xmark"></i>
       </Button>
     </div>
   );
