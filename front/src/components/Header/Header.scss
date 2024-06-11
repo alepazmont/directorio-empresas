@@ -8,8 +8,11 @@
         padding: 15px;
 
         .navbar-brand{
-            img{
-                max-width: 100%;
+            a{
+                filter: none;
+                img{
+                    max-width: 100%;
+                }
             }
         }
 
@@ -21,7 +24,7 @@
                     list-style: none;
                     //flex-direction: column;
                     li{
-                        margin: 0 35px;
+                        margin: 0 auto;
                         
 
                         .nav-item{

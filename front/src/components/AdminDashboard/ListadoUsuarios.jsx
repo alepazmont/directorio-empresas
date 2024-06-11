@@ -32,7 +32,7 @@ const ListadoUsuarios = () => {
   };
 
   return (
-    <Card>
+    <Card className="h-100">
         <Card.Body>
             <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
         </Card.Body>
