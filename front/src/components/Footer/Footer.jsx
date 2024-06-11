@@ -15,10 +15,10 @@ const Footer = () => {
             <Col lg={4} xs={12} className="text-center b-xs">
                 <h5>Siguenos en redes</h5>
                 <ul className="social-links mb-5">
-                  <li><Link to='#'><FontAwesomeIcon icon={faXTwitter} /></Link></li>  
-                  <li><Link to='#'><FontAwesomeIcon icon={faFacebook} /></Link></li>
-                  <li><Link to='#'><FontAwesomeIcon icon={faWhatsapp} /></Link></li>
-                  <li><Link to='#'><FontAwesomeIcon icon={faLinkedin} /></Link></li>
+                  <li><Link to='https://x.com/empresasya' target="_blank"><FontAwesomeIcon icon={faXTwitter} /></Link></li>  
+                  <li><Link to='https://www.facebook.com/empresasya' target="_blank"><FontAwesomeIcon icon={faFacebook} /></Link></li>
+                  <li><Link to='https://api.whatsapp.com/send?phone=666554433'><FontAwesomeIcon icon={faWhatsapp} target="_blank"/></Link></li>
+                  <li><Link to='https://es.linkedin.com/empresasya' target="_blank"><FontAwesomeIcon icon={faLinkedin} /></Link></li>
                 </ul>
             </Col>
             <Col lg={4} xs={12} className="text-center b-xs">

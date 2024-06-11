@@ -15,7 +15,7 @@ const Header = () => {
           <Navbar expand="lg" variant="dark">
           
           <Container>
-            <Navbar.Brand><img src="/images/logo-empresasya.png"/></Navbar.Brand>
+            <Navbar.Brand><Nav.Link href="/"><img src="/images/logo-empresasya.png"/></Nav.Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">

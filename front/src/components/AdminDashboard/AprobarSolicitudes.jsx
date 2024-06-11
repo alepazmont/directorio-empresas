@@ -38,7 +38,7 @@ const AprobarSolicitudes = () => {
   };
 
   return (
-    <Card>
+    <Card className="h-100">
       <Card.Body>
         <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
         {empresas.length === 0 ? (
