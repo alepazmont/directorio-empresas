@@ -35,3 +35,22 @@
   display: flex;
   align-items: center;
 }
+
+
+// EmpresaDetalle
+
+.iconos-redes ul {
+  list-style: none;
+  display: flex;
+
+  & li {
+    margin: 0 20px;
+    transition: 0.3s;
+
+    &:hover {
+      filter: invert(100%)
+    }
+  }
+
+
+}
