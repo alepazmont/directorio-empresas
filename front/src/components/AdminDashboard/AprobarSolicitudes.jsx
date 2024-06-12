@@ -62,7 +62,7 @@ const AprobarSolicitudes = () => {
                     className="request-button cancel-button"
                     onClick={() => handleDelete(empresa._id)}
                   >
-                    Cancelar
+                    Eliminar
                   </button>
                 </div>
               </li>
