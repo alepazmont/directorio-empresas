@@ -19,7 +19,7 @@ app.use(express.urlencoded({ extended: true }));
 
 // Configurar CORS
 const corsOptions = {
-  origin: 'http://localhost:5173', // La URL de tu frontend
+  origin: `*`,
   methods: "GET,PUT,POST,DELETE,PATCH",
   allowedHeaders: "Content-Type,Authorization",
   credentials: true
