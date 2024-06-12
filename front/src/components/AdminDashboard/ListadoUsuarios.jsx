@@ -9,7 +9,6 @@ const ListadoUsuarios = () => {
     const loadUsers = async () => {
       try {
         const usersData = await fetchUsers();
-        console.log(usersData);
         setUsuarios(usersData);
       } catch (error) {
         console.error("Error obteniendo usuarios", error);

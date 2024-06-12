@@ -12,7 +12,7 @@ const UserCard = () => {
       <Card.Body>
         <Card.Subtitle>Datos de usuario</Card.Subtitle>
         <Card.Body>
-          <p ><b>Nombre Completo:</b> {usuario.nombre} {usuario.apellido}</p>
+          <p ><b>Nombre:</b> {usuario.nombre} {usuario.apellidos}</p>
           <p ><b>Teléfono:</b> {usuario.telefono}</p>
           <p ><b>Email:</b> {usuario.email}</p>
           <p ><b>Tipo de usuario:</b> {usuario.tipoUsuario}</p>

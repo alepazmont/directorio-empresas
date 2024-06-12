@@ -20,8 +20,6 @@ Empresas Ya! es una aplicación web que permite a las empresas registrarse a tra
 - **Base de Datos:** MongoDB
 - **API de Mapas:** Google Maps API
 
-NodeMailer o https://www.emailjs.com/
-
 ## Despliegue
 
 La aplicación está diseñada para funcionar online y se despliega en plataformas adecuadas para Node.js y React.
