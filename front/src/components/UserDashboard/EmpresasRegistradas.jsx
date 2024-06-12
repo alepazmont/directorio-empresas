@@ -36,7 +36,7 @@ const EmpresasRegistradas = () => {
         <ul>
           {empresas.map((empresa, index) => (
             <li key={index}>
-              <a href={`${appUrl}/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a>
+              <a href={`${appUrl}/empresas/${empresa._id}`}>{empresa.nameEmpresa}</a>
             </li>
           ))}
         </ul>

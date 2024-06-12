@@ -6,6 +6,7 @@ import Register from './Register';
 import { Link } from 'react-router-dom';
 import UserContext from '../../context/UserContext';
 import { useContext } from 'react';
+import logo from "../../../public/images/logo-empresasya.png"
 
 const Header = () => {
     const { user, logout } = useContext(UserContext);
@@ -15,7 +16,7 @@ const Header = () => {
           <Navbar expand="lg" variant="dark">
           
           <Container>
-            <Navbar.Brand><Nav.Link href="/"><img src="/images/logo-empresasya.png"/></Nav.Link></Navbar.Brand>
+            <Navbar.Brand><Nav.Link href="/"><img src={logo}/></Nav.Link></Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
