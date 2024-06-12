@@ -18,14 +18,14 @@ export const fetchEmpresas = async () => {
 
 export const approveEmpresa = async (empresaId) => {
   try {
-    const response = await axios.patch(`${apiUrl}/empresas/approve/${empresaId}`, {
+    const response = await axios.patch(`${apiUrl}/empresas/approve/${empresaId}`, {}, {
       headers: {
         Authorization: `Bearer ${getAuthToken()}`,
       },
     });
     return response.data;
   } catch (error) {
-    console.error('Error aprobando empresa SERVICIO:', error);
+    console.error('Error aprobando empresa:', error);
     throw error;
   }
 };

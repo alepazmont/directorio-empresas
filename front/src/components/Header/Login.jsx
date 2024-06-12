@@ -38,7 +38,6 @@ const Login = () => {
         setTimeout(() => {
             setErrorMessage(null);
           }, 5000);
-          console.log("Error iniciando sesión", error);
     }
   };
 
