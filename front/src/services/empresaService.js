@@ -18,7 +18,7 @@ export const fetchEmpresas = async () => {
 
 export const approveEmpresa = async (empresaId) => {
   try {
-    const response = await axios.patch(`${apiUrl}/empresas/approve/${empresaId}`, { aprobada: true }, {
+    const response = await axios.patch(`${apiUrl}/empresas/approve/${empresaId}`, {
       headers: {
         Authorization: `Bearer ${getAuthToken()}`,
       },
