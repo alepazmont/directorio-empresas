@@ -141,8 +141,8 @@ const EmpresaDetalle = () => {
                 <strong>Redes Sociales:</strong>
               </p>
               {empresa.redes && empresa.redes.length > 0 && (
-                <div className="iconos-redes">
-                  <ul>
+                <div>
+                  <ul className="d-company--social-links">
                     {empresa.redes.map((red, index) => (
                       <li key={index}>
                         <a

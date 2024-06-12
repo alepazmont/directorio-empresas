@@ -1,71 +1,68 @@
-.d-company{
-
-    .d-company-name{
-        img{
-            width: 100%;
-            max-width: 90px;
-            margin-right: 1rem;
-        }
+.d-company {
+  .d-company-name {
+    img {
+      width: 100%;
+      max-width: 90px;
+      margin-right: 1rem;
     }
+  }
 
-    .d-company-info{
-        .d-company--social-links{
-            list-style: none;
-            display: flex;
+  .d-company-info {
+    .d-company--social-links {
+      list-style: none;
+      display: flex;
 
-            li{
-                margin: 1rem;
+      li {
+        width: 15%;
 
-                .svg-inline--fa{
-                    width: 20px;
-                    height: 20px;
-                }
-            }
-        }
-    }
-
-    .d-company-photos{
-
-        .carousel{
-            img{
-                max-width: 300px;
-                height: 200px;
-                overflow: hidden;
-                object-fit: cover;
-            }
-        }
-        .carousel-control-prev {
-            @media (min-width: 992px) {
-                right: 100%;
-                left: auto;
-            }
-            
-            &:hover{
-              filter: none;
-            }
+        a {
+          font-size: 18px;
+          &:hover {
+            font-size: 22px;
           }
-    
-          .carousel-control-next {
-            @media (min-width: 992px) {
-                left: 100%;
-            }
-            
-            &:hover{
-              filter: none;
-            }
-          }
+        }
+      }
     }
+  }
+
+  .d-company-photos {
+    .carousel {
+      img {
+        max-width: 300px;
+        height: 200px;
+        overflow: hidden;
+        object-fit: cover;
+      }
+    }
+    .carousel-control-prev {
+      @media (min-width: 992px) {
+        right: 100%;
+        left: auto;
+      }
+
+      &:hover {
+        filter: none;
+      }
+    }
+
+    .carousel-control-next {
+      @media (min-width: 992px) {
+        left: 100%;
+      }
+
+      &:hover {
+        filter: none;
+      }
+    }
+  }
 }
-
 
 /* Carousel Lightbox */
 
-.lightbox{
-
-    .carousel-control{
-
-        &:hover{
-            background-color: transparent;
-        }
+.lightbox {
+  .carousel-control {
+    &:hover {
+      background-color: transparent;
     }
+  }
 }

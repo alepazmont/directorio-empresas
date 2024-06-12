@@ -36,10 +36,10 @@ const AdminDashboard = () => {
           </Row>
           <Row>
             <Col lg={6}  xs={12} className='mb-5'>
-              <ListadoUsuarios />
+              <AprobarSolicitudes /> 
             </Col>
             <Col lg={6}  xs={12} className='mb-5'>
-              <AprobarSolicitudes /> 
+              <ListadoUsuarios />
             </Col>
           </Row>
         </Container>

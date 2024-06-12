@@ -149,11 +149,31 @@ const FormularioEmpresa = () => {
       setAlertMessage("Empresa pendiente de validación.");
       setAlertVariant("success");
       setShowAlert(true);
+
+      const timeout = setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+
+
+      return () => {
+
+        clearTimeout(timeout);
+      };
     } catch (error) {
       console.error("Error al crear la empresa", error);
       setAlertMessage("Error al crear la empresa. Inténtelo de nuevo.");
       setAlertVariant("danger");
       setShowAlert(true);
+
+      const timeout = setTimeout(() => {
+        setShowAlert(false);
+      }, 5000);
+
+
+      return () => {
+
+        clearTimeout(timeout);
+      };
     }
   };
 

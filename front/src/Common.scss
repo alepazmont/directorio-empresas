@@ -43,6 +43,7 @@ a {
 /* Alert */
 
 .info-message {
+  font-weight: 600;
   position: fixed;
   width: 350px;
   bottom: 0;
@@ -52,5 +53,11 @@ a {
 
   &.fade-out {
     opacity: 0;
+  }
+
+  .btn-close{
+    &:hover{
+      background-color: #d1e7dd;
+    }
   }
 }

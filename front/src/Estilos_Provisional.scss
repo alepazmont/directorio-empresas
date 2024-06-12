@@ -1,56 +1,5 @@
 @import "@fortawesome/fontawesome-free/css/all.css";
 
-.barra-busqueda {
-  display: flex;
-  gap: 22px;
-}
-
-.draggable-item {
-  display: flex;
-  align-items: baseline;
-  flex-direction: row;
-  
-
-   button {
-    background-color: #ff4d4f;
-    border-radius: 100%;
-    font-size: 15px;
-
-    &:hover {
-      background-color: #b03134 !important;
-    }
-  }
-}
-.image-preview {
-  margin: 5px;
-
-  & img {
-    width: 75px;
-    height: 75px;
-    object-fit: cover;
-  }
-}
-
-.logo-upload {
-  display: flex;
-  align-items: center;
-}
 
 
-// EmpresaDetalle
 
-.iconos-redes ul {
-  list-style: none;
-  display: flex;
-
-  & li {
-    margin: 0 20px;
-    transition: 0.3s;
-
-    &:hover {
-      filter: invert(100%)
-    }
-  }
-
-
-}
