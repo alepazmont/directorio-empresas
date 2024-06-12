@@ -38,9 +38,12 @@ const AprobarSolicitudes = () => {
   };
 
   return (
-    <Card className="h-100">
-      <Card.Body>
+    <Card>
+      <Card.Header>
         <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
+      </Card.Header>
+      <Card.Body>
+
         {empresas.length === 0 ? (
           <p>No hay solicitudes pendientes de aprobación</p>
         ) : (

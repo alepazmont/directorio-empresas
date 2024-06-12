@@ -18,7 +18,7 @@ const UserDashboard = () => {
   return (
     <div className='landing-page'>
       <div className='content'>
-        <Container className='user-dashboard'>
+        <Container className='dashboard user-dashboard'>
         <BreadCrumb pages={pages} />
           <Row>
             <Col lg={6} xs={12} className='mb-5'>

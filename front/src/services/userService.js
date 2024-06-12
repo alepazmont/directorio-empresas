@@ -15,7 +15,7 @@ export const fetchUsers = async () => {
     });
     return response.data.data;
   } catch (error) {
-    console.error('Error obteniendo empresas', error);
+    console.error('Error obteniendo usuarios', error);
     throw error;
   }
 };

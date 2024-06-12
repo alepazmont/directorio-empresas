@@ -1,143 +1,82 @@
 /*AdminDashboard*/
 
-.admin-dashboard {
+.dashboard {
+
   .card {
     border-top: 3px solid #7e57bc;
 
-    .card-body {
+    .card-header{
+      background-color: #fff;
+      border: none;
+      margin-top: .5rem;
+
       .card-subtitle {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
       }
+    }
 
-      .requests-list {
-        list-style: none;
+    .card-body {
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+    }
+  }
 
-        li {
-          display: flex;
-          justify-content: space-between;
-          align-items: center;
-          margin: 0.5rem 0;
-          font-weight: 600;
+  &.admin-dashboard {
+    
+      .card-body {
 
-          .request-buttons {
-            margin-right: 1rem;
+        &.card-body-xl{
+          height: 400px;
+          max-height: 400px;
+          overflow: scroll; 
+        }
+        
+        .requests-list {
+          list-style: none;
 
-            .request-button {
-              margin: 0 0.5rem;
-              color: #fff;
-              font-weight: 600;
+          li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 0.5rem 0;
+            font-weight: 600;
 
-              &:hover {
-                opacity: 0.7;
-              }
+            .request-buttons {
+              margin-right: 1rem;
 
-              &.approve-button {
-                background-color: #4caf50;
-              }
+              .request-button {
+                margin: 0 0.5rem;
+                color: #fff;
+                font-weight: 600;
 
-              &.cancel-button {
-                background-color: #f44336;
+                &:hover {
+                  opacity: 0.7;
+                }
+
+                &.approve-button {
+                  background-color: #4caf50;
+                }
+
+                &.cancel-button {
+                  background-color: #f44336;
+                }
               }
             }
           }
         }
       }
-    }
+    
   }
-}
 
-/*
-.admin-dashboard {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .admin-dashboard h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .requests-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .request-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
-  
-  .request-item:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .request-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .request-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .approve-button {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .cancel-button {
-    background-color: #f44336;
-    color: white;
-  }
-*/
+  /* UserDashboard */
 
-/* UserDashboard */
-
-.user-dashboard {
-  .card {
-    border-top: 3px solid #7e57bc;
-
-    .card-body {
-      .card-subtitle {
-        font-size: 1.5rem;
-      }
-
-      .btn-register-company {
-        float: right;
+  &.user-dashboard {
+      .card-body {
+        .btn-register-company {
+          float: right;
+        }
       }
     }
-  }
+  
 }
-
-/*
-  
-  .user-dashboard h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .user-dashboard .company-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .user-dashboard .company-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    background-color: #fff;
-  }
-  
-  .user-dashboard .company-item:hover {
-    background-color: #f1f1f1;
-  }
-*/

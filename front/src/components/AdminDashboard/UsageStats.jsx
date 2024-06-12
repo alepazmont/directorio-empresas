@@ -48,9 +48,11 @@ const UsageStats = () => {
   }, []);
 
   return (
-    <Card className="h-100">
-      <Card.Body>
+    <Card>
+      <Card.Header>
         <Card.Subtitle>Datos del directorio</Card.Subtitle>
+      </Card.Header>
+
         <Card.Body>
           <Table>
             <TableHead>
@@ -73,7 +75,6 @@ const UsageStats = () => {
             </TableBody>
           </Table>
         </Card.Body>
-      </Card.Body>
     </Card>
   );
 };
