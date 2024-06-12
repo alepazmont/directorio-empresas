@@ -20,10 +20,10 @@ const Header = () => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
                 <ul>
-                <li><Nav.Link href="/" className="nav-item">Inicio</Nav.Link></li>
-                <li><Nav.Link href="/directorio" className="nav-item">Directorio de empresas</Nav.Link></li>
-                <li><Nav.Link href="/empresas" className="nav-item">Registra tu empresa</Nav.Link></li>
-                <li><Nav.Link href="/contacto" className="nav-item">Contacto</Nav.Link>  </li>
+                <li className='menu-item'><Nav.Link href="/" className="nav-item">Inicio</Nav.Link></li>
+                <li className='menu-item'><Nav.Link href="/directorio" className="nav-item">Directorio de empresas</Nav.Link></li>
+                <li className='menu-item'><Nav.Link href="/empresas" className="nav-item">Registra tu empresa</Nav.Link></li>
+                <li className='menu-item'><Nav.Link href="/contacto" className="nav-item">Contacto</Nav.Link>  </li>
                 </ul>             
               </Nav>
               <Nav className='btn-nav'>
