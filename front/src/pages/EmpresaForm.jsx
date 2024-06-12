@@ -192,13 +192,11 @@ const FormularioEmpresa = () => {
       setAlertMessage("Empresa pendiente de validación.");
       setAlertVariant("success");
       setShowAlert(true);
-      alert("Empresa registrada exitosamente.");
     } catch (error) {
       console.error("Error al crear la empresa", error);
       setAlertMessage("Error al crear la empresa. Inténtelo de nuevo.");
       setAlertVariant("danger");
       setShowAlert(true);
-      alert("Error al crear la empresa. Inténtelo de nuevo.");
     }
   };
 
@@ -247,6 +245,7 @@ const FormularioEmpresa = () => {
                     variant={alertVariant}
                     onClose={() => setShowAlert(false)}
                     dismissible
+                    className="info-message"
                   >
                     {alertMessage}
                   </Alert>
