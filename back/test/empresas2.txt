@@ -1,3 +1,5 @@
+// LAURA A PARTIR DE AQUÍ
+
 nameEmpresa:Tech Innovations
 categoria:Tecnología
 prodServ:Ambos
@@ -158,6 +160,9 @@ telWhatsapp:666778899
 condiciones:true
 aprobada:false
 popularidad:38
+
+// LAURA HASTA AQUÍ
+// ALE A PARTIR DE AQUÍ
 
 nameEmpresa:Beauty & Wellness Spa
 categoria:Belleza y Bienestar

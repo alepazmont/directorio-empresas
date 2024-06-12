@@ -18,12 +18,13 @@ const Directorio = () => {
     const loadEmpresas = async () => {
       try {
         const empresasData = await fetchEmpresas();
-        // Filtrar empresas aprobadas antes de establecer el estado
         const empresasAprobadas = empresasData.filter(
           (empresa) => empresa.aprobada
         );
-        setEmpresas(empresasAprobadas);
-        setFilteredEmpresas(empresasAprobadas);
+        // Ordenar aleatoriamente las empresas aprobadas
+        const empresasAleatorias = empresasAprobadas.sort(() => Math.random() - 0.5);
+        setEmpresas(empresasAleatorias);
+        setFilteredEmpresas(empresasAleatorias);
       } catch (error) {
         console.error("Error obteniendo empresas", error);
       }
@@ -168,7 +169,7 @@ const Directorio = () => {
                 </a>
               </td>
               <td>
-              <Link to={`/empresa/${empresa._id}#mapa-empresa-detalle`}>
+                <Link to={`/empresa/${empresa._id}#mapa-empresa-detalle`}>
                   <i className="fa-regular fa-map"></i>
                 </Link>
               </td>

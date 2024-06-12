@@ -53,7 +53,7 @@ export const mapOptions = {
     {
       featureType: "poi.sports_complex",
       stylers: [{ visibility: "off" }],
-    }
+    },
   ],
 };
 
@@ -69,7 +69,8 @@ const MapaEmpresas = () => {
         const empresasAprobadas = empresasData.filter(
           (empresa) => empresa.aprobada
         );
-        setEmpresas(empresasAprobadas);
+        const empresasAleatorias = empresasAprobadas.sort(() => Math.random() - 0.5);
+        setEmpresas(empresasAleatorias);
       } catch (error) {
         console.error("Error obteniendo empresas", error);
       }
