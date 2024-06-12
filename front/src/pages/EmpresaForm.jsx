@@ -195,7 +195,7 @@ const FormularioEmpresa = () => {
             <Row>
               <Col lg={12} xs={12}>
                 {showAlert && (
-                  <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible>
+                  <Alert variant={alertVariant} onClose={() => setShowAlert(false)} dismissible className='info-message'>
                     {alertMessage}
                   </Alert>
                 )}

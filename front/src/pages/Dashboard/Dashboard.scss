@@ -1,5 +1,35 @@
 /*AdminDashboard*/
 
+.admin-dashboard{
+  .requests-list{
+    list-style: none;
+
+    li{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .request-buttons{
+        margin-right: 1rem;
+
+        .request-button{
+          margin: 0 .5rem;
+
+          &.approve-button{
+            background-color: #4caf50;
+            color: white;
+          }
+
+          &.cancel-button{
+            background-color: #f44336;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+}
+
 
 /*
 .admin-dashboard {
