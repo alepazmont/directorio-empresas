@@ -29,8 +29,11 @@ const FormularioEmpresa = () => {
     email: "",
     web: "",
     redes: [],
+    whatsapp: false,
+    telWhatsapp: "",
     condiciones: false,
-    whatsappContacto: 'No'
+    aprobada: false,
+    popularidad: ""
   });
 
   const [fileInputs, setFileInputs] = useState([{ id: Date.now(), url: "" }]);
@@ -105,10 +108,14 @@ const FormularioEmpresa = () => {
     );
   };
 
+  const getToken = () => {
+    return localStorage.getItem('token'); // Ajusta esto según el nombre de tu token en localStorage
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     const data = new FormData();
-
+  
     for (const key in formData) {
       if (key === "listaProd" || key === "listaServ") {
         const arrayValue = formData[key]
@@ -117,24 +124,33 @@ const FormularioEmpresa = () => {
           .filter((item) => item !== "");
         data.append(key, JSON.stringify(arrayValue));
       } else if (key === "galeriaFotos") {
-        formData.galeriaFotos.forEach((file, index) => {
-          data.append(`galeriaFotos[${index}]`, file);
+        formData.galeriaFotos.forEach((file) => {
+          data.append('galeriaFotos', file);  // Usar el mismo nombre del campo que espera el backend
         });
       } else if (key === "redes") {
         socialInputs.forEach((red, index) => {
           data.append(`redes[${index}][platform]`, red.platform);
           data.append(`redes[${index}][url]`, red.url);
         });
+      } else if (key === "logo") {
+        data.append('logo', formData.logo);  // Usar el mismo nombre del campo que espera el backend
+      } else if (key === "locMapa") {
+        const locArray = formData[key].split(",").map(coord => parseFloat(coord.trim()));
+        locArray.forEach((coord, index) => {
+          data.append(`locMapa[${index}]`, coord); // Asegúrate de que cada coordenada se envíe como un número separado
+        });
       } else {
         data.append(key, formData[key]);
       }
     }
-
+  
     try {
       console.log("Enviando datos:", Object.fromEntries(data.entries()));
+      console.log(formData);
       await axios.post(`${apiUrl}/empresas/register`, data, {
         headers: {
           "Content-Type": "multipart/form-data",
+          "Authorization": `Bearer ${getToken()}`
         },
       });
 
@@ -158,8 +174,9 @@ const FormularioEmpresa = () => {
         condiciones: false,
         whatsappContacto: 'No'
       });
+  
       setFileInputs([{ id: Date.now(), url: "" }]);
-
+  
       setAlertMessage("Empresa pendiente de validación.");
       setAlertVariant("success");
       setShowAlert(true);
@@ -172,6 +189,9 @@ const FormularioEmpresa = () => {
       alert("Error al crear la empresa. Inténtelo de nuevo.");
     }
   };
+  
+  
+  
 
   const moveItem = (dragIndex, hoverIndex, type) => {
     const newItems = type === "file" ? [...fileInputs] : [...socialInputs];

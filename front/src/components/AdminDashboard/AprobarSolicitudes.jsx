@@ -24,7 +24,7 @@ const AprobarSolicitudes = () => {
       await approveEmpresa(empresaId);
       setEmpresas(prevEmpresas => prevEmpresas.filter(empresa => empresa._id !== empresaId));
     } catch (error) {
-      console.error('Error aprobando empresa:', error);
+      console.error('Error aprobando empresa COMPONENTE:', error);
     }
   };
 

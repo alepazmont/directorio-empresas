@@ -25,7 +25,7 @@ export const approveEmpresa = async (empresaId) => {
     });
     return response.data;
   } catch (error) {
-    console.error('Error aprobando empresa:', error);
+    console.error('Error aprobando empresa SERVICIO:', error);
     throw error;
   }
 };
