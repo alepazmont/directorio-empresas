@@ -120,7 +120,6 @@ const get = async (req, res, next) => {
 
 const profile = async (req, res) => {
   try {
-    console.log(req.authority);
     const empresasCreadas = await User.find({_id:req.authority.id}).populate("empresas");
       return res.status(200).json({
         status: 200,

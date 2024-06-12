@@ -25,7 +25,6 @@ const isAuth = (req, res, next) => {
 
   try {
     var token = jwt.verify(jwtString, secret);
-    console.log(jwtString);
   } catch (error) {
     return next(error);
   }

@@ -3,8 +3,6 @@ const User = require("../user/user.model");
 
 const create = async (req, res, next) => {
   try {
-    console.log(req.body);
-    console.log(req.files);
 
     const logo = req.files['logo'] ? req.files['logo'][0].path : null;
     const galeriaFotos = req.files['galeriaFotos'] ? req.files['galeriaFotos'].map(file => file.path) : [];
@@ -15,13 +13,10 @@ const create = async (req, res, next) => {
       galeriaFotos
     };
 
-    console.log(empresaData);
-
     const empresa = await Empresas.create(empresaData);
 
     const userId = req.authority.id;
-    console.log(userId); 
-
+    
     await User.findByIdAndUpdate(userId, { $push: { empresasCreadas: empresa._id } });
 
     res.json({
@@ -96,6 +91,7 @@ const deleteOne = async (req, res, next) => {
 const approveEmpresa = async (req, res, next) => {
   try {
     const { id } = req.params;
+
     const empresa = await Empresas.findById(id);
 
     if (!empresa) {
@@ -103,7 +99,6 @@ const approveEmpresa = async (req, res, next) => {
     }
 
     empresa.aprobada = true;
-    console.log("Debería aprobarse");
     await empresa.save();
 
     res.status(200).json({ message: 'Empresa aprobada exitosamente', empresa });

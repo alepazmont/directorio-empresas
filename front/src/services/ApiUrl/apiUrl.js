@@ -1,4 +1,5 @@
 export const apiUrl = "https://directorio-empresas.vercel.app";
+/* export const apiUrl = "http://localhost:3000"; */
 export const appUrl = "http://localhost:5173";
 
 
