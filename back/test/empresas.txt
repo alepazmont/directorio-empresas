@@ -1,3 +1,5 @@
+// LAURA A PARTIR DE AQUÍ
+
 nameEmpresa:Tech Solutions Inc.
 categoria:Tecnología
 prodServ:Productos
@@ -259,6 +261,7 @@ condiciones:true
 aprobada:true
 popularidad:55
 
+// LAURA HASTA AQUÍ
 
 
 _______________________________
@@ -289,3 +292,28 @@ telWhatsapp:722262305
 condiciones:true
 aprobada:true
 popularidad:101
+
+nameEmpresa:Cafetería Bar Restaurante El Chorrón
+categoria:Restaurante
+prodServ:Productos
+listaProd[0]:Comida casera
+listaProd[1]:Carta de vinos
+listaProd[2]:Terraza exterior
+listaServ[]:
+direccion:C. del Valle de Pinares Llanos, 23
+codigoPostal:28035
+paradaMetro:Lacoma
+locMapa[0]:40.485452197034554
+locMapa[1]:-3.7219506010521606
+telefono[0]:917305759
+email:elchorron@gmail.com
+web:https://elchorron.es
+redes[0][redSocial]:Facebook
+redes[0][url]:alepaz.online
+redes[1][redSocial]:Instagram
+redes[1][url]:alepaz.online
+whatsapp:false
+telWhatsapp:null
+condiciones:true
+aprobada:false
+popularidad:null

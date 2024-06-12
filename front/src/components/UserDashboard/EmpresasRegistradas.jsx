@@ -33,13 +33,17 @@ const EmpresasRegistradas = () => {
         <Card.Subtitle>Empresas registradas</Card.Subtitle>
       </Card.Header>
       <Card.Body>
-        <ul>
-          {empresas.map((empresa, index) => (
-            <li key={index}>
-              <a href={`${appUrl}/empresas/${empresa._id}`}>{empresa.nameEmpresa}</a>
-            </li>
-          ))}
-        </ul>
+        {empresas.length === 0 ? (
+          <p>No tienes ninguna empresa registrada</p>
+        ) : (
+          <ul>
+            {empresas.map((empresa, index) => (
+              <li key={index}>
+                <a href={`${appUrl}/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a>
+              </li>
+            ))}
+          </ul>
+        )}
       </Card.Body>
     </Card>
   );

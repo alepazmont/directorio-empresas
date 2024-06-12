@@ -9,7 +9,7 @@ import Row from "react-bootstrap/esm/Row";
 import Col from "react-bootstrap/esm/Col";
 import Carousel from "react-bootstrap/Carousel";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faLink } from "@fortawesome/free-solid-svg-icons";
+import { faLink/* ,FaWhatsapp */ } from "@fortawesome/free-solid-svg-icons";
 import {
   faTwitter,
   faFacebook,
@@ -180,6 +180,19 @@ const EmpresaDetalle = () => {
                     ))}
                   </ul>
                 </div>
+              )}
+              {empresa.whatsapp && (
+                <p>
+                  <a
+                    href={`https://wa.me/${empresa.telWhatsapp}?text=Hola%20${empresa.nameEmpresa},%20tengo%20una%20consulta`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-success"
+                    style={{ backgroundColor: "#25D366", borderColor: "#25D366" }}
+                  >
+                    {/* <FontAwesomeIcon icon={FaWhatsapp} /> */} Contactar por WhatsApp
+                  </a>
+                </p>
               )}
             </Col>
             <Col lg={6} xs={12} className="d-company-map">
