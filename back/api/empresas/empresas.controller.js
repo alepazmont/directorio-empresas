@@ -3,8 +3,8 @@ const User = require("../user/user.model");
 
 const create = async (req, res, next) => {
   try {
-    console.log(req.body); // Verificar los datos del formulario
-    console.log(req.files); // Verificar los archivos cargados
+    console.log(req.body);
+    console.log(req.files);
 
     const logo = req.files['logo'] ? req.files['logo'][0].path : null;
     const galeriaFotos = req.files['galeriaFotos'] ? req.files['galeriaFotos'].map(file => file.path) : [];
@@ -15,12 +15,12 @@ const create = async (req, res, next) => {
       galeriaFotos
     };
 
-    console.log(empresaData); // Verificar los datos antes de crear la empresa
+    console.log(empresaData);
 
     const empresa = await Empresas.create(empresaData);
 
     const userId = req.authority.id;
-    console.log(userId); // Verificar el ID del usuario
+    console.log(userId); 
 
     await User.findByIdAndUpdate(userId, { $push: { empresasCreadas: empresa._id } });
 
@@ -30,57 +30,10 @@ const create = async (req, res, next) => {
       data: empresa,
     });
   } catch (error) {
-    console.error(error); // Log del error
+    console.error(error);
     next(error);
   }
 };
-
-/* const createMany = async (req, res, next) => {
-  try {
-    let empresasData = req.body;
-
-    if (!Array.isArray(empresasData)) {
-      empresasData = [empresasData];
-    }
-
-    const empresasCreated = [];
-
-    for (let empresaData of empresasData) {
-      let logo;
-      let galeriaFotos = [];
-
-      if (empresaData.logoUrl) {
-        const response = await axios.get(empresaData.logoUrl, { responseType: 'arraybuffer' });
-        logo = Buffer.from(response.data, 'binary').toString('base64');
-      }
-
-      if (empresaData.galeriaFotosUrls && Array.isArray(empresaData.galeriaFotosUrls)) {
-        for (const url of empresaData.galeriaFotosUrls) {
-          const response = await axios.get(url, { responseType: 'arraybuffer' });
-          const base64Image = Buffer.from(response.data, 'binary').toString('base64');
-          galeriaFotos.push(base64Image);
-        }
-      }
-
-      const newEmpresaData = {
-        ...empresaData,
-        logo,
-        galeriaFotos
-      };
-
-      const empresa = await Empresas.create(newEmpresaData);
-      empresasCreated.push(empresa);
-    }
-
-    res.status(201).json({
-      status: 201,
-      msg: "Empresas creadas exitosamente",
-      data: empresasCreated,
-    });
-  } catch (error) {
-    next(error);
-  }
-}; */
 
 const getOne = async (req, res, next) => {
   try {
@@ -141,10 +94,10 @@ const deleteOne = async (req, res, next) => {
 };
 
 const approveEmpresa = async (req, res) => {
-  const { empresaId } = req.params;
-
   try {
-    const empresa = await Empresa.findById(empresaId);
+    const { id } = req.params;
+    const empresa = await Empresa.findById(id);
+
     if (!empresa) {
       return res.status(404).json({ message: 'Empresa no encontrada' });
     }
@@ -152,11 +105,11 @@ const approveEmpresa = async (req, res) => {
     empresa.aprobada = true;
     await empresa.save();
 
-    res.json({ message: 'Empresa aprobada exitosamente', empresa });
+    res.status(200).json({ message: 'Empresa aprobada exitosamente', empresa });
   } catch (error) {
     console.error('Error al aprobar la empresa:', error);
-    res.status(500).json({ message: 'Error al aprobar la empresa', error });
+    res.status(500).json({ message: 'Error al aprobar la empresa', error: error.message });
   }
 };
 
-module.exports = { create, /* createMany, */ getOne, getAll, updateOne, deleteOne, approveEmpresa };
+module.exports = { create, getOne, getAll, updateOne, deleteOne, approveEmpresa };
