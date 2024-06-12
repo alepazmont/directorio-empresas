@@ -9,7 +9,6 @@ import ListadoUsuarios from '../../components/AdminDashboard/ListadoUsuarios';
 import Col from 'react-bootstrap/esm/Col';
 import Row from 'react-bootstrap/esm/Row';
 import { useState } from 'react';
-import GraficosPrueba1 from '../../components/AdminDashboard/GraficosPrueba1';
 
 const AdminDashboard = () => {
 
@@ -30,15 +29,12 @@ const AdminDashboard = () => {
             <Col lg={3} xs={6} className='mb-5'>
               <UsageStats />
             </Col>
-            <Col lg={6} xs={12} className='mb-5'>
-              <GraficosPrueba1 />
-            </Col>
-          </Row>
-          <Row>
             <Col lg={6}  xs={12} className='mb-5'>
               <AprobarSolicitudes /> 
             </Col>
-            <Col lg={6}  xs={12} className='mb-5'>
+          </Row>
+          <Row>
+            <Col lg={12}  xs={12} className='mb-5'>
               <ListadoUsuarios />
             </Col>
           </Row>
