@@ -90,6 +90,8 @@
 
            
             .btn-option-user{
+                font-family: 'Roboto Medium', sans-serif;
+                background-color: #391179;
                 border-radius: 0;
                 
 
@@ -99,11 +101,6 @@
                 }
             }
 
-        }
-
-        .btn-option-user{
-            background-color: #391179;
-          
         }
     }
 
@@ -120,7 +117,8 @@
     }
 }
 
-.modal-login{
+.modal-login,
+.modal-register{
     .modal-dialog{
         .modal-header{
             background-color: #7E57BC;
@@ -129,9 +127,6 @@
             .modal-title{
                 width: 100%;
                 text-align: center;
-            }
-            .btn-close{
-                filter: invert(1);
             }
         }
 
