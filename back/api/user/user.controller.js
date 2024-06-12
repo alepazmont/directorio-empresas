@@ -29,9 +29,18 @@ const register = async (req, res, next) => {
     });
     const userDB = await newUser.save();
 
+    const token = jwt.sign(
+      {
+        id: userDB._id,
+        email: userDB.email,
+      },
+      process.env.JWT_SECRET,
+      { expiresIn: "1d" }
+    );
+
     return res.status(201).json({
       status: 201,
-      message: `User ${userDB.email} created`,
+      data: {message: `User ${userDB.email} created`, user: userDB, token : token },
     });
   } catch (error) {
     return next(error);

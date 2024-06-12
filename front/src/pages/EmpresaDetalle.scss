@@ -30,7 +30,8 @@
             img{
                 max-width: 300px;
                 height: 200px;
-                overflow: "hidden";
+                overflow: hidden;
+                object-fit: cover;
             }
         }
         .carousel-control-prev {
