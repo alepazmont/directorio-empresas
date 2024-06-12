@@ -1,90 +1,130 @@
 /*AdminDashboard*/
 
+.dashboard {
 
-/*
-.admin-dashboard {
-    font-family: Arial, sans-serif;
-    padding: 20px;
-  }
-  
-  .admin-dashboard h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-  }
-  
-  .requests-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .request-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 4px;
-  }
-  
-  .request-item:hover {
-    background-color: #f9f9f9;
-  }
-  
-  .request-buttons {
-    display: flex;
-    gap: 10px;
-  }
-  
-  .request-button {
-    padding: 8px 12px;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
-  .approve-button {
-    background-color: #4caf50;
-    color: white;
-  }
-  
-  .cancel-button {
-    background-color: #f44336;
-    color: white;
-  }
-*/
+  .card {
+    border-top: 3px solid #7e57bc;
 
+    .card-header{
+      background-color: #fff;
+      border: none;
+      margin-top: .5rem;
 
-/* UserDashboard */
+      .card-subtitle {
+        font-size: 1.3rem;
+      }
+    }
 
-.user-dashboard{
-
-  .btn-register-company{
-    float: right;
+    .card-body {
+      height: 250px;
+      display: flex;
+      flex-direction: column;
+    }
   }
+
+  &.admin-dashboard {
+    
+      .card-body {
+
+        &.card-body-xl{
+          height: 400px;
+          max-height: 400px;
+          overflow: scroll; 
+          .listado-usuarios-tabla {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 16px;
+            text-align: left;
+          
+          
+            thead {
+              background-color: #f2f2f2;
+              th {
+                padding: 10px 10px;
+                background-color: #7E57BC;
+                color: white;
+                font-weight: bold;
+          
+                &:first-child {
+                  padding-left: 15px;
+                }
+              }
+            }
+          
+            tbody {
+              border-radius: 20px 20px 0px 0px;
+              tr {
+                border-bottom: 1px solid #dddddd;
+          
+                &:nth-of-type(even) {
+                  background-color: #f9f9f9;
+                }
+          
+                &:hover {
+                  background-color: #f1f1f1;
+                }
+          
+                td {
+                  padding: 12px 15px;
+                }
+              }
+            }
+          
+            th,
+            td {
+              text-align: left;
+            }
+          }
+        }
+        
+        .requests-list {
+          list-style: none;
+          overflow-y: scroll;
+          height: 250px;
+
+          li {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: .5rem 0;
+            font-weight: 600;
+
+            .request-buttons {
+              margin-right: 1rem;
+          
+              .request-button {
+                margin: 0 .5rem;
+                color: #fff;
+                font-weight: 600;
+                padding: .4rem .8rem;
+
+                &:hover {
+                  opacity: .7;
+                }
+
+                &.approve-button {
+                  background-color: #4caf50;
+                }
+
+                &.cancel-button {
+                  background-color: #f44336;
+                }
+              }
+            }
+          }
+        }
+      }
+    
+  }
+
+  /* UserDashboard */
+
+  &.user-dashboard {
+      .card-body {
+        .btn-register-company {
+          float: right;
+        }
+      }
+    }
+  
 }
-
-/*
-  
-  .user-dashboard h2 {
-    color: #333;
-    font-size: 24px;
-    margin-bottom: 20px;
-    text-align: center;
-  }
-  
-  .user-dashboard .company-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .user-dashboard .company-item {
-    padding: 10px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    background-color: #fff;
-  }
-  
-  .user-dashboard .company-item:hover {
-    background-color: #f1f1f1;
-  }
-*/

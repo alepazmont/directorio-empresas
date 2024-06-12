@@ -3,7 +3,6 @@ import DirectorioGridRecientes from '../components/Directorio/DirectorioGridReci
 import DirectorioGridPopulares from '../components/Directorio/DirectorioGridPopulares'
 import InfoComercial from '../components/InfoComercial/InfoComercial';
 
-
 const HomePage = () => {
 
   return (
@@ -20,7 +19,7 @@ const HomePage = () => {
         <div>
           <DirectorioGridPopulares />
         </div>
-
+       
       </div>
     </div>
   );

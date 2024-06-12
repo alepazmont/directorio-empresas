@@ -78,37 +78,35 @@ button {
   }
 }
 
-.file-input {
+.draggable-item {
   display: flex;
+  align-items: baseline;
   flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-
-  label {
-    margin-bottom: math.div($spacing-unit, 2);
-  }
 
   button {
     background-color: #ff4d4f;
-    height: 34px;
-    width: 34px;
     border-radius: 100%;
-    padding: 0;
-    font-size: 23px;
-  }
-  button:hover {
-    background-color: #b03134;
+    font-size: 15px;
+
+    &:hover {
+      background-color: #b03134 !important;
+    }
   }
 }
 
-.image-preview img {
-  width: 65px;
-  height: 65px;
-  object-fit: cover;
+.image-preview {
+  margin: 0.5rem;
+
+  img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+  }
 }
 
 .logo-upload {
   display: flex;
+  align-items: center;
 }
 
 .sublabel {

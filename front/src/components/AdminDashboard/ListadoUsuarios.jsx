@@ -31,37 +31,39 @@ const ListadoUsuarios = () => {
   };
 
   return (
-    <Card className="h-100">
-      <table className="listado-usuarios-tabla">
-        <thead>
-          <tr>
-            <th>Usuari@</th>
-            <th>Tipo usuario</th>
-            <th>Admin</th>
-            <th>Teléfono</th>
-            <th>Correo electrónico</th>
-            <th>Empr. cre.</th>
-            <th>Últ. conex.</th>
-            <th>Registro</th>
-          </tr>
-        </thead>
-        <tbody>
-          {usuarios.map((usuario, index) => (
-            <tr key={index}>
-              <td>
-                {usuario.nombre} {usuario.apellidos}
-              </td>
-              <td>{usuario.tipoUsuario}</td>
-              <td>{usuario.admin ? 'Sí' : 'No'}</td>
-              <td>{usuario.telefono}</td>
-              <td>{usuario.email}</td>
-              <td>{usuario.empresasCreadas.length}</td>
-              <td>{formatFecha(usuario.ultimaConexion)}</td>
-              <td>{formatFecha(usuario.fechaRegistro)}</td>
+    <Card>
+      <Card.Body className='card-body-xl'>
+        <table className="listado-usuarios-tabla">
+          <thead>
+            <tr>
+              <th>Usuari@</th>
+              <th>Tipo usuario</th>
+              <th>Admin</th>
+              <th>Teléfono</th>
+              <th>Correo electrónico</th>
+              <th>Empr. cre.</th>
+              <th>Últ. conex.</th>
+              <th>Registro</th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {usuarios.map((usuario, index) => (
+              <tr key={index}>
+                <td>
+                  {usuario.nombre} {usuario.apellidos}
+                </td>
+                <td>{usuario.tipoUsuario}</td>
+                <td>{usuario.admin ? 'Sí' : 'No'}</td>
+                <td>{usuario.telefono}</td>
+                <td>{usuario.email}</td>
+                <td>{usuario.empresasCreadas.length}</td>
+                <td>{formatFecha(usuario.ultimaConexion)}</td>
+                <td>{formatFecha(usuario.fechaRegistro)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </Card.Body>
     </Card>
   );
 };

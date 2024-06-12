@@ -20,13 +20,13 @@ const AdminDashboard = () => {
   return (
     <div className='landing-page'>
       <div className='content'>
-        <Container className='admin-dashboard'>
+        <Container className='dashboard admin-dashboard'>
           <BreadCrumb pages={pages} />
           <Row>
-            <Col lg={3} xs={6} className='mb-5'>
+            <Col lg={3} xs={12} className='mb-5'>
               <UserCard />
             </Col>
-            <Col lg={3} xs={6} className='mb-5'>
+            <Col lg={3} xs={12} className='mb-5'>
               <UsageStats />
             </Col>
             <Col lg={6}  xs={12} className='mb-5'>

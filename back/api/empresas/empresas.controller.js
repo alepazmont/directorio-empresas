@@ -93,22 +93,23 @@ const deleteOne = async (req, res, next) => {
   }
 };
 
-const approveEmpresa = async (req, res) => {
+const approveEmpresa = async (req, res, next) => {
   try {
     const { id } = req.params;
-    const empresa = await Empresa.findById(id);
+    const empresa = await Empresas.findById(id);
 
     if (!empresa) {
       return res.status(404).json({ message: 'Empresa no encontrada' });
     }
 
     empresa.aprobada = true;
+    console.log("Debería aprobarse");
     await empresa.save();
 
     res.status(200).json({ message: 'Empresa aprobada exitosamente', empresa });
   } catch (error) {
     console.error('Error al aprobar la empresa:', error);
-    res.status(500).json({ message: 'Error al aprobar la empresa', error: error.message });
+    next(error);
   }
 };
 

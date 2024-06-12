@@ -38,7 +38,7 @@ const DirectorioGridRecientes = () => {
     return result;
   };
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 922;
   const empresaChunks = chunkArray(empresas, isMobile ? 1 : 3);
 
   return (
@@ -49,7 +49,7 @@ const DirectorioGridRecientes = () => {
           <Carousel.Item key={chunkIndex}>
             <Row>
               {chunk.map((empresa) => (
-                <Col key={empresa._id} md={4}>
+                <Col key={empresa._id} lg={4} xs={12}>
                   <Card style={{ width: '23rem' }}> 
                   <Card.Header className='d-flex'>
                     <Card.Img variant="top" src={empresa.logo} alt={empresa.nameEmpresa} />

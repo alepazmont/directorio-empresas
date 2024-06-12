@@ -37,7 +37,7 @@ const DirectorioGridPopulares = () => {
     return result;
   };
 
-  const isMobile = window.innerWidth <= 768;
+  const isMobile = window.innerWidth <= 992;
   const empresaChunks = chunkArray(empresas, isMobile ? 1 : 3);
 
   return (
@@ -48,7 +48,7 @@ const DirectorioGridPopulares = () => {
           <Carousel.Item key={chunkIndex}>
             <Row>
               {chunk.map((empresa) => (
-                <Col key={empresa._id} md={4}>
+                <Col key={empresa._id} lg={4} xs={12}>
                   <Card style={{ width: '23rem' }}>   
 
                   <Card.Header className='d-flex'>
