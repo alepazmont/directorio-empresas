@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { fetchEmpresas } from "../../services/empresaService";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
+import { fas, faMap } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 import Form from 'react-bootstrap/Form';
 import FormLabel from "react-bootstrap/esm/FormLabel";
@@ -170,8 +170,7 @@ const Directorio = () => {
               </td>
               <td>
                 <Link to={`/empresa/${empresa._id}#mapa-empresa-detalle`}>
-                  <i className="fa-regular fa-map"></i>
-                </Link>
+                <FontAwesomeIcon icon={faMap} />                </Link>
               </td>
             </tr>
           ))}
