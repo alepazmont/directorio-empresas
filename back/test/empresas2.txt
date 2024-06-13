@@ -187,6 +187,8 @@ condiciones:true
 aprobada:false
 popularidad:80
 
+---
+
 nameEmpresa:Real Estate Solutions
 categoria:Inmobiliaria
 prodServ:Ambos
@@ -209,6 +211,7 @@ telWhatsapp:666778899
 condiciones:true
 aprobada:false
 popularidad:76
+---
 
 nameEmpresa:Event Planning Experts
 categoria:Eventos
