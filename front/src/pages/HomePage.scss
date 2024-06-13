@@ -9,7 +9,8 @@
 
       .directorio-container {
         margin: 0px;
-        overflow: scroll;
+        overflow-x: auto;
+        overflow-y: scroll;
         height: 411px;
       }
 
