@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { fetchEmpresas, approveEmpresa, deleteEmpresa } from '../../services/empresaService';
 import Card from "react-bootstrap/Card";
+import { appUrl } from '../../services/ApiUrl/apiUrl';
 
 const AprobarSolicitudes = () => {
   const [empresas, setEmpresas] = useState([]);
@@ -41,7 +42,9 @@ const AprobarSolicitudes = () => {
     <Card>
       <Card.Header>
         <Card.Subtitle>Aprobación de solicitudes</Card.Subtitle>
-      </Card.Header>
+        {empresas.length > 0 && (
+          <p className='m-0'>{empresas.length} {empresas.length > 1 ? "empresas pendientes" : "empresa pendiente"} de aprobación</p>
+        )}      </Card.Header>
       <Card.Body>
 
         {empresas.length === 0 ? (
@@ -50,7 +53,7 @@ const AprobarSolicitudes = () => {
           <ul className="requests-list">
             {empresas.map((empresa) => (
               <li key={empresa._id} className="request-item">
-                {empresa.nameEmpresa}
+              <a href={`${appUrl}/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a>
                 <div className="request-buttons">
                   <button
                     className="request-button approve-button"

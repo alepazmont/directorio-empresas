@@ -8,6 +8,7 @@ const EmpresasRegistradas = () => {
   const { user } = useContext(UserContext);
   const usuario = user.data.user;
   const [empresas, setEmpresas] = useState([]);
+  const [loading, setLoading] = useState(true); 
 
   useEffect(() => {
     const fetchEmpresas = async () => {
@@ -21,6 +22,8 @@ const EmpresasRegistradas = () => {
         setEmpresas(empresasData);
       } catch (error) {
         console.error("Error obteniendo empresas", error);
+      } finally {
+        setLoading(false);
       }
     };
 
@@ -33,16 +36,27 @@ const EmpresasRegistradas = () => {
         <Card.Subtitle>Empresas registradas</Card.Subtitle>
       </Card.Header>
       <Card.Body>
-        {empresas.length === 0 ? (
-          <p>No tienes ninguna empresa registrada</p>
+        {loading ? (
+          <p>Cargando...</p>
         ) : (
-          <ul>
-            {empresas.map((empresa, index) => (
-              <li key={index}>
-                <a href={`${appUrl}/empresa/${empresa._id}`}>{empresa.nameEmpresa}</a>
-              </li>
-            ))}
-          </ul>
+          empresas.length === 0 ? (
+            <p>No tienes ninguna empresa registrada</p>
+          ) : (
+            <ul>
+              {empresas.map((empresa, index) => (
+                <li key={index}>
+                  <a href={`${appUrl}/empresa/${empresa._id}`}>
+                    {empresa.nameEmpresa}
+                  </a>
+                  {!empresa.aprobada && (
+                    <i style={{ color: 'gray', fontSize: 'smaller', marginLeft: '10px' }}>
+                      Pendiente de aprobación
+                    </i>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )
         )}
       </Card.Body>
     </Card>
