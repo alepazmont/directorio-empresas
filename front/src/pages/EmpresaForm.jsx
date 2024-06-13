@@ -10,6 +10,8 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Alert from "react-bootstrap/Alert";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faXmark } from "@fortawesome/free-solid-svg-icons";
 
 const FormularioEmpresa = () => {
   const [formData, setFormData] = useState({
@@ -563,8 +565,7 @@ const FileInput = ({ id, index, url, onChange, onRemove, moveItem }) => {
             <img src={url} alt="Preview" />
           </div>
           <Button variant="danger" onClick={onRemove}>
-            <i className="fa-solid fa-xmark"></i>
-          </Button>
+          <FontAwesomeIcon icon={faXmark} />          </Button>
         </>
       )}
     </div>
@@ -622,8 +623,7 @@ const SocialInput = ({
         onChange={(e) => onChange(e, index)}
       />
       <Button variant="danger" onClick={onRemove}>
-        <i className="fa-solid fa-xmark"></i>
-      </Button>
+      <FontAwesomeIcon icon={faXmark} />        </Button>
     </div>
   );
 };

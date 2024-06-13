@@ -23,7 +23,7 @@ const EmpresasRegistradas = () => {
       } catch (error) {
         console.error("Error obteniendo empresas", error);
       } finally {
-        setLoading(false);
+        setLoading(false);  // Establecer loading en false una vez que los datos se hayan cargado
       }
     };
 
@@ -37,7 +37,7 @@ const EmpresasRegistradas = () => {
       </Card.Header>
       <Card.Body>
         {loading ? (
-          <p>Cargando...</p>
+          <p>Cargando...</p>  // Mostrar mensaje de carga mientras loading es true
         ) : (
           empresas.length === 0 ? (
             <p>No tienes ninguna empresa registrada</p>
