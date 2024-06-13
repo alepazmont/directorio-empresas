@@ -100,7 +100,7 @@ const MapaEmpresas = () => {
   }
 
   return (
-    <Row>
+    <Row className="m-0">
       <Col lg={6} xs={12} className="text-center b-xs col-mapa-inicio">
         <div className="mapa-directorio-container">
           <GoogleMap
