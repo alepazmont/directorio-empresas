@@ -8,7 +8,7 @@ const InfoComercial = () => {
     return (
         <>
         <PurpleTitle title="Lo que EmpresasYa! te ofrece" />
-        <Row className="register-company-cards"> 
+        <Row className="register-company-cards m-0"> 
             <Col lg={3} xs={6} className="d-flex justify-content-center mb-3">
                 <Card style={{ width: '18rem' }}>
                     <Card.Header className="text-center">

@@ -19,7 +19,6 @@ const HomePage = () => {
         <div>
           <DirectorioGridPopulares />
         </div>
-       
       </div>
     </div>
   );
